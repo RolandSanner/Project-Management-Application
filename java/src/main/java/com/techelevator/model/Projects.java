@@ -2,12 +2,15 @@ package com.techelevator.model;
 
 public class Projects {
 
+
     private long projectID;
     private String projectName;
     private String precinct;
     private String municipality;
     private String location;
     private String description;
+    private long projectManagerID;
+    private long groupID;
 
     public long getProjectID() {
         return projectID;
@@ -17,6 +20,19 @@ public class Projects {
         this.projectID = projectID;
     }
 
+    public Projects(long projectID, String projectName, String precinct, String municipality, String location, String description) {
+        this.projectID = projectID;
+        this.projectName = projectName;
+        this.precinct = precinct;
+        this.municipality = municipality;
+        this.location = location;
+        this.description = description;
+
+    }
+
+    public Projects() {
+
+    }
 
     @Override
     public String toString() {
@@ -31,7 +47,21 @@ public class Projects {
     }
 
 
+    public long getProjectManagerID() {
+        return projectManagerID;
+    }
 
+    public void setProjectManagerID(long projectManagerID) {
+        this.projectManagerID = projectManagerID;
+    }
+
+    public long getGroupID() {
+        return groupID;
+    }
+
+    public void setGroupID(long groupID) {
+        this.groupID = groupID;
+    }
 
     public String getProjectName() {
         return projectName;
