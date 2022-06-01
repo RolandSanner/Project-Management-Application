@@ -1,13 +1,15 @@
 package com.techelevator.dao;
 
-import com.techelevator.model.Projects;
+import com.techelevator.model.Project;
 
 import java.util.List;
 
 public interface ProjectDAO {
 
-    List<Projects> getAllProjects();
+    List<Project> getAllProjects();
 
-    Projects getAProject(int id);
+    Project getAProject(int id);
+
+    Project addProject();
 
 }
