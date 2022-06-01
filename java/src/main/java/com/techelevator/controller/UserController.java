@@ -1,9 +1,6 @@
 package com.techelevator.controller;
 
-
-import com.techelevator.dao.ProjectDAO;
 import com.techelevator.dao.UserDao;
-import com.techelevator.model.Projects;
 import com.techelevator.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -14,24 +11,11 @@ import java.util.List;
 @RestController
 @CrossOrigin
 @PreAuthorize("isAuthenticated()")
-public class AppController {
+public class UserController {
 
-    @Autowired
-    ProjectDAO projectDAO;
+
     @Autowired
     UserDao userDAO;
-
-    // PROJECT REQUEST MAPPING
-
-    @RequestMapping(path = "/projects", method = RequestMethod.GET)
-    public List<Projects> listProjects() {
-        return projectDAO.getAllProjects();
-    }
-
-    @RequestMapping(path = "/project/{id}", method = RequestMethod.GET)
-    public Projects getProject(@PathVariable int id) {
-        return projectDAO.getAProject(id);
-    }
 
 
     // USER REQUEST MAPPING
@@ -52,11 +36,6 @@ public class AppController {
     }
 
 
-    // MANAGER REQUEST MAPPING
 
-    @RequestMapping(path = "/managers/{id}", method = RequestMethod.GET)
-    public User getMyProjects(@PathVariable String username) {
-        return userDAO.findByUsername(username);
-    }
 
 }
