@@ -23,12 +23,12 @@ public class AppController {
 
     // PROJECT REQUEST MAPPING
 
-    @RequestMapping(path="/projects", method = RequestMethod.GET)
-    public List<Projects> listProjects(){
+    @RequestMapping(path = "/projects", method = RequestMethod.GET)
+    public List<Projects> listProjects() {
         return projectDAO.getAllProjects();
     }
 
-    @RequestMapping(path="/project/{id}", method = RequestMethod.GET)
+    @RequestMapping(path = "/project/{id}", method = RequestMethod.GET)
     public Projects getProject(@PathVariable int id) {
         return projectDAO.getAProject(id);
     }
@@ -36,19 +36,21 @@ public class AppController {
 
     // USER REQUEST MAPPING
 
-    @RequestMapping(path="/users", method = RequestMethod.GET)
-    public List<User> listUsers(){
+    @RequestMapping(path = "/users", method = RequestMethod.GET)
+    public List<User> listUsers() {
         return userDAO.findAll();
     }
 
-    @RequestMapping(path="/users/{id}", method = RequestMethod.GET)
+    @RequestMapping(path = "/users/{id}", method = RequestMethod.GET)
     public User getUserById(@PathVariable long id) {
         return userDAO.getUserById(id);
     }
 
-    @RequestMapping(path="/username", method = RequestMethod.GET)
+    @RequestMapping(path = "/users/{username}", method = RequestMethod.GET)
     public User findByUsername(@PathVariable String username) {
         return userDAO.findByUsername(username);
     }
 
+
+    // MANAGER REQUEST MAPPING 
 }
