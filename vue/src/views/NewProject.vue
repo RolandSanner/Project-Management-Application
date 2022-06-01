@@ -9,6 +9,7 @@
       placeholder="Project ID"
       required
       autofocus
+      v-model="project.ProjectId"
     />
     <input
       type="text"
@@ -17,6 +18,7 @@
       placeholder="Project Name"
       required
       autofocus
+      v-model="project.projectName"
     />
     <textarea
       id="project-description"
@@ -25,7 +27,8 @@
       required
       autofocus
       rows="4"
-      cols="23" 
+      cols="23"
+      v-model="project.projectDescription" 
     />
     <input
       type="text"
@@ -34,6 +37,7 @@
       placeholder="Primary Funding Source"
       required
       autofocus
+      v-model="project.primaryFunding"
     />
     <input
       type="text"
@@ -41,6 +45,7 @@
       class="form-control"
       placeholder="Secondary Funding Sources"
       autofocus
+      v-model="project.secondaryFunding"
     />
     <input
       type="text"
@@ -49,6 +54,7 @@
       placeholder="Precinct"
       required
       autofocus
+      v-model="project.precinct"
     />
     <input
       type="text"
@@ -57,6 +63,7 @@
       placeholder="Contract"
       required
       autofocus
+      v-model="project.contract"
     />
      <button type="submit" v-on:click="saveDocument()">Submit</button>
      <button type="cancel" class="cancel" v-on:click="cancel()">Cancel</button>
@@ -65,9 +72,13 @@
 </template>
 
 <script>
+  import projectService from './../services/ProjectService'
+
     export default {
   name: "new-project",
-  components: {},
+  components: {
+    
+  },
   data() {
       return {
         project: {
@@ -82,17 +93,17 @@
       }
     },
    methods: {
-  //   saveDocument() {
-  //     projectServices.create(this.project)
-  //                    .then(response => {
-  //                      if(response.status === 201){
-  //                        this.$router.push("/")
-  //                      }
-  //                    })
-  //                    .catch(error => {
-  //                      console.error(error)
-  //                    })
-  //   }
+    saveDocument() {
+      projectService.create(this.project)
+                     .then(response => {
+                       if(response.status === 201){
+                         this.$router.push("/")
+                       }
+                     })
+                     .catch(error => {
+                       console.error(error)
+                     })
+    },
     cancel() {
       this.$router.push('/')
     }
@@ -124,7 +135,7 @@
   background: none;
   border-radius: 5px;
   box-shadow: 0px 0px 4px #043464;
-  /* background-color: #3c99dc; */
+  margin-top: 50px;
 }
 
 #new-project-form  h1 {
@@ -157,7 +168,7 @@
 }
 
 .form-control:focus{
-  background: #043464;
+  background: #04346435;
 }
 
 form button {

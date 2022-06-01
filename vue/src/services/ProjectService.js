@@ -11,5 +11,9 @@ export default{
 
     getProjectById(id){
         return http.get(`/projects/${id}`)
+    },
+
+    create(project) {
+        return http.post('/projects/', project)
     }
 }
