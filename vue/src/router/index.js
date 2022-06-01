@@ -8,6 +8,8 @@ import store from '../store/index'
 import ListUsers from '../views/ListUsers.vue'
 import NewProject from '../views/NewProject.vue'
 import ProjectList from '../views/ProjectList.vue'
+import NewContractor from '../views/NewContractor.vue'
+
 Vue.use(Router)
 
 /**
@@ -78,8 +80,11 @@ const router = new Router({
       meta:{
         requiresAuth: true
       }
+    },{
+    path: "/newcontractor",
+    name: "newcontractor",
+    component: NewContractor,
     }
-    
   ]
 })
 

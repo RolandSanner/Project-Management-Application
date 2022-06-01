@@ -1,6 +1,6 @@
 package com.techelevator.dao;
 
-import com.techelevator.model.Managers;
+import com.techelevator.model.Manager;
 
 
 import java.util.List;
@@ -8,7 +8,7 @@ import java.util.List;
 public interface ManagerDAO {
 
 
-    List<Managers> listMyProjects(int id);
+    List<Manager> listMyProjects(int id);
 
 
 
