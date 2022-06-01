@@ -149,10 +149,13 @@ export default {
 }
 
 #username:focus{
-  background: #043464;
+  background: #04346435;
 }
 #password:focus{
-  background: #043464
+  background: #04346435;
+}
+#confirmPassword:focus{
+  background: #04346435;
 }
 
 form button {
@@ -167,6 +170,9 @@ form button {
   border-radius: 3px;
   cursor: pointer;
 }
+form button:hover{
+  color: black;
+}
 
 .hasAccount {
   text-decoration: none;
@@ -178,7 +184,7 @@ form button {
 }
 
 .hasAccount:hover {
-  color: #043464;
+  color: #acaeaf;
 }
 
 </style>
