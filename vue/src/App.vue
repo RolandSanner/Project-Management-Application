@@ -1,6 +1,11 @@
 <template>
   <div id="app">
-    <NavigationBar class="nav"/>
+    <div class="nav">
+      <NavigationBar class="nav"/>
+    </div>
+    <div>
+      <router-view />
+    </div>
   </div>
 </template>
 
@@ -14,8 +19,8 @@
 </script>
 
 <style>
-  /* .nav {
-    z-index: -1; 
+  .nav {
+    z-index: 1; 
     position: relative;
-  } */
+  }
 </style>
