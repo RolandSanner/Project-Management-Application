@@ -7,6 +7,7 @@ import Register from '../views/Register.vue'
 import store from '../store/index'
 import ListUsers from '../views/ListUsers.vue'
 import NewProject from '../views/NewProject.vue'
+import NewContractor from '../views/NewContractor.vue'
 
 Vue.use(Router)
 
@@ -67,8 +68,11 @@ const router = new Router({
       meta: {
         requiresAuth: false
       }
+    },{
+    path: "/newcontractor",
+    name: "newcontractor",
+    component: NewContractor,
     }
-    
   ]
 })
 
