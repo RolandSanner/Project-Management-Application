@@ -9,6 +9,7 @@ import ListUsers from '../views/ListUsers.vue'
 import NewProject from '../views/NewProject.vue'
 import ProjectList from '../views/ProjectList.vue'
 import NewContractor from '../views/NewContractor.vue'
+import UserInfo from '../views/UserInfo.vue'
 
 Vue.use(Router)
 
@@ -84,6 +85,14 @@ const router = new Router({
     path: "/newcontractor",
     name: "newcontractor",
     component: NewContractor,
+    },
+    {
+      path:"/userlist/:id",
+      name:"userinfo",
+      component: UserInfo,
+      meta:{
+        requiresAuth: true
+      }
     }
   ]
 })

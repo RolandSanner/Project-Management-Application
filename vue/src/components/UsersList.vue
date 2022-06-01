@@ -1,7 +1,9 @@
 <template>
   <div class="user-list">
       <div v-for="user in users" v-bind:key="user.id" class="user">
+          <router-link v-bind:to="{name:'userinfo',params:{id: user.id}}">
           {{user.username}}
+          </router-link>
       </div>
   </div>
 </template>
