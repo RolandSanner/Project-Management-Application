@@ -52,5 +52,11 @@ public class AppController {
     }
 
 
-    // MANAGER REQUEST MAPPING 
+    // MANAGER REQUEST MAPPING
+
+    @RequestMapping(path = "/managers/{id}", method = RequestMethod.GET)
+    public User getMyProjects(@PathVariable String username) {
+        return userDAO.findByUsername(username);
+    }
+
 }

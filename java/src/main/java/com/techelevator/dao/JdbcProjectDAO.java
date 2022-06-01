@@ -60,4 +60,20 @@ public class JdbcProjectDAO implements ProjectDAO{
 
         return project;
     }
+
+    @Override
+    public Projects getMyProjects(int id) {
+
+        String sql = "SELECT * FROM projects where manager_id = ?";
+        SqlRowSet results = this.jdbcTemplate.queryForRowSet(sql, id);
+
+        Projects project = null;
+        if(results.next()) {
+            project = projectObjectMapper(results);
+        }
+
+        return project;
+    }
+
+
 }

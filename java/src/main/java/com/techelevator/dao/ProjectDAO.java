@@ -10,4 +10,6 @@ public interface ProjectDAO {
 
     Projects getAProject(int id);
 
+    Projects getMyProject(int id);
+
 }
