@@ -1,7 +1,7 @@
 package com.techelevator.dao;
 
 
-import com.techelevator.model.Projects;
+import com.techelevator.model.Project;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
@@ -20,9 +20,9 @@ public class JdbcProjectDAO implements ProjectDAO{
     }
 
 
-    private Projects projectObjectMapper(SqlRowSet results) {
+    private Project projectObjectMapper(SqlRowSet results) {
 
-        Projects project = new Projects();
+        Project project = new Project();
         project.setProjectID(results.getLong("project_ID"));
         project.setProjectName(results.getString("project_name"));
         project.setPrecinct(results.getString("precinct"));
@@ -36,10 +36,10 @@ public class JdbcProjectDAO implements ProjectDAO{
 
 
     @Override
-    public List<Projects> getAllProjects() {
+    public List<Project> getAllProjects() {
         String sql = "SELECT * from projects;";
         SqlRowSet results = this.jdbcTemplate.queryForRowSet(sql);
-        List<Projects> projects = new ArrayList<>();
+        List<Project> projects = new ArrayList<>();
         while (results.next()) {
             projects.add(projectObjectMapper(results));
 
@@ -48,16 +48,36 @@ public class JdbcProjectDAO implements ProjectDAO{
     }
 
     @Override
-    public Projects getAProject(int id) {
+    public Project getAProject(int id) {
 
         String sql = "SELECT * FROM projects where project_ID = ?";
         SqlRowSet results = this.jdbcTemplate.queryForRowSet(sql, id);
 
-        Projects project = null;
+        Project project = null;
         if(results.next()) {
             project = projectObjectMapper(results);
         }
 
         return project;
     }
+
+    @Override
+    public Project addProject() {
+
+        String sql = "INSERT INTO projects (project_id," +
+                " project_name," +
+                " project_description," +
+                " project_location," +
+                " precinct," +
+                " municipality," +
+                " project_manager_id," +
+                " group_id) VALUES(?,?,?,?,?,?,?) RETURNING project_id";
+
+        int newProjectID =  jdbcTemplate.queryForObject(sql, Integer.class);
+
+
+        return getAProject(newProjectID);
+    }
+
+
 }

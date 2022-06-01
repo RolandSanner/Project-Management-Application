@@ -1,6 +1,6 @@
 package com.techelevator.model;
 
-public class Projects {
+public class Project {
 
 
     private long projectID;
@@ -20,7 +20,7 @@ public class Projects {
         this.projectID = projectID;
     }
 
-    public Projects(long projectID, String projectName, String precinct, String municipality, String location, String description) {
+    public Project(long projectID, String projectName, String precinct, String municipality, String location, String description) {
         this.projectID = projectID;
         this.projectName = projectName;
         this.precinct = precinct;
@@ -30,7 +30,7 @@ public class Projects {
 
     }
 
-    public Projects() {
+    public Project() {
 
     }
 
