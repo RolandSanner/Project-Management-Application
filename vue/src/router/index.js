@@ -5,6 +5,8 @@ import Login from '../views/Login.vue'
 import Logout from '../views/Logout.vue'
 import Register from '../views/Register.vue'
 import store from '../store/index'
+import ListUsers from '../views/ListUsers.vue'
+import NewProject from '../views/NewProject.vue'
 
 Vue.use(Router)
 
@@ -53,6 +55,20 @@ const router = new Router({
         requiresAuth: false
       }
     },
+    {
+      path: "/userlist",
+      name: "userlist",
+      component: ListUsers
+    },
+    {
+      path: "/newproject",
+      name: "newproject",
+      component: NewProject,
+      meta: {
+        requiresAuth: false
+      }
+    }
+    
   ]
 })
 

@@ -134,10 +134,10 @@ export default {
 }
 
 #username:focus{
-  background: #043464;
+  background: #04346435;
 }
 #password:focus{
-  background: #043464;
+  background: #04346435;
 }
 
 form button {
@@ -153,6 +153,10 @@ form button {
   cursor: pointer;
 }
 
+form button:hover{
+  color: black;
+}
+
 .newAccount {
   text-decoration: none;
   display: flex;
@@ -162,7 +166,7 @@ form button {
   }
 
 .newAccount:hover {
-  color: #043464;
+  color: #acaeaf;
 }
 
 .alert-danger {
