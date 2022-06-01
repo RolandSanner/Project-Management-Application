@@ -101,13 +101,13 @@ export default {
   background: none;
   border-radius: 5px;
   box-shadow: 0px 0px 4px #043464;
-  /* background-color: #3c99dc; */
+  margin-top: 5%;
 }
 
 #login  h1 {
   display: flex;
   justify-content: center;
-  padding: 25px 0 25px 25px;
+  padding: 25px 25px 25px 25px;
   font-size: 2.3rem;
 }
 

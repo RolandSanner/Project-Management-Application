@@ -135,13 +135,13 @@
   background: none;
   border-radius: 5px;
   box-shadow: 0px 0px 4px #043464;
-  margin-top: 50px;
+  margin-top: 5%;
 }
 
 #new-project-form  h1 {
   display: flex;
   justify-content: center;
-  padding: 25px 0 25px 25px;
+  padding: 25px 25px 25px 25px;
   font-size: 2.3rem;
 }
 
@@ -154,7 +154,6 @@
 .form-control {
   display: flex;
   justify-content: center;
-  border-radius: 5px;
   box-shadow: 0px 0px 4px #043464;
   background-color: white;
   border-radius: 3px;
