@@ -134,10 +134,10 @@ export default {
 }
 
 #username:focus{
-  background: #043464;
+  background: #acaeaf;
 }
 #password:focus{
-  background: #043464;
+  background: #00AFF0
 }
 
 form button {

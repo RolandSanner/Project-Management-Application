@@ -5,12 +5,18 @@
 
     <div class="nav">
 
-        <img src="./../../assests/logoBlue.png" alt="blue logo" height=55 width=auto>
-
-        <router-link v-bind:to="{ name: 'home' }" class="link">Home</router-link>
-        <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''" 
+        <div class="logo">
+           <img src="./../../assests/logoBlue.png" alt="blue logo" height=55 width=auto>
+        </div>
+        <div class="navLinks">
+            <router-link v-bind:to="{ name: 'home' }" class="link">Home</router-link>
+            <router-link v-bind:to="{ name: 'newproject' }" v-if="$store.state.token != ''" 
+                            class="link" &nbsp;|&nbsp;>Projects</router-link>
+            <router-link v-bind:to="{ name: 'newproject' }" class="link">New Project</router-link>
+            <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''" 
                             class="link" &nbsp;|&nbsp;>Logout</router-link>
-        <router-view />
+            <router-view />
+        </div>
     </div>
 
 </template>

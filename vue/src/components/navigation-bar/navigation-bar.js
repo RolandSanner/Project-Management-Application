@@ -1,6 +1,10 @@
+import router from './../../router/index'
+
 export default {
 	name: "navigation-bar",
-	components: {},
+	components: {
+		router
+	},
 	data() {
 		return {}
 	},
