@@ -58,7 +58,10 @@ const router = new Router({
     {
       path: "/userlist",
       name: "userlist",
-      component: ListUsers
+      component: ListUsers,
+      meta:{
+        requiresAuth:true
+      }
     },
     {
       path: "/newproject",
