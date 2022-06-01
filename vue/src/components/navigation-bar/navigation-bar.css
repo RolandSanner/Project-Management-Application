@@ -1,0 +1,26 @@
+
+  .nav {
+    background-color: #043464;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .link {
+    text-decoration: none;
+    color: white;
+    background-color: #043464;
+    font-size: 1.4rem;
+    padding: 5px;
+    transition: .2s;
+
+  }
+  
+  .link:hover {
+    transform: scale(1.5);
+}
+
+  .link:active {
+    color: white;
+  }

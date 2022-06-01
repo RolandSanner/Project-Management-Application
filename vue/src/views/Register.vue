@@ -90,14 +90,14 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 
 * {
   font-family: Arial, Helvetica, sans-serif;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: #d5f3fe;
+  background-color: #fff;
 }
 
 #register{
@@ -115,7 +115,7 @@ export default {
   outline: none;
   background: none;
   border-radius: 5px;
-  box-shadow: 0px 0px 8px rgba(0, 175, 240, 0.25);
+  box-shadow: 0px 0px 5px #043464;
   /* background-color: #3c99dc; */
 }
 
@@ -136,7 +136,7 @@ export default {
   display: flex;
   justify-content: center;
   border-radius: 5px;
-  box-shadow: 0px 0px 8px rgba(0, 175, 240, 0.25);
+  box-shadow: 0px 0px 5px #043464;
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 3px;
   font-size: 1.8rem;
@@ -149,14 +149,15 @@ export default {
 }
 
 #username:focus{
-  background: #00AFF0;
+  background: #043464;
 }
 #password:focus{
-  background: #00AFF0
+  background: #043464
 }
 
 form button {
-  background-color: #00AFF0;
+  background-color: #043464;
+  color: white;
   display: flex;
   margin-left: auto;
   margin-right: auto;
@@ -177,7 +178,7 @@ form button {
 }
 
 .hasAccount:hover {
-  color: #00AFF0;
+  color: #043464;
 }
 
 </style>

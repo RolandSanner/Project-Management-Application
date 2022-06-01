@@ -1,7 +1,7 @@
 <template>
   <div id="login" class="text-center">
     <form class="form-signin" @submit.prevent="login">
-      <h1 class="h3 mb-3 font-weight-normal">Features, Not Bugs</h1>
+      <h1 class="h3 mb-3 font-weight-normal">Front Line Advisory Group</h1>
       <div
         class="alert alert-danger"
         role="alert"
@@ -82,7 +82,7 @@ export default {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: #d5f3fe;
+  background-color: #ffffff;
 }
 
 #login{
@@ -100,7 +100,7 @@ export default {
   outline: none;
   background: none;
   border-radius: 5px;
-  box-shadow: 0px 0px 8px rgba(0, 175, 240, 0.5);
+  box-shadow: 0px 0px 4px #043464;
   /* background-color: #3c99dc; */
 }
 
@@ -108,7 +108,7 @@ export default {
   display: flex;
   justify-content: center;
   padding: 25px 0 25px 25px;
-  font-size: 2rem;
+  font-size: 2.3rem;
 }
 
 #login label {
@@ -121,8 +121,8 @@ export default {
   display: flex;
   justify-content: center;
   border-radius: 5px;
-  box-shadow: 0px 0px 8px rgba(0, 175, 240, 0.999525);
-  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 0px 4px #043464;
+  background-color: white;
   border-radius: 3px;
   font-size: 1.8rem;
   margin-left: auto;
@@ -134,14 +134,15 @@ export default {
 }
 
 #username:focus{
-  background: #00AFF0;
+  background: #043464;
 }
 #password:focus{
-  background: #00AFF0
+  background: #043464;
 }
 
 form button {
-  background-color: #00AFF0;
+  background-color: #043464;
+  color: white;
   display: flex;
   margin-left: auto;
   margin-right: auto;
@@ -161,7 +162,7 @@ form button {
   }
 
 .newAccount:hover {
-  color: #00AFF0;
+  color: #043464;
 }
 
 .alert-danger {
