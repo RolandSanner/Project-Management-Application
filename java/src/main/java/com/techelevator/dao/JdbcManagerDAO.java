@@ -1,6 +1,6 @@
 package com.techelevator.dao;
 
-import com.techelevator.model.Managers;
+import com.techelevator.model.Manager;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
@@ -19,9 +19,9 @@ public class JdbcManagerDAO implements ManagerDAO{
     }
 
 
-    private Managers managerObjectMapper(SqlRowSet results) {
+    private Manager managerObjectMapper(SqlRowSet results) {
 
-        Managers managers = new Managers();
+        Manager managers = new Manager();
         managers.setManagerID(results.getInt("project_ID"));
         managers.setFirstName(results.getString("first_name"));
         managers.setLastName(results.getString("last_name"));
@@ -35,11 +35,11 @@ public class JdbcManagerDAO implements ManagerDAO{
 
 
     @Override
-    public List<Managers> listMyProjects(int id) {
+    public List<Manager> listMyProjects(int id) {
 
         String sql = "SELECT * FROM projects where project_manager_id = ?";
         SqlRowSet results = this.jdbcTemplate.queryForRowSet(sql, id);
-        List<Managers> project = new ArrayList<>();
+        List<Manager> project = new ArrayList<>();
 
         while (results.next()){
             project.add(managerObjectMapper(results));

@@ -1,7 +1,7 @@
 
 package com.techelevator.model;
 
-public class Managers {
+public class Manager {
 
 
     private int managerID;
@@ -13,12 +13,12 @@ public class Managers {
     private String managerRole;
 
 
-    public Managers (){
+    public Manager(){
 
     }
 
 
-    public Managers(int managerID, String firstName, String lastName, String phoneNumber, String email, String municipality, String managerRole) {
+    public Manager(int managerID, String firstName, String lastName, String phoneNumber, String email, String municipality, String managerRole) {
         this.managerID = managerID;
         this.firstName = firstName;
         this.lastName = lastName;
