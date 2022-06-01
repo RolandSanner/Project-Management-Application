@@ -5,7 +5,7 @@
       <div class="alert alert-danger" role="alert" v-if="registrationErrors">
         {{ registrationErrorMsg }}
       </div>
-      <label for="username" class="sr-only">Username</label>
+      <!-- <label for="username" class="sr-only">Username</label> -->
       <input
         type="text"
         id="username"
@@ -15,7 +15,7 @@
         required
         autofocus
       />
-      <label for="password" class="sr-only">Password</label>
+      <!-- <label for="password" class="sr-only">Password</label> -->
       <input
         type="password"
         id="password"
@@ -32,11 +32,11 @@
         v-model="user.confirmPassword"
         required
       />
-      <router-link :to="{ name: 'login' }">Have an account?</router-link>
       <button class="btn btn-lg btn-primary btn-block" type="submit">
         Create Account
       </button>
     </form>
+    <router-link :to="{ name: 'login' }" class="hasAccount">Have an account?</router-link>
   </div>
 </template>
 
@@ -90,4 +90,101 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+}
+
+#register{
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: auto;
+  color: #313131;
+  font-size: 1.5rem;;
+  transform: translate(-50%, -50%);
+  padding: 30px;
+  appearance: none;
+  border:none;
+  outline: none;
+  background: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #043464;
+  /* background-color: #3c99dc; */
+}
+
+#register  h1 {
+  display: flex;
+  justify-content: center;
+  padding: 25px 0 25px 25px;
+  font-size: 2rem;
+}
+
+#register label {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+}
+
+#username, #password, #confirmPassword {
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #043464;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 3px;
+  font-size: 1.8rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+  cursor: text;
+  padding-left: 5px;
+  width: auto;
+}
+
+#username:focus{
+  background: #04346435;
+}
+#password:focus{
+  background: #04346435;
+}
+#confirmPassword:focus{
+  background: #04346435;
+}
+
+form button {
+  background-color: #043464;
+  color: white;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  font-size: 18px;
+  padding: 3px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+form button:hover{
+  color: black;
+}
+
+.hasAccount {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  padding-top: 25px;
+  color: #000000;
+  /* padding-bottom: 15px; */
+}
+
+.hasAccount:hover {
+  color: #acaeaf;
+}
+
+</style>

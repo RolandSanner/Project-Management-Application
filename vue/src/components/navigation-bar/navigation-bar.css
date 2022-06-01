@@ -1,0 +1,39 @@
+
+  .nav {
+    background-color: #043464;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    background-color: #043464;
+    display: flex;
+    max-width: 50%;
+    flex-grow: 1;
+  }
+
+  .navLinks {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+    background-color: #043464;
+    padding-right: 20px;
+  }
+
+  .link {
+    text-decoration: none;
+    color: white;
+    background-color: #043464;
+    font-size: 1.4rem;
+    padding: 5px;
+    transition: .2s;
+ }
+  
+  .link:hover {
+    color:rgb(199, 200, 233);
+}
+
+  .link:active {
+    color: white;
+  }
