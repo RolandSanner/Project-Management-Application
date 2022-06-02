@@ -1,13 +1,13 @@
 
   .nav {
-    background-color: #043464;
+    background-color: #073763;
     padding: 5px;
     display: flex;
     align-items: center;
   }
   
   .logo {
-    background-color: #043464;
+    background-color: #073763;
     display: flex;
     max-width: 50%;
     flex-grow: 1;
@@ -17,14 +17,14 @@
     display: flex;
     justify-content: flex-end;
     flex-grow: 1;
-    background-color: #043464;
+    background-color: #073763;
     padding-right: 20px;
   }
 
   .link {
     text-decoration: none;
     color: white;
-    background-color: #043464;
+    background-color: #073763;
     font-size: 1.4rem;
     padding: 5px;
     transition: .2s;

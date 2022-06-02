@@ -2,8 +2,9 @@
 <style src="./project-component.css" scoped></style>
 
 <template>
+    
+    <div id="project-component-main">
     <div id="project-component">
-      
         <form class="new-project">
             <h1 class="h3 mb-3 font-weight-normal">New Project</h1>
             <input
@@ -72,6 +73,7 @@
             <button type="submit" v-on:click="saveDocument()">Submit</button>
             <button type="cancel" class="cancel" v-on:click="cancel()">Cancel</button>
         </form>
+    </div>
     </div>
 </template>
 

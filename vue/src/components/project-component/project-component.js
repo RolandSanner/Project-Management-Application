@@ -1,5 +1,6 @@
 import projectService from './../../services/ProjectService'
 
+
 export default {
 	name: "project-component",
 	components: {

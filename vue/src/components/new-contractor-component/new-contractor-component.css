@@ -7,24 +7,24 @@
 }
 
 #new-contractor-component{
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  height: auto;
-  color: #313131;
-  transform: translate(-50%, -50%);
-  padding: 30px;
-  /* appearance: none; */
-  /* border:none; */
-  /* outline: none; */
-  /* background: none; */
-  border-radius: 5px;
-  box-shadow: 0px 0px 4px #043464;
-  margin-top: 5%;
+    display: flex;
+    justify-content: center;
 }
 
-#new-contractor-component  h1 {
+#new-contractor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    color: #313131;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 4px #073763;
+    margin-top: 5%;
+    max-width: 50%;
+}
+
+#new-contractor h1 {
   display: flex;
   justify-content: center;
   padding: 25px 25px 25px 25px;
@@ -41,7 +41,7 @@
   display: flex;
   justify-content: center;
   border-radius: 5px;
-  box-shadow: 0px 0px 4px #043464;
+  box-shadow: 0px 0px 4px #073763;
   background-color: white;
   border-radius: 3px;
   font-size: 1.5rem;
@@ -57,7 +57,7 @@
   display: flex;
   justify-content: center;
   border-radius: 5px;
-  box-shadow: 0px 0px 4px #043464;
+  box-shadow: 0px 0px 4px #073763;
   background-color: white;
   border-radius: 3px;
   font-size: 1.3rem;
@@ -70,12 +70,12 @@
 }
 
 .form-control:focus{
-  background: #04346435;
+  background: #07376335;
 }
 
 
 form button {
-  background-color: #043464;
+  background-color: #073763;
   color: white;
   display: flex;
   margin-left: auto;

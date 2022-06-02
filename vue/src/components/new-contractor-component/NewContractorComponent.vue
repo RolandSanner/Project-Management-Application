@@ -3,8 +3,9 @@
 
 <template>
     <div id="new-contractor-component">
+     <div id="new-contractor">   
     <form class="new-contractor">
-      <h1 class="h3 mb-3 font-weight-normal">New contractor</h1>
+      <h1 class="h3 mb-3 font-weight-normal">New Contractor</h1>
     <input
       type="text"
       id="Company Name"
@@ -150,5 +151,6 @@
      <button type="submit" v-on:click="saveDocument()">Submit</button>
      <button type="cancel" class="cancel" v-on:click="cancel()">Cancel</button>
     </form>
+    </div>
     </div>
 </template>
