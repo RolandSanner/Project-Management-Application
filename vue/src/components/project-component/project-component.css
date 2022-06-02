@@ -16,12 +16,11 @@
     justify-content: center;
     align-items: center;
     height: auto;
-    color: #313131;
     padding: 30px;
     border-radius: 5px;
     box-shadow: 0px 0px 4px #073763;
     margin-top: 5%;
-    max-width: 50%;
+    max-width: 70%;
   }
   
   #project-component  h1 {
@@ -33,6 +32,8 @@
   
   .form-control {
     display: flex;
+    justify-content: center;
+    border-radius: 5px;
     box-shadow: 0px 0px 4px #073763;
     background-color: white;
     border-radius: 3px;
@@ -42,6 +43,7 @@
     margin-bottom: 15px;
     cursor: text;
     padding-left: 5px;
+    width: 300px;
   }
   
   .form-control:focus{

@@ -11,17 +11,16 @@
     justify-content: center;
 }
 
-#new-contractor{
+#new-contractor {
     display: flex;
     justify-content: center;
     align-items: center;
     height: auto;
-    color: #313131;
     padding: 30px;
     border-radius: 5px;
     box-shadow: 0px 0px 4px #073763;
     margin-top: 5%;
-    max-width: 50%;
+    max-width: 70%;
 }
 
 #new-contractor h1 {
@@ -29,12 +28,6 @@
   justify-content: center;
   padding: 25px 25px 25px 25px;
   font-size: 2.3rem;
-}
-
-#contractor-state {
-  font-size: 1.8rem;
-    color: #313131;
-
 }
 
 .form-control {
@@ -50,23 +43,21 @@
   margin-bottom: 15px;
   cursor: text;
   padding-left: 5px;
-  width: auto;
+  width: 300px;
 }
 
 .form-control-dropper {
   display: flex;
-  justify-content: center;
-  border-radius: 5px;
-  box-shadow: 0px 0px 4px #073763;
+  color: #313131;
   background-color: white;
   border-radius: 3px;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 15px;
   cursor: pointer;
   padding-left: 5px;
-  width: auto;
+  width: 300px;
 }
 
 .form-control:focus{
@@ -89,4 +80,9 @@ form button {
 
 .cancel {
   background-color: gray;
+}
+
+#new-contractor select{
+  border-radius: 5px;
+  box-shadow: 0px 0px 4px #073763;
 }

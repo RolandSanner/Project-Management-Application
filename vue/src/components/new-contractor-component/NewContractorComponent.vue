@@ -32,7 +32,6 @@
         required
         autofocus
         v-model="contractor.phone"
-        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
     />
     <input
       type="text"
@@ -64,7 +63,7 @@
     />
     <select
       id="contractor-state"
-      class="form-control"
+      class="form-control form-control-dropper"
       name="state"
       required
       autofocus
