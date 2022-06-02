@@ -25,7 +25,7 @@ public class ProjectController {
     }
 
     @RequestMapping(path = "/project/{id}", method = RequestMethod.GET)
-    public Project getProject(@PathVariable int id) {
+    public Project getProject(@PathVariable String id) {
         return projectDAO.getAProject(id);
     }
 

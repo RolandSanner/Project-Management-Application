@@ -23,12 +23,14 @@ public class JdbcProjectDAO implements ProjectDAO{
     private Project projectObjectMapper(SqlRowSet results) {
 
         Project project = new Project();
-        project.setProjectID(results.getLong("project_ID"));
+        project.setProjectID(results.getString("project_id"));
         project.setProjectName(results.getString("project_name"));
         project.setPrecinct(results.getString("precinct"));
         project.setMunicipality(results.getString("municipality"));
-        project.setLocation(results.getString("location"));
-        project.setDescription(results.getString("description"));
+        project.setLocation(results.getString("project_location"));
+        project.setDescription(results.getString("project_description"));
+        project.setGroupID(results.getLong("group_id"));
+        project.setProjectManagerID(results.getLong("project_manager_id"));
 
 
         return project;
@@ -48,9 +50,9 @@ public class JdbcProjectDAO implements ProjectDAO{
     }
 
     @Override
-    public Project getAProject(int id) {
+    public Project getAProject(String id) {
 
-        String sql = "SELECT * FROM projects where project_ID = ?";
+        String sql = "SELECT * FROM projects where project_id = ?";
         SqlRowSet results = this.jdbcTemplate.queryForRowSet(sql, id);
 
         Project project = null;
@@ -73,7 +75,7 @@ public class JdbcProjectDAO implements ProjectDAO{
                 " project_manager_id," +
                 " group_id) VALUES(?,?,?,?,?,?,?) RETURNING project_id";
 
-        int newProjectID =  jdbcTemplate.queryForObject(sql, Integer.class);
+        String newProjectID =  jdbcTemplate.queryForObject(sql, String.class);
 
 
         return getAProject(newProjectID);

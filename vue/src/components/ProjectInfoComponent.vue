@@ -1,13 +1,13 @@
 <template>
   <div class='project-info'>
-      <h2>Project ID: </h2>
-      <h2>Project Name: </h2>
-      <h2>Description: </h2>
-      <h2>Location: </h2>
-      <h2>Precinct: </h2>
-      <h2>Municipality: </h2>
-      <h2>Project Manager: </h2>
-      <h2>Group: </h2>
+      <h2>Project ID: {{project.projectID}}</h2>
+      <h2>Project Name: {{project.projectName}}</h2>
+      <h2>Description: {{project.description}}</h2>
+      <h2>Location: {{project.location}}</h2>
+      <h2>Precinct: {{project.precinct}}</h2>
+      <h2>Municipality: {{project.municipality}}</h2>
+      <h2>Project Manager: {{project.projectManagerID}}</h2>
+      <h2>Group: {{project.groupID}}</h2>
       <h2>Contractor: </h2>
   </div>
 </template>
@@ -17,7 +17,7 @@
 export default {
  name:'project-info-component',
  props:{
-     'projectId':Number
+     'projectId': NaN
  },
  data(){
      return{

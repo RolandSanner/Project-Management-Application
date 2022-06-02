@@ -10,7 +10,7 @@ export default{
     },
 
     getProjectById(id){
-        return http.get(`/projects/${id}`)
+        return http.get(`/project/${id}`)
     },
 
     create(project) {
