@@ -3,9 +3,7 @@
     <div class="nav">
       <NavigationBar class="nav"/>
     </div>
-    <div>
       <router-view />
-    </div>
   </div>
 </template>
 

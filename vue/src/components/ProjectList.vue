@@ -18,11 +18,19 @@ data(){
 created(){
     ProjectService.listProjects().then(response=>{
         this.projects=response.data;
+        console.log(this.projects)
     })
 }
 }
 </script>
 
 <style>
-
+.project{
+     margin-left: 50px;
+    margin-bottom: 10px;
+    margin-right: 50px;
+    font-size: 24px;
+    border-bottom: 1px solid #f2f2f2;
+    padding: 10px 20px;
+}
 </style>

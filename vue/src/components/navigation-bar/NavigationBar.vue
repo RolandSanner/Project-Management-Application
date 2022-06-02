@@ -13,7 +13,7 @@
             <router-link v-bind:to="{ name: 'newproject' }" v-if="$store.state.token != ''" 
                             class="link">&nbsp;|&nbsp;Add Projects</router-link>
             <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''" 
-                            class="link">&nbsp;|&nbsp;Logout</router-link>
+                            class="link" >&nbsp;|&nbsp;Logout</router-link>
         </div>
     </div>
 

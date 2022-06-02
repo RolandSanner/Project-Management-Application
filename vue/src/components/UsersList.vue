@@ -1,7 +1,9 @@
 <template>
   <div class="user-list">
       <div v-for="user in users" v-bind:key="user.id" class="user">
+          <router-link v-bind:to="{name:'userinfo',params:{id: user.id}}">
           {{user.username}}
+          </router-link>
       </div>
   </div>
 </template>
@@ -24,5 +26,11 @@ created(){
 </script>
 
 <style>
-
+.user{
+    margin-left: 50px;
+    margin-bottom: 10px;
+    font-size: 24px;
+    border-bottom: 1px solid #f2f2f2;
+    padding: 10px 20px;
+}
 </style>
