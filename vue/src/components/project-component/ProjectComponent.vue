@@ -33,9 +33,9 @@
             autofocus
             rows="4"
             cols="23"
-            v-model="project.projectDescription" 
+            v-model="project.description" 
             />
-            <input
+            <!-- <input
             type="text"
             id="primary-funding"
             class="form-control"
@@ -51,7 +51,7 @@
             placeholder="Secondary Funding Sources"
             autofocus
             v-model="project.secondaryFunding"
-            />
+            /> -->
             <input
             type="text"
             id="precinct"
@@ -61,7 +61,25 @@
             autofocus
             v-model="project.precinct"
             />
-            <input
+                        <input
+            type="text"
+            id="precinct"
+            class="form-control"
+            placeholder="Municipality"
+            required
+            autofocus
+            v-model="project.municipality"
+            />
+                        <input
+            type="text"
+            id="precinct"
+            class="form-control"
+            placeholder="Location"
+            required
+            autofocus
+            v-model="project.location"
+            />
+            <!-- <input
             type="text"
             id="contract"
             class="form-control"
@@ -69,7 +87,7 @@
             required
             autofocus
             v-model="project.contract"
-            />
+            /> -->
             <button type="submit" v-on:click="saveDocument()">Submit</button>
             <button type="cancel" class="cancel" v-on:click="cancel()">Cancel</button>
         </form>
