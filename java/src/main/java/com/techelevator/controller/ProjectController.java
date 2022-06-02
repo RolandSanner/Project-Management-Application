@@ -36,10 +36,10 @@ public class ProjectController {
         return projectDAO.addProject();
     }
 
-    @RequestMapping(path="project/{groupId}/updateGroup", method = RequestMethod.PUT)
-    public void updateProjectGroupId(@PathVariable int id, @RequestBody Project project){
-        project.setGroupID(id);
-        projectDAO.updateProjectGroupId();
-    }
+//    @RequestMapping(path="project/{groupId}/updateGroup", method = RequestMethod.PUT)
+//    public void updateProjectGroupId(@PathVariable int id, @RequestBody Project project){
+//        project.setGroupID(id);
+//        projectDAO.updateProjectGroupId();
+//    }
 
 }

@@ -119,19 +119,19 @@ export default {
 }
 
 #username, #password {
-  display: flex;
-  justify-content: center;
-  border-radius: 5px;
-  box-shadow: 0px 0px 4px #073763;
-  background-color: white;
-  border-radius: 3px;
-  font-size: 1.8rem;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 15px;
-  cursor: text;
-  padding-left: 5px;
-  width: auto;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    box-shadow: 0px 0px 4px #073763;
+    background-color: white;
+    border-radius: 3px;
+    font-size: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+    cursor: text;
+    padding-left: 5px;
+    width: 300px;
 }
 
 #username:focus{

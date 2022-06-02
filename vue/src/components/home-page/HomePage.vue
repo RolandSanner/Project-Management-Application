@@ -13,9 +13,5 @@
             <router-link :to="{ name: 'userlist' }" class="routerLinks">View All Users</router-link>
         </div>
 
-                <div id="home-main">
-            <router-link :to="{ name: 'allprojects' }" class="routerLinks">View All Projects</router-link>
-            <router-link :to="{ name: 'userlist' }" class="routerLinks">View All Users</router-link>
-        </div>
     </div>
 </template>
