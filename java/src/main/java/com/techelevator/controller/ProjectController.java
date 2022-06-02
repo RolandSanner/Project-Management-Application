@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+import java.security.Principal;
 import java.util.List;
 
 @RestController
@@ -25,7 +27,7 @@ public class ProjectController {
     }
 
     @RequestMapping(path = "/project/{id}", method = RequestMethod.GET)
-    public Project getProject(@PathVariable int id) {
+    public Project getProject(@PathVariable String id) {
         return projectDAO.getAProject(id);
     }
 
@@ -34,6 +36,10 @@ public class ProjectController {
         return projectDAO.addProject();
     }
 
-
+    @RequestMapping(path="project/{groupId}/updateGroup", method = RequestMethod.PUT)
+    public void updateProjectGroupId(@PathVariable int id, @RequestBody Project project){
+        project.setGroupID(id);
+        projectDAO.updateProjectGroupId();
+    }
 
 }

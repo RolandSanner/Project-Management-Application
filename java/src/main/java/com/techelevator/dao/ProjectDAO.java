@@ -8,8 +8,10 @@ public interface ProjectDAO {
 
     List<Project> getAllProjects();
 
-    Project getAProject(int id);
+    Project getAProject(String id);
 
     Project addProject();
+
+    Project updateProjectGroupId();
 
 }

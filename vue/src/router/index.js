@@ -97,7 +97,7 @@ const router = new Router({
     },
     {
       path:"/project/:id",
-      name:"projectinfo",
+      name:"projectinfoview",
       component:ProjectInfoView,
       meta:{
         requiresAuth:true

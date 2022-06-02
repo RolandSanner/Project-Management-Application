@@ -3,7 +3,7 @@ package com.techelevator.model;
 public class Project {
 
 
-    private long projectID;
+    private String projectID;
     private String projectName;
     private String precinct;
     private String municipality;
@@ -12,15 +12,15 @@ public class Project {
     private long projectManagerID;
     private long groupID;
 
-    public long getProjectID() {
+    public String getProjectID() {
         return projectID;
     }
 
-    public void setProjectID(long projectID) {
+    public void setProjectID(String projectID) {
         this.projectID = projectID;
     }
 
-    public Project(long projectID, String projectName, String precinct, String municipality, String location, String description) {
+    public Project(String projectID, String projectName, String precinct, String municipality, String location, String description) {
         this.projectID = projectID;
         this.projectName = projectName;
         this.precinct = precinct;

@@ -1,8 +1,5 @@
 <template>
   <div class="home">
-    <h1>Home</h1>
-    <p v-if="$store.state.token == ''">You must be logged in to see this</p>
-    <home-page v-if="$store.state.token != ''"></home-page>
     <home-page></home-page>
   </div>
 </template>

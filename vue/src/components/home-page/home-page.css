@@ -47,3 +47,17 @@
   .routerLinks:hover {
     color: #acaeaf;
   }
+
+  
+  h1{
+    text-decoration: none;
+    padding-bottom: 15px;
+}
+.header{
+    padding: 15px;
+    display: inline-block;
+}
+.login{
+    display: flex;
+    justify-content: space-around;
+} 
