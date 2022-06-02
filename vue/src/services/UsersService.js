@@ -10,7 +10,7 @@ export default{
     },
 
     getUserById(id){
-        return http.get(`/users/${id}`);
+        return http.get(`/users/id/${id}`);
     },
 
     getUserByUsername(username){

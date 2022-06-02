@@ -10,6 +10,7 @@ import NewProject from '../views/NewProject.vue'
 import ProjectListView from '../views/ProjectListView.vue'
 import NewContractor from '../views/NewContractor.vue'
 import UserInfo from '../views/UserInfo.vue'
+import ProjectInfoView from '../views/ProjectInfoView.vue'
 
 Vue.use(Router)
 
@@ -92,6 +93,14 @@ const router = new Router({
       component: UserInfo,
       meta:{
         requiresAuth: true
+      }
+    },
+    {
+      path:"/project/:id",
+      name:"projectinfo",
+      component:ProjectInfoView,
+      meta:{
+        requiresAuth:true
       }
     }
   ]
