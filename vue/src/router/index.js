@@ -80,7 +80,7 @@ const router = new Router({
       name: "allProjects",
       component: ProjectListView,
       meta:{
-        requiresAuth: true
+        requiresAuth: false
       }
     },{
     path: "/newcontractor",
@@ -92,7 +92,7 @@ const router = new Router({
       name:"userinfo",
       component: UserInfo,
       meta:{
-        requiresAuth: true
+        requiresAuth: false
       }
     },
     {
