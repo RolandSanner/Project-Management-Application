@@ -1,14 +1,17 @@
 import ContractorService from './../../services/ContractorService'
 
 export default {
-	name: "new-contractor-component",
+	name: "new-contact-component",
 	components: {},
 	data() {
 		return {
-			contractor: {
-				companyName: '',
+			contact: {
+				firstName: '',
+				lastName: '',
 				email: '',
-				phone: '',
+				phoneNumber: '',
+				role: '',
+				companyName: '',
 				street: '',
 				city: '',
 				state: '',
@@ -21,7 +24,7 @@ export default {
 	computed: {},
     methods: {
     saveDocument() {
-      ContractorService.addContractor(this.Contractor)
+      ContractorService.addContractor(this.Contact)
                      .then(response => {
                        if(response.status === 201){
                          this.$router.push("/")

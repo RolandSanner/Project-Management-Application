@@ -178,4 +178,10 @@ form button:hover{
   justify-content: center;
 }
 
+.alert-success {
+  display: flex;
+  justify-content: center;
+  color:#073763
+}
+
 </style>
