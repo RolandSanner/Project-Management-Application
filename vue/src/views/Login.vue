@@ -110,6 +110,7 @@ export default {
   padding: 25px 25px 25px 25px;
   font-size: 2.3rem;
   text-decoration: none;
+  
 }
 
 #login label {
