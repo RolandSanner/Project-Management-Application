@@ -18,6 +18,7 @@ data(){
 created(){
     ProjectService.listProjects().then(response=>{
         this.projects=response.data;
+        console.log(this.projects)
     })
 }
 }

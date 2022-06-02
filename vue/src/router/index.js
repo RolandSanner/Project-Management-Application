@@ -7,7 +7,7 @@ import Register from '../views/Register.vue'
 import store from '../store/index'
 import ListUsers from '../views/ListUsers.vue'
 import NewProject from '../views/NewProject.vue'
-import ProjectList from '../views/ProjectList.vue'
+import ProjectListView from '../views/ProjectListView.vue'
 import NewContractor from '../views/NewContractor.vue'
 import UserInfo from '../views/UserInfo.vue'
 
@@ -77,7 +77,7 @@ const router = new Router({
     {
       path:"/allprojects",
       name: "allProjects",
-      component: ProjectList,
+      component: ProjectListView,
       meta:{
         requiresAuth: true
       }

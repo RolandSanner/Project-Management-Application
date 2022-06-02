@@ -29,5 +29,7 @@ created(){
 </script>
 
 <style>
-
+h2 {
+    margin-left: 50px;
+}
 </style>

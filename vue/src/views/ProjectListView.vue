@@ -8,7 +8,7 @@
 <script>
 import ProjectList from '../components/ProjectList.vue'
 export default {
-name: 'ProjectList',
+name: 'ProjectListView',
 components:{
     ProjectList
 }
