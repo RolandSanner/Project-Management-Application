@@ -14,6 +14,6 @@ export default{
     },
 
     create(project) {
-        return http.post('/projects/', project)
+        return http.post('/project/new', project)
     }
 }
