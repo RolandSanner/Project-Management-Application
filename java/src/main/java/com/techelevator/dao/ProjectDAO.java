@@ -12,4 +12,6 @@ public interface ProjectDAO {
 
     Project addProject();
 
+    Project updateProjectGroupId();
+
 }

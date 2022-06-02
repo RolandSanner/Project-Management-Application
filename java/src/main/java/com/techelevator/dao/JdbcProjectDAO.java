@@ -79,5 +79,15 @@ public class JdbcProjectDAO implements ProjectDAO{
         return getAProject(newProjectID);
     }
 
+    @Override
+    public void updateProjectGroupId(int groupId, int projectId){
+
+        String sql = "UPDATE projects SET groups.group_id = ? WHERE projects.project_id = ?";
+
+        jdbcTemplate.update(sql,groupId, projectId);
+
+    }
+
+
 
 }
