@@ -69,3 +69,10 @@
   .cancel {
     background-color: gray;
   }
+
+  h4 {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 5px;
+    color: #31313183;
+  }
