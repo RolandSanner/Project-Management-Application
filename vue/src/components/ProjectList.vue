@@ -1,7 +1,9 @@
 <template>
   <div class="project-list">
       <div v-for="project in projects" v-bind:key="project.id" class="project">
+          <router-link v-bind:to="{name:projectinfo,params:{id: project.id}}">
           {{project.project_name}}
+          </router-link>
       </div>
   </div>
 </template>

@@ -22,7 +22,7 @@ data(){
 },
 created(){
     UsersService.getUserById(this.$route.params.id).then(response=>{
-        this.user.id=response.data.id;
+        this.user=response.data;
     })
 }
 }
