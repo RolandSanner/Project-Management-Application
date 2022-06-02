@@ -100,7 +100,7 @@ export default {
   outline: none;
   background: none;
   border-radius: 5px;
-  box-shadow: 0px 0px 4px #043464;
+  box-shadow: 0px 0px 4px #073763;
   margin-top: 5%;
 }
 
@@ -121,7 +121,7 @@ export default {
   display: flex;
   justify-content: center;
   border-radius: 5px;
-  box-shadow: 0px 0px 4px #043464;
+  box-shadow: 0px 0px 4px #073763;
   background-color: white;
   border-radius: 3px;
   font-size: 1.8rem;
@@ -134,14 +134,14 @@ export default {
 }
 
 #username:focus{
-  background: #04346435;
+  background: #07376335;
 }
 #password:focus{
-  background: #04346435;
+  background: #07376335;
 }
 
 form button {
-  background-color: #043464;
+  background-color: #073763;
   color: white;
   display: flex;
   margin-left: auto;
