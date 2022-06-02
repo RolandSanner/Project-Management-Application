@@ -1,4 +1,4 @@
-import projectService from './../../services/ProjectService'
+import projectService from './../../services/ProjectService.js'
 
 
 export default {
@@ -15,6 +15,8 @@ export default {
 				primaryFunding: '',
 				secondaryFunding: '',
 				precinct: '',
+				municipality: '',
+				location: '',
 				contract: ''
 			}
 		}

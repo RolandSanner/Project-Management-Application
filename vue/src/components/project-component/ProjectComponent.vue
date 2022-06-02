@@ -33,7 +33,7 @@
             autofocus
             rows="4"
             cols="23"
-            v-model="project.projectDescription" 
+            v-model="project.description" 
             />
             <input
             type="text"
@@ -60,6 +60,24 @@
             required
             autofocus
             v-model="project.precinct"
+            />
+            <input
+            type="text"
+            id="municipality"
+            class="form-control"
+            placeholder="Municipality"
+            required
+            autofocus
+            v-model="project.municipality"
+            />
+            <input
+            type="text"
+            id="location"
+            class="form-control"
+            placeholder="Location"
+            required
+            autofocus
+            v-model="project.location"
             />
             <input
             type="text"

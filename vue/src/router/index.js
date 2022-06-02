@@ -8,7 +8,7 @@ import store from '../store/index'
 import ListUsers from '../views/ListUsers.vue'
 import NewProject from '../views/NewProject.vue'
 import ProjectListView from '../views/ProjectListView.vue'
-import NewContractor from '../views/NewContractor.vue'
+import NewContact from '../views/NewContact.vue'
 import UserInfo from '../views/UserInfo.vue'
 import ProjectInfoView from '../views/ProjectInfoView.vue'
 
@@ -64,7 +64,7 @@ const router = new Router({
       name: "userlist",
       component: ListUsers,
       meta:{
-        requiresAuth:true
+        requiresAuth:false
       }
     },
     {
@@ -72,7 +72,7 @@ const router = new Router({
       name: "newproject",
       component: NewProject,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     },
     {
@@ -80,19 +80,19 @@ const router = new Router({
       name: "allProjects",
       component: ProjectListView,
       meta:{
-        requiresAuth: true
+        requiresAuth: false
       }
     },{
-    path: "/newcontractor",
-    name: "newcontractor",
-    component: NewContractor,
+    path: "/newcontact",
+    name: "newcontact",
+    component: NewContact,
     },
     {
       path:"/userlist/:id",
       name:"userinfo",
       component: UserInfo,
       meta:{
-        requiresAuth: true
+        requiresAuth: false
       }
     },
     {
