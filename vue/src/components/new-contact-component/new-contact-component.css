@@ -6,24 +6,25 @@
   background-color: #ffffff;
 }
 
-#new-contractor-component{
+#new-contact-component{
     display: flex;
     justify-content: center;
 }
 
-#new-contractor {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: auto;
-    padding: 30px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 4px #073763;
-    margin-top: 5%;
-    max-width: 70%;
+#new-contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 4px #073763;
+  margin-top: 5%;
+  min-width: 350px;
+  max-width: 70%;
 }
 
-#new-contractor h1 {
+#new-contact h1 {
   display: flex;
   justify-content: center;
   padding: 25px 25px 25px 25px;
@@ -84,7 +85,7 @@ form button {
   background-color: gray;
 }
 
-#new-contractor select{
+#new-contact select{
   border-radius: 5px;
   box-shadow: 0px 0px 4px #073763;
 }

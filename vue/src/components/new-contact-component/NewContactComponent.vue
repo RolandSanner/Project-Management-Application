@@ -1,19 +1,28 @@
-<script src="./new-contractor-component.js"></script>
-<style src="./new-contractor-component.css" scoped></style>
+<script src="./new-contact-component.js"></script>
+<style src="./new-contact-component.css" scoped></style>
 
 <template>
-    <div id="new-contractor-component">
-     <div id="new-contractor">   
-    <form class="new-contractor">
-      <h1 class="h3 mb-3 font-weight-normal">New Contractor</h1>
-    <input
+    <div id="new-contact-component">
+     <div id="new-contact">   
+    <form class="new-contact">
+      <h1 class="h3 mb-3 font-weight-normal">New Contact</h1>
+      <input
       type="text"
-      id="Company Name"
+      id="First Name"
       class="form-control"
-      placeholder="Company Name"
+      placeholder="First Name"
       required
       autofocus
-      v-model="contractor.companyName"
+      v-model="contact.firstName"
+    />
+    <input
+      type="text"
+      id="Last Name"
+      class="form-control"
+      placeholder="Last Name"
+      required
+      autofocus
+      v-model="contact.lastName"
     />
     <input
       type="email"
@@ -22,52 +31,70 @@
       placeholder="Email Address"
       required
       autofocus
-      v-model="contractor.email"
+      v-model="contact.email"
     />
     <input
-        type="tel"
-        id="phoneNumber"
-        class="form-control"
-        placeholder="Phone Number"
-        required
-        autofocus
-        v-model="contractor.phone"
+      type="tel"
+      id="phoneNumber"
+      class="form-control"
+      placeholder="Phone Number"
+      required
+      autofocus
+      v-model="contact.phone"
     />
     <input
       type="text"
-      id="contractor-street-address"
+      id="role"
+      class="form-control"
+      placeholder="User Role"
+      required
+      autofocus
+      v-model="contact.role"
+    />
+    <input
+      type="text"
+      id="Company Name"
+      class="form-control"
+      placeholder="Company Name"
+      required
+      autofocus
+      v-model="contact.companyName"
+    />
+    <input
+      type="text"
+      id="contact-street-address"
       class="form-control"
       placeholder="Street Address"
       required
       autofocus
-      v-model="contractor.street"
+      v-model="contact.street"
     />
     <input
       type="text"
-      id="contractor-street-address-2"
+      id="contact-street-address-2"
       class="form-control"
       placeholder="Street Address 2"
       autofocus
-      v-model="contractor.street2"
+      v-model="contact.street2"
 
     />
     <input
       type="text"
-      id="contractor-city"
+      id="contact-city"
       class="form-control"
       placeholder="City"
       required
       autofocus
-      v-model="contractor.city"
+      v-model="contact.city"
 
     />
     <select
-      id="contractor-state"
+      id="contact-state"
       class="form-control form-control-dropper"
       name="state"
       required
       autofocus
-      v-model="contractor.state"
+      v-model="contact.state"
       >
       <option value ="" disabled selected>State</option>
       <option value="AL">Alabama</option>
@@ -125,26 +152,27 @@
 
     <input
       type="text"
-      id="contractor-street-Zip"
+      id="contact-street-Zip"
       class="form-control"
       placeholder="Zip "
       required
       autofocus
-      v-model="contractor.zip"
+      v-model="contact.zip"
     />
     <select
-      id="contractor-industry"
+      id="contact-industry"
       class="form-control-dropper"
-      name="contractor-industry"
+      name="contact-industry"
       required
       autofocus
-      v-model="contractor.industry">
-      <option value ="" disabled selected>Contractor Industry</option>
+      v-model="contact.industry">
+      <option value ="" disabled selected>Contact Industry</option>
       <option value="design">Design</option>
       <option value="construction">Construction</option>
       <option value="general-engineering">General Engineering Consultant</option>
       <option value="right-of-way-consultant">Right-Of-Way Consultant</option>
       <option value="program-management-consultant">Program Management Consultant</option>
+      <option value="other">Other</option>
     </select>
 
      <button type="submit" v-on:click="saveDocument()">Submit</button>

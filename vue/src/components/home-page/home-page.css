@@ -13,13 +13,14 @@
 
   #home-main {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     height: auto;
     padding: 30px;
     border-radius: 5px;
     box-shadow: 0px 0px 4px #073763;
     margin-top: 5%;
+    min-width: 350px;
     max-width: 70%;
   }
   
@@ -48,16 +49,13 @@
     color: #acaeaf;
   }
 
-  
-  h1{
+  .header h1{
     text-decoration: none;
-    padding-bottom: 15px;
-}
-.header{
-    padding: 15px;
-    display: inline-block;
-}
-.login{
+  }
+
+  .headerRoute {
     display: flex;
-    justify-content: space-around;
-} 
+    justify-content: center;
+  }
+
+

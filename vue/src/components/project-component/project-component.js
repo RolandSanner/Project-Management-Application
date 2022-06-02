@@ -11,15 +11,13 @@ export default {
 			project: {
 				projectId: '',
 				projectName: '',
+				projectDescription: '',
+				primaryFunding: '',
+				secondaryFunding: '',
 				precinct: '',
 				municipality: '',
 				location: '',
-				description: '',
-				// projectDescription: '',
-				// primaryFunding: '',
-				// secondaryFunding: '',
-				// precinct: '',
-				// contract: ''
+				contract: ''
 			}
 		}
 	},
