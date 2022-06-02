@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import ProjectService from '../services/ProjectService'
+import ProjectService from './../services/ProjectService'
 export default {
 name:'project-list',
 data(){
