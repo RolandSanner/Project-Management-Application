@@ -1,0 +1,92 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+}
+
+#new-contractor-component{
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: auto;
+  color: #313131;
+  transform: translate(-50%, -50%);
+  padding: 30px;
+  /* appearance: none; */
+  /* border:none; */
+  /* outline: none; */
+  /* background: none; */
+  border-radius: 5px;
+  box-shadow: 0px 0px 4px #043464;
+  margin-top: 5%;
+}
+
+#new-contractor-component  h1 {
+  display: flex;
+  justify-content: center;
+  padding: 25px 25px 25px 25px;
+  font-size: 2.3rem;
+}
+
+#contractor-state {
+  font-size: 1.8rem;
+    color: #313131;
+
+}
+
+.form-control {
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+  box-shadow: 0px 0px 4px #043464;
+  background-color: white;
+  border-radius: 3px;
+  font-size: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+  cursor: text;
+  padding-left: 5px;
+  width: auto;
+}
+
+.form-control-dropper {
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+  box-shadow: 0px 0px 4px #043464;
+  background-color: white;
+  border-radius: 3px;
+  font-size: 1.3rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+  cursor: pointer;
+  padding-left: 5px;
+  width: auto;
+}
+
+.form-control:focus{
+  background: #04346435;
+}
+
+
+form button {
+  background-color: #043464;
+  color: white;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  font-size: 18px;
+  padding: 3px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.cancel {
+  background-color: gray;
+}
