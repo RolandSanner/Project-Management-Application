@@ -124,6 +124,7 @@ export default {
   justify-content: center;
   padding: 25px 0 25px 25px;
   font-size: 2rem;
+  text-decoration: none;
 }
 
 #register label {

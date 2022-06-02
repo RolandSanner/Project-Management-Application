@@ -13,7 +13,7 @@
 
   #home-main {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     height: auto;
     padding: 30px;
@@ -28,16 +28,20 @@
     justify-content: center;
     padding: 25px 25px 25px 25px;
     font-size: 2.3rem;
+    text-decoration: none;
   }
 
   .routerLinks {
     text-decoration: none;
     display: flex;
     justify-content: center;
-    padding-top: 25px;
+    padding: 5px;
     color: white;
     background-color: #073763;
     font-size: 1.5rem;
+    border-radius: 5px;
+    margin: 5px;
+    flex-wrap: wrap;
   }
   
   .routerLinks:hover {

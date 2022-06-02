@@ -63,7 +63,7 @@ const router = new Router({
       name: "userlist",
       component: ListUsers,
       meta:{
-        requiresAuth:true
+        requiresAuth:false
       }
     },
     {
@@ -71,7 +71,7 @@ const router = new Router({
       name: "newproject",
       component: NewProject,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     },
     {
