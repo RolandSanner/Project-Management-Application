@@ -1,0 +1,88 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+}
+
+#new-contractor-component{
+    display: flex;
+    justify-content: center;
+}
+
+#new-contractor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 4px #073763;
+    margin-top: 5%;
+    max-width: 70%;
+}
+
+#new-contractor h1 {
+  display: flex;
+  justify-content: center;
+  padding: 25px 25px 25px 25px;
+  font-size: 2.3rem;
+}
+
+.form-control {
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+  box-shadow: 0px 0px 4px #073763;
+  background-color: white;
+  border-radius: 3px;
+  font-size: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+  cursor: text;
+  padding-left: 5px;
+  width: 300px;
+}
+
+.form-control-dropper {
+  display: flex;
+  color: #313131;
+  background-color: white;
+  border-radius: 3px;
+  font-size: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+  cursor: pointer;
+  padding-left: 5px;
+  width: 300px;
+}
+
+.form-control:focus{
+  background: #07376335;
+}
+
+
+form button {
+  background-color: #073763;
+  color: white;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  font-size: 18px;
+  padding: 3px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.cancel {
+  background-color: gray;
+}
+
+#new-contractor select{
+  border-radius: 5px;
+  box-shadow: 0px 0px 4px #073763;
+}
