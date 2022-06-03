@@ -16,4 +16,7 @@ public interface ContactDAO {
     List<Contact> listMyProjects(int id);
 
     void addContact(Contact contact);
+
+
+
 }

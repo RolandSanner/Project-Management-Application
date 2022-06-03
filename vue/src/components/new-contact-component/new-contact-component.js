@@ -1,4 +1,4 @@
-import ContractorService from './../../services/ContractorService'
+import ContactService from './../../services/ContactService'
 
 export default {
 	name: "new-contact-component",
@@ -10,7 +10,7 @@ export default {
 				lastName: '',
 				email: '',
 				phoneNumber: '',
-				role: '',
+				contactRole: '',
 				companyName: '',
 				street: '',
 				city: '',
@@ -24,7 +24,7 @@ export default {
 	computed: {},
     methods: {
     saveDocument() {
-      ContractorService.addContractor(this.Contact)
+      ContactService.addContact(this.contact)
                      .then(response => {
                        if(response.status === 201){
                          this.$router.push("/")

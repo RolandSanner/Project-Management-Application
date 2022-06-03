@@ -32,8 +32,10 @@ public class JdbcContactDAO implements ContactDAO {
         contact.setContactRole(results.getString("contact_role"));
         contact.setCompanyName(results.getString("companyName"));
         contact.setIndustry(results.getString("industry"));
-        contact.setAddress(results.getString("contractor_address"));
-
+        contact.setContactCity(results.getString("contact_city"));
+        contact.setContactState(results.getString("contact_state"));
+        contact.setContactStreet(results.getString("contact_street"));
+        contact.setContactZip(results.getString("contact_zip"));
 
         return contact;
     }
@@ -67,11 +69,10 @@ public class JdbcContactDAO implements ContactDAO {
     }
 
     @Override
-    public void addContact(Contact contact) {
+    public void addContact(Contact contact){
+        String sql = "INSERT INTO contacts (contact_id, firstname, lastname, phonenumber, email, municipality, contact_role, companyname, industry, contact_street, contact_city, contact_state, contact_zip)\n" +
+                "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
-        String sql = "INSERT INTO contacts (contact_id, firstName, lastName, phoneNumber, email, municipality, contact_role, companyName, industry, contractor_address) VALUES(?,?,?,?,?,?,?,?,?,?)";
-
-        jdbcTemplate.update(sql, contact.getContactID(),contact.getFirstName(),contact.getLastName(),contact.getPhoneNumber(),contact.getEmail(),contact.getMunicipality(),contact.getContactRole());
-
+        jdbcTemplate.update(sql, contact.getContactID(), contact.getFirstName(), contact.getLastName(), contact.getPhoneNumber(), contact.getEmail(), contact.getMunicipality(), contact.getContactRole(), contact.getCompanyName(), contact.getIndustry(), contact.getContactStreet(), contact.getContactCity(), contact.getContactState(), contact.getContactZip());
     }
 }
