@@ -32,8 +32,8 @@ public class ProjectController {
     }
 
     @RequestMapping(path="/project/new", method=RequestMethod.POST)
-    public Project addProject(@RequestBody ProjectDAO projectDAO) {
-        return projectDAO.addProject();
+    public void addProject(@RequestBody Project project) {
+       projectDAO.addProject(project);
     }
 
 //    @RequestMapping(path="project/{groupId}/updateGroup", method = RequestMethod.PUT)
