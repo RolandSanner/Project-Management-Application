@@ -64,21 +64,12 @@ public class JdbcProjectDAO implements ProjectDAO{
     }
 
     @Override
-    public Project addProject() {
+    public void addProject(Project project) {
 
-        String sql = "INSERT INTO projects (project_id," +
-                " project_name," +
-                " project_description," +
-                " project_location," +
-                " precinct," +
-                " municipality," +
-                " project_manager_id," +
-                " group_id) VALUES(?,?,?,?,?,?,?) RETURNING project_id";
+        String sql = "INSERT INTO projects (project_id, project_name, project_description, project_location, precinct, municipality, project_manager_id, group_id) VALUES(?,?,?,?,?,?,?,?)";
 
-        String newProjectID =  jdbcTemplate.queryForObject(sql, String.class);
+        jdbcTemplate.update(sql, project.getProjectID(),project.getProjectName(),project.getDescription(),project.getLocation(),project.getPrecinct(),project.getMunicipality(),project.getProjectManagerID(),project.getGroupID());
 
-
-        return getAProject(newProjectID);
     }
 
 //    @Override

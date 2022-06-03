@@ -7,11 +7,12 @@
     <div id="project-component">
         <form class="new-project">
             <h1 class="h3 mb-3 font-weight-normal">New Project</h1>
+            <h4>* Required</h4>
             <input
             type="text"
             id="project-id"
             class="form-control"
-            placeholder="Project ID"
+            placeholder="* Project ID"
             required
             autofocus
             v-model="project.ProjectId"
@@ -20,7 +21,7 @@
             type="text"
             id="project-name"
             class="form-control"
-            placeholder="Project Name"
+            placeholder="* Project Name"
             required
             autofocus
             v-model="project.projectName"
@@ -29,7 +30,6 @@
             id="project-description"
             class="form-control"
             placeholder="Project Description"
-            required
             autofocus
             rows="4"
             cols="23"
@@ -40,7 +40,6 @@
             id="primary-funding"
             class="form-control"
             placeholder="Primary Funding Source"
-            required
             autofocus
             v-model="project.primaryFunding"
             />
@@ -57,7 +56,6 @@
             id="precinct"
             class="form-control"
             placeholder="Precinct"
-            required
             autofocus
             v-model="project.precinct"
             />
@@ -66,7 +64,6 @@
             id="municipality"
             class="form-control"
             placeholder="Municipality"
-            required
             autofocus
             v-model="project.municipality"
             />
@@ -75,7 +72,6 @@
             id="location"
             class="form-control"
             placeholder="Location"
-            required
             autofocus
             v-model="project.location"
             />
@@ -84,7 +80,6 @@
             id="contract"
             class="form-control"
             placeholder="Contract"
-            required
             autofocus
             v-model="project.contract"
             />
