@@ -10,7 +10,7 @@ public interface ProjectDAO {
 
     Project getAProject(String id);
 
-    Project addProject();
+    void addProject(Project project);
 
 //    Project updateProjectGroupId();
 

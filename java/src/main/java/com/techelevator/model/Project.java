@@ -20,32 +20,36 @@ public class Project {
         this.projectID = projectID;
     }
 
-    public Project(String projectID, String projectName, String precinct, String municipality, String location, String description) {
+    public Project() {
+
+    }
+
+    public Project(String projectID, String projectName, String precinct, String municipality, String location, String description, long projectManagerID, long groupID) {
         this.projectID = projectID;
         this.projectName = projectName;
         this.precinct = precinct;
         this.municipality = municipality;
         this.location = location;
         this.description = description;
-
+        this.projectManagerID = projectManagerID;
+        this.groupID = groupID;
     }
 
-    public Project() {
 
-    }
 
     @Override
     public String toString() {
         return "com.techelevator.model.Project{" +
-                "projectID=" + projectID +
+                "projectID='" + projectID + '\'' +
                 ", projectName='" + projectName + '\'' +
                 ", precinct='" + precinct + '\'' +
                 ", municipality='" + municipality + '\'' +
                 ", location='" + location + '\'' +
                 ", description='" + description + '\'' +
+                ", projectManagerID=" + projectManagerID +
+                ", groupID=" + groupID +
                 '}';
     }
-
 
     public long getProjectManagerID() {
         return projectManagerID;
