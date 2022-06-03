@@ -43,4 +43,8 @@ export default {
 
 <style>
 
+.project-info {
+    display: flex;
+}
+
 </style>
