@@ -1,6 +1,7 @@
 package com.techelevator.dao;
 
 import com.techelevator.model.Contact;
+import com.techelevator.model.Project;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
@@ -22,19 +23,32 @@ public class JdbcContactDAO implements ContactDAO {
     private Contact contactObjectMapper(SqlRowSet results) {
 
         Contact contact = new Contact();
-        contact.setContactID(results.getInt("project_ID"));
-        contact.setFirstName(results.getString("first_name"));
-        contact.setLastName(results.getString("last_name"));
-        contact.setPhoneNumber(results.getString("phone_number"));
+        contact.setContactID(results.getInt("contact_id"));
+        contact.setFirstName(results.getString("firstName"));
+        contact.setLastName(results.getString("lastName"));
+        contact.setPhoneNumber(results.getString("phoneNumber"));
         contact.setEmail(results.getString("email"));
         contact.setMunicipality(results.getString("municipality"));
         contact.setContactRole(results.getString("contact_role"));
         contact.setCompanyName(results.getString("companyName"));
         contact.setIndustry(results.getString("industry"));
-        contact.setAddress(results.getString("address"));
+        contact.setAddress(results.getString("contractor_address"));
 
 
         return contact;
+    }
+
+
+    @Override
+    public List<Contact> getAllContacts() {
+        String sql = "SELECT * from contacts;";
+        SqlRowSet results = this.jdbcTemplate.queryForRowSet(sql);
+        List<Contact> contacts = new ArrayList<>();
+        while (results.next()) {
+            contacts.add(contactObjectMapper(results));
+
+        }
+        return contacts;
     }
 
 
@@ -50,5 +64,14 @@ public class JdbcContactDAO implements ContactDAO {
         }
 
         return project;
+    }
+
+    @Override
+    public void addContact(Contact contact) {
+
+        String sql = "INSERT INTO contacts (contact_id, firstName, lastName, phoneNumber, email, municipality, contact_role, companyName, industry, contractor_address) VALUES(?,?,?,?,?,?,?,?,?,?)";
+
+        jdbcTemplate.update(sql, contact.getContactID(),contact.getFirstName(),contact.getLastName(),contact.getPhoneNumber(),contact.getEmail(),contact.getMunicipality(),contact.getContactRole());
+
     }
 }
