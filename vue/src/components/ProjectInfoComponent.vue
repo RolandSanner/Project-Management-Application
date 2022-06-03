@@ -1,14 +1,15 @@
 <template>
   <div class='project-info'>
-      <h2>Project ID: {{project.projectID}}</h2>
-      <h2>Project Name: {{project.projectName}}</h2>
-      <h2>Description: {{project.description}}</h2>
-      <h2>Location: {{project.location}}</h2>
-      <h2>Precinct: {{project.precinct}}</h2>
-      <h2>Municipality: {{project.municipality}}</h2>
-      <h2>Project Manager: {{project.projectManagerID}}</h2>
-      <h2>Group: {{project.groupID}}</h2>
-      <h2>Contractor: </h2>
+      <div id="A">Project ID: {{project.projectID}}</div>
+      <div id="B">Project Name: {{project.projectName}}</div>
+      <div id="C">Description: {{project.description}}</div>
+      <div id="D">Location: {{project.location}}</div>
+      <div id="E">Precinct: {{project.precinct}}</div>
+      <div id="F">Municipality: {{project.municipality}}</div>
+      <div id="G">Project Manager: {{project.projectManagerID}}</div>
+      <div id="H">Group: {{project.groupID}}</div>
+      <div id="I">Contractor List: </div>
+      <div id="J">Map holder</div>
   </div>
 </template>
 
@@ -42,5 +43,58 @@ export default {
 </script>
 
 <style>
+
+.project-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+                "A A B B"
+                "C D E F"
+                "H G J J"
+                "I I J J";
+    row-gap: 100px;
+    column-gap: 50px;
+    align-items: center;
+    border-style:solid;
+    
+}
+
+#A {
+    grid-area: A;
+    border-style: ridge;
+
+}
+#B {
+    grid-area: B;
+    border-style: ridge;
+    margin: -40px;
+    margin-right: 50px;
+}
+#C {
+    grid-area: C;
+}
+#D {
+    grid-area: D;
+}
+#E {
+    grid-area: E;
+}
+#F {
+    grid-area: F;
+}
+#G {
+    grid-area: G;
+}
+#H {
+    grid-area: H;
+}
+#I {
+    grid-area: I;
+}
+#J {
+    grid-area: J;
+    text-align: center;
+}
+
 
 </style>

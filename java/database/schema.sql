@@ -68,6 +68,14 @@ CREATE TABLE project_contractors (
 	CONSTRAINT FK_project_contractor_project FOREIGN KEY (project_id) REFERENCES projects(project_id)
 );
 
+CREATE TABLE group_contacts (
+	contact_id int NOT NULL,
+	group_id int NOT NULL,
+	CONSTRAINT PK_group_contacts PRIMARY KEY (contact_id, group_id),
+	CONSTRAINT FK_group_contacts_contacts FOREIGN KEY (contact_id) REFERENCES contacts(contact_id),
+	CONSTRAINT FK_group_contacts_group FOREIGN KEY (group_id) REFERENCES groups(group_id)
+);
+
 
 
 
