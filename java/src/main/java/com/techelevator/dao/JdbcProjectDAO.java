@@ -84,9 +84,10 @@ public class JdbcProjectDAO implements ProjectDAO{
 //    @Override
 //    public void updateProjectGroupId(int groupId, int projectId){
 //
-//        String sql = "UPDATE projects SET groups.group_id = ? WHERE projects.project_id = ?";
+//        String sql = "UPDATE projects SET group_id = ? WHERE projects.project_id = ?";
+//        String sql2 = "UPDATE groups SET group_id = ? WHERE projects.project_id = ?";
 //
-//        jdbcTemplate.update(sql,groupId, projectId);
+//        jdbcTemplate.update(sql, sql2, groupId, projectId);
 //
 //    }
 

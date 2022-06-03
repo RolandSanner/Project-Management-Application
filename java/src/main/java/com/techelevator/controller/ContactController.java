@@ -1,7 +1,7 @@
 package com.techelevator.controller;
 
-import com.techelevator.dao.ManagerDAO;
-import com.techelevator.model.Manager;
+import com.techelevator.dao.ContactDAO;
+import com.techelevator.model.Contact;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -11,17 +11,17 @@ import java.util.List;
 @RestController
 @CrossOrigin
 @PreAuthorize("isAuthenticated()")
-public class ManagerController {
+public class ContactController {
 
     @Autowired
-    ManagerDAO managerDAO;
+    ContactDAO contactDAO;
 
 
     // MANAGER REQUEST MAPPING
 
     @RequestMapping(path = "/manager/{id}", method = RequestMethod.GET)
-    public List<Manager> listManagerProjects(@PathVariable int id) {
-        return managerDAO.listMyProjects(id);
+    public List<Contact> listManagerProjects(@PathVariable int id) {
+        return contactDAO.listMyProjects(id);
     }
 
 

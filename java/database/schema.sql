@@ -70,7 +70,9 @@ CREATE TABLE project_contractors (
 
 INSERT INTO users (username,password_hash,role) VALUES ('user','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
 INSERT INTO users (username,password_hash,role) VALUES ('admin','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_ADMIN');
-
-
+INSERT INTO contacts (contact_id, firstName, lastName, phoneNumber, email, municipality, contact_role) VALUES ('1', 'Roland', 'Sanner', '1234567890', '123@abc.com', 'a', 'Project Manager');
+INSERT INTO contacts (contact_id, firstName, lastName, phoneNumber, email, municipality, contact_role) VALUES ('2', 'Jack', 'Khodr', '1234567890', '12@abcd.com', 'a', 'Program Manager');
+INSERT INTO groups (group_name, program_manager_id) VALUES ('Bridges','2');
+INSERT INTO projects (project_id, project_name, project_description, project_location, precinct, municipality, project_manager_id, group_id) VALUES ('One','The First Bridge', 'Bridge in Austin','Austin', '1', 'a', '1', '1');
 
 COMMIT TRANSACTION;
