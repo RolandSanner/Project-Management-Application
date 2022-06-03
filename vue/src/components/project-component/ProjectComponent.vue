@@ -29,8 +29,9 @@
             <textarea
             id="project-description"
             class="form-control"
-            placeholder="Project Description"
+            placeholder="* Project Description"
             autofocus
+            required
             rows="4"
             cols="23"
             v-model="project.description" 
@@ -43,27 +44,61 @@
             autofocus
             v-model="project.fundingSource"
             />
-            <input
+            <!-- <input
                 type="text"
                 id="precinct"
                 class="form-control"
-                placeholder="Precinct"
+                placeholder="* Precinct"
+                required
                 autofocus
                 v-model="project.precinct"
-            />
+            /> -->
+            
+          <select
+            id="project-precinct"
+            class="form-control form-control-dropper"
+            name="state"
+            autofocus
+            v-model="project.Precinct"
+          >
+            <option value="" disabled selected>Precinct</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+            <option value=6>6</option>
+            <option value=7>7</option>
+            <option value=8>8</option>
+            <option value=9>9</option>
+            <option value=10>10</option>
+            <option value=11>11</option>
+            <option value=12>12</option>
+            <option value=13>13</option>
+            <option value=14>14</option>
+            <option value=15>15</option>
+            <option value=16>16</option>
+            <option value=17>17</option>
+            <option value=18>18</option>
+            <option value=19>19</option>
+            <option value=20>20</option>
+           
+          </select>
             <input
                 type="text"
                 id="municipality"
                 class="form-control"
-                placeholder="Municipality"
+                placeholder="* Municipality"
                 autofocus
+                required
                 v-model="project.municipality"
             />
             <input
                 type="text"
                 id="location"
                 class="form-control"
-                placeholder="Location"
+                placeholder="* Location"
+                required
                 autofocus
                 v-model="project.location"
             />
@@ -83,14 +118,7 @@
                 autofocus
                 v-model="project.projectManagerID"
             />
-            <input
-                type="text"
-                id="groupId"
-                class="form-control"
-                placeholder="Group Id"
-                autofocus
-                v-model="project.groupID"
-            />
+
 
             <button type="submit" v-on:click="saveDocument()">Submit</button>
             <button type="cancel" class="cancel" v-on:click="cancel()">Cancel</button>

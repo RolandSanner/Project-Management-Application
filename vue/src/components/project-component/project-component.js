@@ -17,8 +17,7 @@ export default {
 				municipality: '',
 				location: '',
 				contractName: '',
-				projectManagerID: 1,
-				groupID: 1,
+				projectManagerID: '',
 			}
 		}
 	},
