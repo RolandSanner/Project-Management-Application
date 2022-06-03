@@ -22,10 +22,10 @@ public class JdbcContactDAO implements ContactDAO {
     private Contact contactObjectMapper(SqlRowSet results) {
 
         Contact contact = new Contact();
-        contact.setContactID(results.getInt("project_ID"));
-        contact.setFirstName(results.getString("first_name"));
-        contact.setLastName(results.getString("last_name"));
-        contact.setPhoneNumber(results.getString("phone_number"));
+        contact.setContactID(results.getInt("contact_id"));
+        contact.setFirstName(results.getString("firstname"));
+        contact.setLastName(results.getString("lastname"));
+        contact.setPhoneNumber(results.getString("phonenumber"));
         contact.setEmail(results.getString("email"));
         contact.setMunicipality(results.getString("municipality"));
         contact.setContactRole(results.getString("contact_role"));
@@ -56,10 +56,10 @@ public class JdbcContactDAO implements ContactDAO {
 
     @Override
     public void addContact(Contact contact){
-        String sql = "INSERT INTO contacts (contact_id, firstname, lastname, phonenumber, email, municipality, contact_role, companyname, industry, contact_street, contact_city, contact_state, contact_zip)\n" +
-                "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO contacts (firstname, lastname, phonenumber, email, municipality, contact_role, companyname, industry, contact_street, contact_city, contact_state, contact_zip)\n" +
+                "VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
 
-        jdbcTemplate.update(sql, contact.getContactID(), contact.getFirstName(), contact.getLastName(), contact.getPhoneNumber(), contact.getEmail(), contact.getMunicipality(), contact.getContactRole(), contact.getCompanyName(), contact.getIndustry(), contact.getContactStreet(), contact.getContactCity(), contact.getContactState(), contact.getContactZip());
+        jdbcTemplate.update(sql, contact.getFirstName(), contact.getLastName(), contact.getPhoneNumber(), contact.getEmail(), contact.getMunicipality(), contact.getContactRole(), contact.getCompanyName(), contact.getIndustry(), contact.getContactStreet(), contact.getContactCity(), contact.getContactState(), contact.getContactZip());
     }
 
     @Override

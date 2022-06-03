@@ -19,7 +19,7 @@ CREATE TABLE users (
 );
 
 CREATE TABLE contacts (
-	contact_id SERIAL,
+	contact_id serial,
 	firstName varchar(50) NOT NULL,
 	lastName varchar(50) NOT NULL,
 	phoneNumber varchar(25) NOT NULL,
