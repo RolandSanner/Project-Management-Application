@@ -86,6 +86,7 @@ public class JdbcProjectDAO implements ProjectDAO{
 //
 //        String sql = "UPDATE projects SET groups.group_id = ? WHERE projects.project_id = ?";
 //
+//
 //        jdbcTemplate.update(sql,groupId, projectId);
 //
 //    }
