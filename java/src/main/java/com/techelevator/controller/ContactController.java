@@ -24,5 +24,8 @@ public class ContactController {
         return contactDAO.listMyProjects(id);
     }
 
-
+    @RequestMapping(path="/contacts/new", method = RequestMethod.POST)
+    public void addContact(@RequestBody Contact contact){
+        contactDAO.addContact(contact);
+    }
 }

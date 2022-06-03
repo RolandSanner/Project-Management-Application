@@ -13,12 +13,15 @@ public class Contact {
     private String contactRole;
     private String companyName;
     private String industry;
-    private String address;
+    private String contactStreet;
+    private String contactCity;
+    private String contactState;
+    private String contactZip ;
 
     public Contact() {
     }
 
-    public Contact(int contactID, String firstName, String lastName, String phoneNumber, String email, String municipality, String contactRole, String companyName, String industry, String address) {
+    public Contact(int contactID, String firstName, String lastName, String phoneNumber, String email, String municipality, String contactRole, String companyName, String industry, String contactStreet, String contactCity, String contactState, String contactZip ) {
         this.contactID = contactID;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -28,22 +31,28 @@ public class Contact {
         this.contactRole = contactRole;
         this.companyName = companyName;
         this.industry = industry;
-        this.address = address;
+        this.contactStreet = contactStreet;
+        this.contactCity = contactCity;
+        this.contactState = contactState;
+        this.contactZip  = contactZip ;
     }
 
     @Override
     public String toString() {
-        return "com.techelevator.model.Contact{" +
+        return "Contact{" +
                 "contactID=" + contactID +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", email='" + email + '\'' +
                 ", municipality='" + municipality + '\'' +
-                ", managerRole='" + contactRole + '\'' +
+                ", contactRole='" + contactRole + '\'' +
                 ", companyName='" + companyName + '\'' +
                 ", industry='" + industry + '\'' +
-                ", address='" + address + '\'' +
+                ", contactStreet='" + contactStreet + '\'' +
+                ", contactCity='" + contactCity + '\'' +
+                ", contactState='" + contactState + '\'' +
+                ", contactZip ='" + contactZip  + '\'' +
                 '}';
     }
 
@@ -63,12 +72,37 @@ public class Contact {
         this.industry = industry;
     }
 
-    public String getAddress() {
-        return address;
+
+    public String getContactStreet() {
+        return contactStreet;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setContactStreet(String contactStreet) {
+        this.contactStreet = contactStreet;
+    }
+
+    public String getContactCity() {
+        return contactCity;
+    }
+
+    public void setContactCity(String contactCity) {
+        this.contactCity = contactCity;
+    }
+
+    public String getContactState() {
+        return contactState;
+    }
+
+    public void setContactState(String contactState) {
+        this.contactState = contactState;
+    }
+
+    public String getContactZip() {
+        return contactZip;
+    }
+
+    public void setContactZip(String contactZip) {
+        this.contactZip = contactZip;
     }
 
     public int getContactID() {
