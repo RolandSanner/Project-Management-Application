@@ -19,7 +19,7 @@ CREATE TABLE users (
 );
 
 CREATE TABLE contacts (
-	contact_id int NOT NULL,
+	contact_id SERIAL,
 	firstName varchar(50) NOT NULL,
 	lastName varchar(50) NOT NULL,
 	phoneNumber varchar(25) NOT NULL,
@@ -28,9 +28,12 @@ CREATE TABLE contacts (
 	contact_role varchar(50) NOT NULL,
 	companyName varchar(50),
 	industry varchar(50),
-	contractor_address varchar(100),
-	CONSTRAINT PK_contact PRIMARY KEY (contact_id),
-	CONSTRAINT FK_contact_user FOREIGN KEY (contact_id) REFERENCES users(user_id)
+	contact_street varchar(100),
+	contact_city varchar(50),
+	contact_state varchar(50),
+	contact_zip varchar(15),
+	CONSTRAINT PK_contact PRIMARY KEY (contact_id)
+-- 	CONSTRAINT FK_contact_user FOREIGN KEY (contact_id) REFERENCES users(user_id)
 );
 
 CREATE TABLE groups (
@@ -70,9 +73,9 @@ CREATE TABLE project_contractors (
 
 INSERT INTO users (username,password_hash,role) VALUES ('user','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
 INSERT INTO users (username,password_hash,role) VALUES ('admin','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_ADMIN');
-INSERT INTO contacts (contact_id, firstName, lastName, phoneNumber, email, municipality, contact_role) VALUES ('1', 'Roland', 'Sanner', '1234567890', '123@abc.com', 'a', 'Project Manager');
-INSERT INTO contacts (contact_id, firstName, lastName, phoneNumber, email, municipality, contact_role) VALUES ('2', 'Jack', 'Khodr', '1234567890', '12@abcd.com', 'a', 'Program Manager');
-INSERT INTO groups (group_name, program_manager_id) VALUES ('Bridges','2');
-INSERT INTO projects (project_id, project_name, project_description, project_location, precinct, municipality, project_manager_id, group_id) VALUES ('One','The First Bridge', 'Bridge in Austin','Austin', '1', 'a', '1', '1');
+-- INSERT INTO contacts (contact_id, firstName, lastName, phoneNumber, email, municipality, contact_role) VALUES ('1', 'Roland', 'Sanner', '1234567890', '123@abc.com', 'a', 'Project Manager');
+-- INSERT INTO contacts (contact_id, firstName, lastName, phoneNumber, email, municipality, contact_role) VALUES ('2', 'Jack', 'Khodr', '1234567890', '12@abcd.com', 'a', 'Program Manager');
+-- INSERT INTO groups (group_name, program_manager_id) VALUES ('Bridges','2');
+-- INSERT INTO projects (project_id, project_name, project_description, project_location, precinct, municipality, project_manager_id, group_id) VALUES ('One','The First Bridge', 'Bridge in Austin','Austin', '1', 'a', '1', '1');
 
 COMMIT TRANSACTION;
