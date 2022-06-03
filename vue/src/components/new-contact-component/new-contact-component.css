@@ -33,13 +33,18 @@
 
 }
 
+.name, .demos, .about, .address, .address2{
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 10px;
+}
+
 .form-control {
   display: flex;
   justify-content: center;
   border-radius: 5px;
   box-shadow: 0px 0px 4px #073763;
   background-color: white;
-  border-radius: 3px;
   font-size: 1.5rem;
   margin-left: auto;
   margin-right: auto;
@@ -53,7 +58,7 @@
   display: flex;
   color: #313131;
   background-color: white;
-  border-radius: 3px;
+  border-radius: 5px;
   font-size: 1.5rem;
   margin-left: auto;
   margin-right: auto;
@@ -77,7 +82,7 @@ form button {
   margin-top: 15px;
   font-size: 18px;
   padding: 3px;
-  border-radius: 3px;
+  border-radius: 5px;
   cursor: pointer;
 }
 
@@ -88,4 +93,11 @@ form button {
 #new-contact select{
   border-radius: 5px;
   box-shadow: 0px 0px 4px #073763;
+}
+
+h4 {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 5px;
+  color: #31313183;
 }
