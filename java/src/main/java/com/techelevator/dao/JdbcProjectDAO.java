@@ -66,19 +66,19 @@ public class JdbcProjectDAO implements ProjectDAO{
     @Override
     public void addProject(Project project) {
 
-        String sql = "INSERT INTO projects (project_id, project_name, project_description, project_location, precinct, municipality, project_manager_id, group_id) VALUES(?,?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO projects (project_id, project_name, project_description, project_location, precinct, municipality, project_manager_id, group_id, contractname, fundingsource) VALUES(?,?,?,?,?,?,?,?,?,?)";
 
-        jdbcTemplate.update(sql, project.getProjectID(),project.getProjectName(),project.getDescription(),project.getLocation(),project.getPrecinct(),project.getMunicipality(),project.getProjectManagerID(),project.getGroupID());
+        jdbcTemplate.update(sql, project.getProjectID(),project.getProjectName(),project.getDescription(),project.getLocation(),project.getPrecinct(),project.getMunicipality(),project.getProjectManagerID(),project.getGroupID(), project.getContractName(), project.getFundingSource());
 
     }
 
 //    @Override
-//    public void updateProjectGroupId(int groupId, int projectId){
+//    public void updateProjectGroupID(int groupID, int projectID){
 //
 //        String sql = "UPDATE projects SET group_id = ? WHERE projects.project_id = ?";
 //        String sql2 = "UPDATE groups SET group_id = ? WHERE projects.project_id = ?";
 //
-//        jdbcTemplate.update(sql, sql2, groupId, projectId);
+//        jdbcTemplate.update(sql, sql2, groupID, projectID);
 //
 //    }
 

@@ -15,6 +15,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     height: auto;
     padding: 30px;
     border-radius: 5px;

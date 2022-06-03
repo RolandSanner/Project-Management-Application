@@ -11,6 +11,8 @@ public class Project {
     private String description;
     private long projectManagerID;
     private long groupID;
+    private String fundingSource;
+    private String contractName;
 
     public String getProjectID() {
         return projectID;
@@ -24,7 +26,7 @@ public class Project {
 
     }
 
-    public Project(String projectID, String projectName, String precinct, String municipality, String location, String description, long projectManagerID, long groupID) {
+    public Project(String projectID, String projectName, String precinct, String municipality, String location, String description, long projectManagerID, long groupID, String fundingSource, String contractName) {
         this.projectID = projectID;
         this.projectName = projectName;
         this.precinct = precinct;
@@ -33,13 +35,13 @@ public class Project {
         this.description = description;
         this.projectManagerID = projectManagerID;
         this.groupID = groupID;
+        this.fundingSource = fundingSource;
+        this.contractName = contractName;
     }
-
-
 
     @Override
     public String toString() {
-        return "com.techelevator.model.Project{" +
+        return "Project{" +
                 "projectID='" + projectID + '\'' +
                 ", projectName='" + projectName + '\'' +
                 ", precinct='" + precinct + '\'' +
@@ -48,6 +50,8 @@ public class Project {
                 ", description='" + description + '\'' +
                 ", projectManagerID=" + projectManagerID +
                 ", groupID=" + groupID +
+                ", fundingSource='" + fundingSource + '\'' +
+                ", contractName='" + contractName + '\'' +
                 '}';
     }
 
@@ -105,5 +109,21 @@ public class Project {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getFundingSource() {
+        return fundingSource;
+    }
+
+    public void setFundingSource(String fundingSource) {
+        this.fundingSource = fundingSource;
+    }
+
+    public String getContractName() {
+        return contractName;
+    }
+
+    public void setContractName(String contractName) {
+        this.contractName = contractName;
     }
 }
