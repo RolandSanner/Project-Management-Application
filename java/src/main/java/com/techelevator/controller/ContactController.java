@@ -28,4 +28,9 @@ public class ContactController {
     public void addContact(@RequestBody Contact contact){
         contactDAO.addContact(contact);
     }
+
+    @RequestMapping(path = "/contacts", method = RequestMethod.GET)
+    public List<Contact> listContacts() {
+        return contactDAO.getAllContacts();
+    }
 }

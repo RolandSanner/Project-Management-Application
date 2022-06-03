@@ -61,4 +61,16 @@ public class JdbcContactDAO implements ContactDAO {
 
         jdbcTemplate.update(sql, contact.getContactID(), contact.getFirstName(), contact.getLastName(), contact.getPhoneNumber(), contact.getEmail(), contact.getMunicipality(), contact.getContactRole(), contact.getCompanyName(), contact.getIndustry(), contact.getContactStreet(), contact.getContactCity(), contact.getContactState(), contact.getContactZip());
     }
+
+    @Override
+    public List<Contact> getAllContacts() {
+        String sql = "SELECT * from contacts;";
+        SqlRowSet results = this.jdbcTemplate.queryForRowSet(sql);
+        List<Contact> contacts = new ArrayList<>();
+        while (results.next()) {
+            contacts.add(contactObjectMapper(results));
+
+        }
+        return contacts;
+    }
 }
