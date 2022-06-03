@@ -9,15 +9,16 @@ export default {
 	data() {
 		return {
 			project: {
-				projectId: '',
+				projectID: '',
 				projectName: '',
-				projectDescription: '',
-				primaryFunding: '',
-				secondaryFunding: '',
+				description: '',
+				fundingSource: '',
 				precinct: '',
 				municipality: '',
 				location: '',
-				contract: ''
+				contractName: '',
+				projectManagerID: 1,
+				groupID: 1,
 			}
 		}
 	},

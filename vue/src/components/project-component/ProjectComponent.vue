@@ -12,10 +12,10 @@
             type="text"
             id="project-id"
             class="form-control"
-            placeholder="* Project ID"
+            placeholder="* Project Id"
             required
             autofocus
-            v-model="project.ProjectId"
+            v-model="project.projectID"
             />
             <input
             type="text"
@@ -41,48 +41,57 @@
             class="form-control"
             placeholder="Primary Funding Source"
             autofocus
-            v-model="project.primaryFunding"
+            v-model="project.fundingSource"
             />
             <input
-            type="text"
-            id="secondary-funding"
-            class="form-control"
-            placeholder="Secondary Funding Sources"
-            autofocus
-            v-model="project.secondaryFunding"
+                type="text"
+                id="precinct"
+                class="form-control"
+                placeholder="Precinct"
+                autofocus
+                v-model="project.precinct"
             />
             <input
-            type="text"
-            id="precinct"
-            class="form-control"
-            placeholder="Precinct"
-            autofocus
-            v-model="project.precinct"
+                type="text"
+                id="municipality"
+                class="form-control"
+                placeholder="Municipality"
+                autofocus
+                v-model="project.municipality"
             />
             <input
-            type="text"
-            id="municipality"
-            class="form-control"
-            placeholder="Municipality"
-            autofocus
-            v-model="project.municipality"
+                type="text"
+                id="location"
+                class="form-control"
+                placeholder="Location"
+                autofocus
+                v-model="project.location"
             />
             <input
-            type="text"
-            id="location"
-            class="form-control"
-            placeholder="Location"
-            autofocus
-            v-model="project.location"
+                type="text"
+                id="contract"
+                class="form-control"
+                placeholder="Contract Name"
+                autofocus
+                v-model="project.contractName"
             />
             <input
-            type="text"
-            id="contract"
-            class="form-control"
-            placeholder="Contract"
-            autofocus
-            v-model="project.contract"
+                type="text"
+                id="projectManagerId"
+                class="form-control"
+                placeholder="Project Manager Id"
+                autofocus
+                v-model="project.projectManagerID"
             />
+            <input
+                type="text"
+                id="groupId"
+                class="form-control"
+                placeholder="Group Id"
+                autofocus
+                v-model="project.groupID"
+            />
+
             <button type="submit" v-on:click="saveDocument()">Submit</button>
             <button type="cancel" class="cancel" v-on:click="cancel()">Cancel</button>
         </form>
