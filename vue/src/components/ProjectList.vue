@@ -165,8 +165,13 @@ table{
 .projectList > td{
   padding: 3px 0 3px 3px;
 }
-.projectList td{
-  border-bottom: 1px solid red;
+
+tbody tr{
+  border: 1px solid green;
+}
+
+.projectList tr {
+  display: flex;
 }
 
 </style>
