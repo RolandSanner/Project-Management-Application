@@ -19,7 +19,7 @@ CREATE TABLE users (
 );
 
 CREATE TABLE contacts (
-	contact_id SERIAL,
+	contact_id serial,
 	firstName varchar(50) NOT NULL,
 	lastName varchar(50) NOT NULL,
 	phoneNumber varchar(25) NOT NULL,
@@ -66,6 +66,14 @@ CREATE TABLE project_contractors (
 	CONSTRAINT PK_project_contractor PRIMARY KEY (contractor_id, project_id),
 	CONSTRAINT FK_project_contractor_contractors FOREIGN KEY (contractor_id) REFERENCES contacts(contact_id),
 	CONSTRAINT FK_project_contractor_project FOREIGN KEY (project_id) REFERENCES projects(project_id)
+);
+
+CREATE TABLE group_contacts (
+	contact_id int NOT NULL,
+	group_id int NOT NULL,
+	CONSTRAINT PK_group_contacts PRIMARY KEY (contact_id, group_id),
+	CONSTRAINT FK_group_contacts_contacts FOREIGN KEY (contact_id) REFERENCES contacts(contact_id),
+	CONSTRAINT FK_group_contacts_group FOREIGN KEY (group_id) REFERENCES groups(group_id)
 );
 
 

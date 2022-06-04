@@ -11,6 +11,7 @@ import ProjectListView from '../views/ProjectListView.vue'
 import NewContact from '../views/NewContact.vue'
 import UserInfo from '../views/UserInfo.vue'
 import ProjectInfoView from '../views/ProjectInfoView.vue'
+import ContactListView from '../views/ContactListView.vue'
 
 Vue.use(Router)
 
@@ -99,6 +100,14 @@ const router = new Router({
       path:"/project/:id",
       name:"projectinfoview",
       component:ProjectInfoView,
+      meta:{
+        requiresAuth:true
+      }
+    },
+    {
+      path:"/contacts",
+      name:"contact-list",
+      component:ContactListView,
       meta:{
         requiresAuth:true
       }

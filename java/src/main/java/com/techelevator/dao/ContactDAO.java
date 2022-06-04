@@ -17,6 +17,6 @@ public interface ContactDAO {
 
     void addContact(Contact contact);
 
-
+    List<Contact> getAllContacts();
 
 }
