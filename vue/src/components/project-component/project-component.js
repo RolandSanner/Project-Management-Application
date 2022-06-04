@@ -17,8 +17,7 @@ export default {
 				municipality: '',
 				location: '',
 				contractName: '',
-				projectManagerID: 1,
-				groupID: 1,
+				projectManagerID: '',
 			}
 		}
 	},
@@ -28,8 +27,9 @@ export default {
 		saveDocument() {
 			projectService.create(this.project)
 			.then(response => {
-				if(response.status === 201){
+				if(response.status === 200){
 					this.$router.push("/")
+					this.clearNewProject();
 				}
 			})
 			.catch(error => {
@@ -38,6 +38,20 @@ export default {
 		},
 		cancel() {
 			this.$router.push('/')
+		},
+		clearNewProject() {
+			this.project = {
+				projectID: '',
+				projectName: '',
+				description: '',
+				fundingSource: '',
+				precinct: '',
+				municipality: '',
+				location: '',
+				contractName: '',
+				projectManagerID: 1,
+				groupID: 1,
+			}
 		}
 	}
 }
