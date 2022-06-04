@@ -106,10 +106,10 @@ const router = new Router({
     },
     {
       path:"/contacts",
-      name:"contact-list",
+      name:"allContacts",
       component:ContactListView,
       meta:{
-        requiresAuth:true
+        requiresAuth:false
       }
     }
   ]
