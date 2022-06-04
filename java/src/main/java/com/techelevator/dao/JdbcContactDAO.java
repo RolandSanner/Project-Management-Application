@@ -40,20 +40,6 @@ public class JdbcContactDAO implements ContactDAO {
         return contact;
     }
 
-
-    @Override
-    public List<Contact> getAllContacts() {
-        String sql = "SELECT * from contacts;";
-        SqlRowSet results = this.jdbcTemplate.queryForRowSet(sql);
-        List<Contact> contacts = new ArrayList<>();
-        while (results.next()) {
-            contacts.add(contactObjectMapper(results));
-
-        }
-        return contacts;
-    }
-
-
     @Override
     public List<Contact> listMyProjects(int id) {
 

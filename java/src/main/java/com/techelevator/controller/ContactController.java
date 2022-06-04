@@ -20,12 +20,6 @@ public class ContactController {
 
     // CONTACT REQUEST MAPPING
 
-
-    @RequestMapping(path = "/contacts", method = RequestMethod.GET)
-    public List<Contact> listContacts() {
-        return contactDAO.getAllContacts();
-    }
-
     @RequestMapping(path = "/manager/{id}", method = RequestMethod.GET)
     public List<Contact> listManagerProjects(@PathVariable int id) {
         return contactDAO.listMyProjects(id);
@@ -37,7 +31,6 @@ public class ContactController {
     }
 
     @RequestMapping(path = "/contacts", method = RequestMethod.GET)
-    public List<Contact> listContacts() {
-        return contactDAO.getAllContacts();
-    }
+    public List<Contact> listContacts() {return contactDAO.getAllContacts();}
+
 }

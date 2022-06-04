@@ -11,8 +11,6 @@ import java.util.List;
 
 public interface ContactDAO {
 
-    List<Contact> getAllContacts();;
-
     List<Contact> listMyProjects(int id);
 
     void addContact(Contact contact);
