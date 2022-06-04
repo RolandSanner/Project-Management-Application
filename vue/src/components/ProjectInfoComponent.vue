@@ -47,7 +47,7 @@ export default {
 .project-info {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-areas: 
+    grid-template-areas:
                 "A A B B"
                 "C D E F"
                 "H G J J"
@@ -56,7 +56,7 @@ export default {
     column-gap: 50px;
     align-items: center;
     border-style:solid;
-    
+
 }
 
 #A {

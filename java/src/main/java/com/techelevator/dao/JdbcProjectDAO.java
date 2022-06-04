@@ -31,6 +31,8 @@ public class JdbcProjectDAO implements ProjectDAO{
         project.setDescription(results.getString("project_description"));
         project.setGroupID(results.getLong("group_id"));
         project.setProjectManagerID(results.getLong("project_manager_id"));
+        project.setContractName(results.getString("contractname"));
+        project.setFundingSource(results.getString("fundingsource"));
 
 
         return project;
