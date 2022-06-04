@@ -11,5 +11,8 @@ export default{
 
     addContact(contact){
         return http.post(`/contacts/new`, contact);
-    }
+    },
+    listContacts(){
+        return http.get('/contacts')
+    },
 }
