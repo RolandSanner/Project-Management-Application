@@ -17,6 +17,7 @@
             <router-link :to="{ name: 'newproject' }" class="routerLinks">Add New Project</router-link>
             <router-link :to="{ name: 'newcontact' }" class="routerLinks">Add Contact</router-link>
             <router-link :to="{ name: 'userlist' }" class="routerLinks">View All Users</router-link>
+            <router-link :to="{ name: 'group-list' }" class="routerLinks">View All Project Groups</router-link>
         </div>
 
     </div>
