@@ -1,8 +1,6 @@
 <template>
   <div>
-      <h2>Group Info</h2>
       <group-info-component v-bind:group-id="$route.params.id"/>
-      <h2>Projects</h2>
       <group-projects v-bind:group-id="$route.params.id"/>
   </div>
 </template>

@@ -1,10 +1,39 @@
 <template>
 <div>
-  <h3 v-for="project in projects" v-bind:key="project.id" class="project">
-      <router-link v-bind:to="{name:'projectinfoview',params:{id:project.projectID}}">
+    <h2>Projects</h2>
+      <table id='project-table'>
+<thead>
+    <tr>
+        <th>Project Name</th>
+        <th>Project ID</th>
+    </tr>
+</thead>
+<tbody>
+    <tr v-for="project in projects" v-bind:key="project.id" class="project">
+        <td>
+            <router-link v-bind:to="{name:'projectinfoview',params:{id:project.projectID}}">
       {{project.projectName}}
       </router-link>
-  </h3>
+      </td>
+        <td>{{project.projectID}}</td>
+    </tr>
+</tbody>
+  </table>
+  <h2>Contacts</h2>
+  <table id='contact-table'>
+<thead>
+    <tr>
+        <th>Contact</th>
+        <th>Role</th>
+    </tr>
+</thead>
+<tbody>
+    <tr v-for="contact in contacts" v-bind:key="contact.contactID" class="contact">
+        <td>{{contact.firstName}} {{contact.lastName}}</td>
+        <td>{{contact.contactRole}}</td>
+    </tr>
+</tbody>
+  </table>
   <table id="project-manager-table">
       <thead>
           <tr>
@@ -52,6 +81,7 @@
 
 <script>
 import ProjectService from '../services/ProjectService'
+import ContactService from '../services/ContactService'
 export default {
 name:'group-projects',
 props:{
@@ -62,7 +92,8 @@ data(){
         projects:[],
         projectManagers:[],
         precincts:[],
-        fundingTypes:[]
+        fundingTypes:[],
+        contacts:[]
     }
 },
 created(){
@@ -71,6 +102,10 @@ created(){
         this.projectManagers=this.findUniqueManagers();
         this.precincts=this.findUniquePrecincts();
         this.fundingTypes=this.findUniqueFundingTypes();
+    }),
+
+    ContactService.listContactsByGroupId(this.$route.params.id).then(response=>{
+        this.contacts=response.data;
     })
 },
 methods:{

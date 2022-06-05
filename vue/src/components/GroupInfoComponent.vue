@@ -1,8 +1,14 @@
 <template>
   <div class='group-info'>
-<h3>Group ID: {{group.groupID}}</h3>
-<h3>Group Name: {{group.groupName}}</h3>
-<h3>Program Manager: {{group.program_manager_name}}</h3>
+      <table id='info-header'>
+          <thead>
+              <tr>
+                  <th>Group ID: {{group.groupID}}</th>
+                  <th>Group Name: {{group.groupName}}</th>
+                  <th>Program Manager: {{group.program_manager_name}}</th>
+              </tr>
+          </thead>
+      </table>
   </div>
 </template>
 
@@ -31,5 +37,9 @@ created(){
 </script>
 
 <style>
-
+#info-header{
+    width: 60vw;
+    padding: 10px;
+    border: 0px;
+}
 </style>
