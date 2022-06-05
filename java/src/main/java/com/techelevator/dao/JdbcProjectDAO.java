@@ -33,6 +33,7 @@ public class JdbcProjectDAO implements ProjectDAO{
         project.setProjectManagerID(results.getLong("project_manager_id"));
         project.setContractName(results.getString("contractname"));
         project.setFundingSource(results.getString("fundingsource"));
+        project.setProjectManagerName(results.getString("project_manager_name"));
 
 
         return project;
@@ -41,7 +42,9 @@ public class JdbcProjectDAO implements ProjectDAO{
 
     @Override
     public List<Project> getAllProjects() {
-        String sql = "SELECT * from projects;";
+        String sql = "SELECT project_id,project_name,project_description,project_location,precinct,A.municipality,project_manager_id,group_id,contractname,fundingsource,CONCAT(firstname, ' ',lastname) AS project_manager_name " +
+                " FROM projects A " +
+                "JOIN contacts B ON A.project_manager_id=B.contact_id;";
         SqlRowSet results = this.jdbcTemplate.queryForRowSet(sql);
         List<Project> projects = new ArrayList<>();
         while (results.next()) {
@@ -54,7 +57,10 @@ public class JdbcProjectDAO implements ProjectDAO{
     @Override
     public Project getAProject(String id) {
 
-        String sql = "SELECT * FROM projects where project_id = ?";
+        String sql = "SELECT project_id,project_name,project_description,project_location,precinct,A.municipality,project_manager_id,group_id,contractname,fundingsource,CONCAT(firstname, ' ',lastname) AS project_manager_name " +
+                "FROM projects A " +
+                "JOIN contacts B ON A.project_manager_id=B.contact_id" +
+                " where project_id = ?";
         SqlRowSet results = this.jdbcTemplate.queryForRowSet(sql, id);
 
         Project project = null;
@@ -72,6 +78,20 @@ public class JdbcProjectDAO implements ProjectDAO{
 
         jdbcTemplate.update(sql, project.getProjectID(),project.getProjectName(),project.getDescription(),project.getLocation(),project.getPrecinct(),project.getMunicipality(),project.getProjectManagerID(),project.getGroupID(), project.getContractName(), project.getFundingSource());
 
+    }
+
+    @Override
+    public List<Project> getProjectsByGroupId(int id) {
+        String sql="SELECT project_id,project_name,project_description,project_location,precinct,A.municipality,project_manager_id,group_id,contractname,fundingsource,CONCAT(firstname, ' ',lastname) AS project_manager_name" +
+                " FROM projects A " +
+                "JOIN contacts B ON A.project_manager_id=B.contact_id" +
+                " WHERE group_id=?";
+        SqlRowSet results=jdbcTemplate.queryForRowSet(sql,id);
+        List<Project>projects=new ArrayList<>();
+        while (results.next()){
+            projects.add(projectObjectMapper(results));
+        }
+        return projects;
     }
 
 //    @Override

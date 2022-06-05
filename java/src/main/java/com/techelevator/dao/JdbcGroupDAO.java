@@ -23,13 +23,16 @@ public class JdbcGroupDAO implements GroupDAO{
         group.setGroupID(results.getInt("group_id"));
         group.setGroupName(results.getString("group_name"));
         group.setProgram_manager_id(results.getInt("program_manager_id"));
+        group.setProgram_manager_name(results.getString("program_manager_name"));
 
         return group;
     }
 
     @Override
     public List<Group> getAllGroups() {
-        String sql="SELECT* FROM groups;";
+        String sql="SELECT group_id, group_name, program_manager_id,CONCAT(B.firstname, ' ',lastname) AS program_manager_name " +
+                "FROM groups A " +
+                "JOIN contacts B ON A.program_manager_id=B.contact_id;";
         SqlRowSet results=this.jdbcTemplate.queryForRowSet(sql);
         List<Group> groups=new ArrayList<>();
         while (results.next()){
@@ -40,7 +43,10 @@ public class JdbcGroupDAO implements GroupDAO{
 
     @Override
     public Group getGroupById(int groupId) {
-        String sql="SELECT* FROM groups WHERE group_id=?";
+        String sql="SELECT group_id, group_name, program_manager_id,CONCAT(B.firstname, ' ',lastname) AS program_manager_name " +
+                "FROM groups A " +
+                "JOIN contacts B ON A.program_manager_id=B.contact_id " +
+                "WHERE group_id=?;";
         SqlRowSet result=jdbcTemplate.queryForRowSet(sql,groupId);
         if(result.next()){
             return groupObjectMapper(result);

@@ -5,6 +5,7 @@ public class Group {
     private int groupID;
     private String groupName;
     private int program_manager_id;
+    private String program_manager_name;
 
     public Group() {
     }
@@ -29,6 +30,14 @@ public class Group {
 
     public void setGroupName(String groupName) {
         this.groupName = groupName;
+    }
+
+    public String getProgram_manager_name() {
+        return program_manager_name;
+    }
+
+    public void setProgram_manager_name(String program_manager_name) {
+        this.program_manager_name = program_manager_name;
     }
 
     public int getProgram_manager_id() {

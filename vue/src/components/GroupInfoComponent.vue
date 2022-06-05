@@ -1,8 +1,8 @@
 <template>
   <div class='group-info'>
-<h2>Group ID: {{group.groupID}}</h2>
-<h2>Group Name: {{group.groupName}}</h2>
-<h2>Program Manager: {{group.program_manager_id}}</h2>
+<h3>Group ID: {{group.groupID}}</h3>
+<h3>Group Name: {{group.groupName}}</h3>
+<h3>Program Manager: {{group.program_manager_name}}</h3>
   </div>
 </template>
 
