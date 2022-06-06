@@ -192,7 +192,7 @@ created(){
 }
 </script>
 
-<style>
+<style scoped>
 table{
   color: #073763;
 }
