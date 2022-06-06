@@ -1,8 +1,6 @@
 <template>
   <div class="project-list">
-    <!--    <div class="header">-->
-    <!--      <h1>All Projects</h1>-->
-    <!--    </div>-->
+
     <div class="headerlink">
       <li class="header">View Project By:</li>
     </div>
@@ -281,6 +279,11 @@ export default {
   border-radius: 5px;
   margin: 2px;
   flex-wrap: wrap;
+}
+
+.choice .picker li button:hover {
+  color: #acaeaf;
+  cursor: pointer;
 }
 
 .header {
