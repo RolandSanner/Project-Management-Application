@@ -1,5 +1,8 @@
 <template>
   <div class="project-list">
+    <div class="header">
+      <h1>All Projects</h1>
+    </div>
     <table id="projectTable">
       <thead>
         <tr>
@@ -166,12 +169,13 @@ table{
   padding: 3px 0 3px 3px;
 }
 
-tbody tr{
-  border: 1px solid green;
-}
+/*.projectList tr {*/
+/*  display: flex;*/
+/*}*/
 
-.projectList tr {
+.header {
   display: flex;
+  justify-content: center;
 }
 
 </style>
