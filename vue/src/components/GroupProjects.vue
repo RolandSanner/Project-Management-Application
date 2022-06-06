@@ -38,6 +38,9 @@
 </tbody>
   </table>
   </div>
+  <div id="data">
+  <div id="project-manager-data">
+      <h2>Projects By Manager</h2>
   <table id="project-manager-table">
       <thead>
           <tr>
@@ -55,6 +58,9 @@
   <div id="manager-chart-container">
   <canvas id="managerChart" chart.canvas.parentNode.style.height='128px'></canvas>
   </div>
+  </div>
+  <div id="precinct-data">
+      <h2>Projects By Precinct</h2>
     <table id="precinct-table">
       <thead>
           <tr>
@@ -72,6 +78,9 @@
   <div id="precinct-chart-container">
   <canvas id="precinctChart"></canvas>
   </div>
+  </div>
+  <div id="funding-data">
+      <h2>Projects By Funding Type</h2>
   <table id="funding-table">
       <thead>
           <tr>
@@ -88,6 +97,8 @@
   </table>
   <div id="funding-chart-container">
   <canvas id="fundingChart"></canvas>
+  </div>
+  </div>
   </div>
   </div>
 </template>
@@ -297,39 +308,43 @@ methods:{
 <style>
 #main{
     display: grid;
-    grid-template-columns: 1fr,1fr,1fr;
-    grid-template-rows: 33vh,33vh,33vh;
+    grid-template-columns: 1fr,3fr,;
+    grid-template-rows: 40vh,40vh;
     grid-template-areas: 
-    "project-list project-manager-table managerChart"
-    "contact-list precinct-table precinctChart"
-    ". funding-table fundingChart";
+    "project-list data"
+    "contact-list .";
+    justify-items: center;
+}
+#data{
+    grid-area: data;
+    display: flex;
 }
 #projects-list{
     grid-area: project-list;
+    margin: 10px;
+    
 }
 #contacts-list{
     grid-area: contact-list;
+    margin: 10px;
 }
-#project-manager-table{
+#project-manager-data{
     grid-area: project-manager-table;
+    justify-content: center;
 }
-#manager-chart-container{
-    grid-area: managerChart;
-}
-#precinct-table{
+
+#precinct-data{
     grid-area: precinct-table;
+    justify-items: center;
+    
 }
-#precinct-chart-container{
-    grid-area: precinctChart;
-}
-#funding-table{
+#funding-data{
     grid-area: funding-table;
-}
-#funding-chart-container{
-    grid-area: fundingChart;
+    
 }
 table{
     border:2px solid black;
+    width: 20vw;
 }
 td{
     border: 1px solid black;
@@ -341,8 +356,15 @@ thead,th{
 th{
     padding: 8px;
 }
+#project-manager-data,#precinct-data,#funding-data{
+    height: 25vh;
+    width: 20vw;
+    margin: 10px;
+}
 #manager-chart-container,#precinct-chart-container,#funding-chart-container{
-    height: 10vh;
-    width: 10vw;
+    height: 20vh;
+}
+#data table{
+    width: 20vw;
 }
 </style>
