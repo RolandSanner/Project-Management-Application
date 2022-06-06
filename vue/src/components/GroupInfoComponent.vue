@@ -38,7 +38,7 @@ created(){
 
 <style>
 #info-header{
-    width: 60vw;
+    width: 100vw;
     padding: 10px;
     border: 0px;
 }
