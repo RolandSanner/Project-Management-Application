@@ -15,7 +15,7 @@
           </button>
         </li>
         <td class="idfilter">
-          <input type="text" id="projectIDFilter" v-model="filter.projectID"/>
+          <input type="text" id="projectIDFilter" v-model="filter.projectID" class="form-control" placeholder="Search..."/>
         </td>
         <li>
           <button @click="isHiddenName = !isHiddenName"
@@ -23,7 +23,7 @@
           </button>
         </li>
         <td class="nameFilter">
-          <input type="text" id="projectNameFilter" v-model="filter.projectName"/>
+          <input type="text" id="projectNameFilter" v-model="filter.projectName" class="form-control" placeholder="Search..."/>
         </td>
         <li>
           <button @click="isHiddenDescription = !isHiddenDescription"
@@ -32,7 +32,7 @@
           </button>
         </li>
         <td class="descriptionFilter">
-          <input type="text" id="projectDescriptionFilter" v-model="filter.description"/>
+          <input type="text" id="projectDescriptionFilter" v-model="filter.description" class="form-control" placeholder="Search..."/>
         </td>
         <li>
           <button @click="isHiddenLocation = !isHiddenLocation"
@@ -40,7 +40,7 @@
           </button>
         </li>
         <td class="locationFilter">
-          <input type="text" id="projectLocationFilter" v-model="filter.location"/>
+          <input type="text" id="projectLocationFilter" v-model="filter.location" class="form-control" placeholder="Search..."/>
         </td>
         <li>
           <button @click="isHiddenPrecinct = !isHiddenPrecinct"
@@ -48,7 +48,7 @@
           </button>
         </li>
         <td class="precinctFilter">
-          <input type="text" id="projectPrecinctFilter" v-model="filter.precinct"/>
+          <input type="text" id="projectPrecinctFilter" v-model="filter.precinct" class="form-control" placeholder="Search..."/>
         </td>
         <li>
           <button @click="isHiddenMunicipality = !isHiddenMunicipality"
@@ -57,7 +57,7 @@
           </button>
         </li>
         <td class="municipalityFilter">
-          <input type="text" id="projectMunicipalityFilter" v-model="filter.municipality"/>
+          <input type="text" id="projectMunicipalityFilter" v-model="filter.municipality" class="form-control" placeholder="Search..."/>
         </td>
 
         <li>
@@ -66,7 +66,7 @@
           </button>
         </li>
         <td class="managerIDFilter">
-          <input type="text" id="projectManagerIDFilter" v-model="filter.projectManagerID"/>
+          <input type="text" id="projectManagerIDFilter" v-model="filter.projectManagerID" class="form-control" placeholder="Search..."/>
         </td>
 
         <li>
@@ -75,7 +75,7 @@
           </button>
         </li>
         <td class="GroupIDFilter">
-          <input type="text" id="projectGroupIDFilter" v-model="filter.groupID"/>
+          <input type="text" id="projectGroupIDFilter" v-model="filter.groupID" class="form-control" placeholder="Search..."/>
         </td>
 
         <li>
@@ -85,7 +85,7 @@
           </button>
         </li>
         <td class="contractNameFilter">
-          <input type="text" id="projectContractNameFilter" v-model="filter.contractName"/>
+          <input type="text" id="projectContractNameFilter" v-model="filter.contractName" class="form-control" placeholder="Search..."/>
         </td>
         <li>
           <button @click="isHiddenFunding = !isHiddenFunding"
@@ -94,7 +94,7 @@
           </button>
         </li>
         <td>
-          <input type="text" id="projectFundingSourceFilter" v-model="filter.fundingSource"/>
+          <input type="text" id="projectFundingSourceFilter" v-model="filter.fundingSource" class="form-control" placeholder="Search..."/>
         </td>
       </ol>
       <table>
@@ -338,4 +338,9 @@ td {
 tbody tr {
   border-bottom: 2px solid black;
 }
+
+.picker input:focus {
+  width: 250px
+}
+
 </style>

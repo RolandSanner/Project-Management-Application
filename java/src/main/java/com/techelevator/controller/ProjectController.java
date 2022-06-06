@@ -46,4 +46,7 @@ public class ProjectController {
     public List<Project> getProjectsByGroupId(@PathVariable int id){
         return projectDAO.getProjectsByGroupId(id);
     }
+
+    @RequestMapping(path = "contractor/{id}/projects", method = RequestMethod.GET)
+    public List<Project> getProjectsByContractorID(@PathVariable int id){return projectDAO.getProjectsByContractorID(id);}
 }

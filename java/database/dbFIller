@@ -1,6 +1,7 @@
 INSERT INTO groups (group_id, group_name, program_manager_id) VALUES (1, 'Group1', 1);
 INSERT INTO groups (group_id, group_name, program_manager_id) VALUES (2, 'Group2', 2);
 INSERT INTO groups (group_id, group_name, program_manager_id) VALUES (3, 'Group3', 3);
+INSERT INTO groups (group_id, group_name, program_manager_id) VALUES (4, 'Group4', 4);
 
 INSERT INTO contacts (firstname, lastname, phonenumber, email, municipality, contact_role, companyname, industry, contact_street, contact_city, contact_state, contact_zip)
 VALUES ('First1', 'Last1', '000-000-0001', 'email@email.com1', 'Municipality1', 'Role1', 'Company Name1', 'Industry1', 'Street1', 'City1', 'OK', '00001');
@@ -63,3 +64,43 @@ INSERT INTO projects (project_id, project_name, project_description, project_loc
 INSERT INTO projects (project_id, project_name, project_description, project_location, precinct, municipality, project_manager_id, group_id, contractname, fundingsource)VALUES ('Project ID 17', 'Name 17', 'Description 17', 'Location 17', '1', '4', '1', '1', 'ContractName17', 'Funding 17');
 INSERT INTO projects (project_id, project_name, project_description, project_location, precinct, municipality, project_manager_id, group_id, contractname, fundingsource)VALUES ('Project ID 18', 'Name 18', 'Description 18', 'Location 18', '2', '3', '1', '1', 'ContractName18', 'Funding 18');
 INSERT INTO projects (project_id, project_name, project_description, project_location, precinct, municipality, project_manager_id, group_id, contractname, fundingsource)VALUES ('Project ID 19', 'Name 19', 'Description 19', 'Location 19', '3', '2', '1', '1', 'ContractName19', 'Funding 19');
+
+INSERT INTO project_contractors (contractor_id, project_id)
+VALUES (1,'Project ID 1');
+INSERT INTO project_contractors (contractor_id, project_id)
+VALUES (2,'Project ID 2');
+INSERT INTO project_contractors (contractor_id, project_id)
+VALUES (3,'Project ID 3');
+INSERT INTO project_contractors (contractor_id, project_id)
+VALUES (4,'Project ID 4');
+INSERT INTO project_contractors (contractor_id, project_id)
+VALUES (5,'Project ID 5');
+INSERT INTO project_contractors (contractor_id, project_id)
+VALUES (1,'Project ID 10');
+INSERT INTO project_contractors (contractor_id, project_id)
+VALUES (2,'Project ID 9');
+INSERT INTO project_contractors (contractor_id, project_id)
+VALUES (3,'Project ID 8');
+INSERT INTO project_contractors (contractor_id, project_id)
+VALUES (4,'Project ID 7');
+INSERT INTO project_contractors (contractor_id, project_id)
+VALUES (5,'Project ID 6');
+
+INSERT INTO project_contractors (contractor_id, project_id)
+VALUES (1,'Project ID 11');
+INSERT INTO project_contractors (contractor_id, project_id)
+VALUES (2,'Project ID 12');
+INSERT INTO project_contractors (contractor_id, project_id)
+VALUES (3,'Project ID 13');
+INSERT INTO project_contractors (contractor_id, project_id)
+VALUES (4,'Project ID 14');
+INSERT INTO project_contractors (contractor_id, project_id)
+VALUES (5,'Project ID 15');
+INSERT INTO project_contractors (contractor_id, project_id)
+VALUES (1,'Project ID 16');
+INSERT INTO project_contractors (contractor_id, project_id)
+VALUES (2,'Project ID 17');
+INSERT INTO project_contractors (contractor_id, project_id)
+VALUES (3,'Project ID 18');
+INSERT INTO project_contractors (contractor_id, project_id)
+VALUES (4,'Project ID 19');

@@ -94,6 +94,19 @@ public class JdbcProjectDAO implements ProjectDAO{
         return projects;
     }
 
+    @Override
+    public List<Project> getProjectsByContractorID(int id) {
+        String sql = "SELECT *\n" +
+                "FROM projects\n" +
+                "JOIN project_contractors pc on projects.project_id = pc.project_id\n" +
+                "WHERE contractor_id = ?;";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, id);
+        List<Project> projects = new ArrayList<>();
+        while (results.next()){
+            projects.add(projectObjectMapper(results));
+        }
+        return projects;
+    }
 //    @Override
 //    public void updateProjectGroupID(int groupID, int projectID){
 //
