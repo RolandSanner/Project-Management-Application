@@ -118,6 +118,14 @@
                 autofocus
                 v-model="project.projectManagerID"
             />
+            <input
+                type="text"
+                id="groupID"
+                class="form-control"
+                placeholder="Group ID"
+                autofocus
+                v-model="project.groupID"
+            />
 
 
             <button type="submit" v-on:click="saveDocument()">Submit</button>
