@@ -1,12 +1,13 @@
 <template>
   <div class="project-list">
-    <div class="header">
-      <h1>All Projects</h1>
-    </div>
+<!--    <div class="header">-->
+<!--      <h1>All Projects</h1>-->
+<!--    </div>-->
 
     <div class="choice">
-      <h1>View Projects By:</h1>
-      <ol>
+      <ol class="picker">
+        <h1>View Projects By:</h1>
+
         <li><button @click="isHiddenID = !isHiddenID">Project ID</button></li>
         <li><button @click="isHiddenName = !isHiddenName">Project Name</button></li>
         <li><button @click="isHiddenDescription = !isHiddenDescription">Project Description</button></li>
@@ -17,7 +18,6 @@
         <li><button @click="isHiddenGroupID = !isHiddenGroupID">Project GroupID</button></li>
         <li><button @click="isHiddenContractName = !isHiddenContractName">Project Contract Name</button></li>
         <li><button @click="isHiddenFunding = !isHiddenFunding">Project Funding Name</button></li>
-
       </ol>
       <ol v-for="project in filteredList"
           v-bind:key="project.id"
@@ -221,10 +221,29 @@ created(){
 }
 </script>
 
-<style>
+<style scoped>
 
 button:active {
   background-color: red;
+}
+
+.picker {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 25%;
+  flex-grow: 1;
+}
+
+.picker button{
+  color: white;
+  background-color: #073763;
+  text-decoration: none;
+  display: flex;
+}
+h1 {
+  text-decoration: none;
 }
 
 </style>
