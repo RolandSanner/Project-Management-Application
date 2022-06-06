@@ -5,9 +5,9 @@
 <!--    </div>-->
 
     <div class="choice">
+
       <ol class="picker">
         <h1>View Projects By:</h1>
-
         <li><button @click="isHiddenID = !isHiddenID">Project ID</button></li>
         <li><button @click="isHiddenName = !isHiddenName">Project Name</button></li>
         <li><button @click="isHiddenDescription = !isHiddenDescription">Project Description</button></li>
@@ -19,115 +19,42 @@
         <li><button @click="isHiddenContractName = !isHiddenContractName">Project Contract Name</button></li>
         <li><button @click="isHiddenFunding = !isHiddenFunding">Project Funding Name</button></li>
       </ol>
-      <ol v-for="project in filteredList"
+      <div v-for="project in filteredList"
           v-bind:key="project.id"
           class="projectList">
-        <li v-if="isHiddenID===true">
+        <div v-if="isHiddenID===true">
           {{project.projectID}}
-        </li>
-        <li v-if="isHiddenName===true">
+        </div>
+        <div v-if="isHiddenName===true">
           {{project.projectName}}
-        </li>
-        <li v-if="isHiddenDescription===true">
+        </div>
+        <div v-if="isHiddenDescription===true">
           {{project.description}}
-        </li>
-        <li v-if="isHiddenLocation===true">
+        </div>
+        <div v-if="isHiddenLocation===true">
           {{project.location}}
-        </li>
-        <li v-if="isHiddenPrecinct===true">
+        </div>
+        <div v-if="isHiddenPrecinct===true">
           {{project.precinct}}
-        </li>
-        <li v-if="isHiddenMunicipality===true">
+        </div>
+        <div v-if="isHiddenMunicipality===true">
           {{project.municipality}}
-        </li>
-        <li v-if="isHiddenMangerID===true">
+        </div>
+        <div v-if="isHiddenMangerID===true">
           {{project.projectManagerID}}
-        </li>
-        <li v-if="isHiddenGroupID===true">
+        </div>
+        <div v-if="isHiddenGroupID===true">
           {{project.groupID}}
-        </li>
-        <li v-if="isHiddenContractName===true">
+        </div>
+        <div v-if="isHiddenContractName===true">
           {{project.contractName}}
-        </li>
-        <li v-if="isHiddenFunding===true">
+        </div>
+        <div v-if="isHiddenFunding===true">
           {{project.fundingSource}}
-        </li>
-      </ol>
+        </div>
+      </div>
     </div>
-<!--    <table id="projectTable">-->
-<!--      <thead>-->
-<!--        <tr>-->
-<!--          <th>Project ID</th>-->
-<!--          <th>Project Name</th>-->
-<!--          <th>Project Description</th>-->
-<!--          <th>Project Location</th>-->
-<!--          <th>Precinct</th>-->
-<!--          <th>Municipality</th>-->
-<!--          <th>Project Manager ID</th>-->
-<!--          <th>Project Group ID</th>-->
-<!--          <th>Contract Name</th>-->
-<!--          <th>Funding Source</th>-->
-<!--        </tr>-->
-<!--      </thead>-->
-<!--      <tbody>-->
-<!--        <tr>-->
-<!--          <td class="idfilter">-->
-<!--            <input type="text" id="projectIDFilter" v-model="filter.projectID"/>-->
-<!--          </td>-->
-<!--          <td class="nameFilter">-->
-<!--            <input type="text" id="projectNameFilter" v-model="filter.projectName"/>-->
-<!--          </td>-->
-<!--          <td class="descriptionFilter">-->
-<!--            <input type="text" id="projectDescriptionFilter" v-model="filter.description"/>-->
-<!--          </td>-->
-<!--          <td class="locationFilter">-->
-<!--            <input type="text" id="projectLocationFilter" v-model="filter.location"/>-->
-<!--          </td>-->
-<!--          <td class="precinctFilter">-->
-<!--            <input type="text" id="projectPrecinctFilter" v-model="filter.precinct"/>-->
-<!--          </td>-->
-<!--          <td class="municipalityFilter">-->
-<!--            <input type="text" id="projectMunicipalityFilter" v-model="filter.municipality"/>-->
-<!--          </td>-->
-<!--          <td class="managerIDFilter">-->
-<!--            <input type="text" id="projectManagerIDFilter" v-model="filter.projectManagerID"/>-->
-<!--          </td>-->
-<!--          <td class="GroupIDFilter">-->
-<!--            <input type="text" id="projectGroupIDFilter" v-model="filter.groupID"/>-->
-<!--          </td>-->
-<!--          <td class="contractNameFilter">-->
-<!--            <input type="text" id="projectContractNameFilter" v-model="filter.contractName"/>-->
-<!--          </td>-->
-<!--          <td>-->
-<!--            <input type="text" id="projectFundingSourceFilter" v-model="filter.fundingSource"/>-->
-<!--          </td>-->
-<!--&lt;!&ndash;          <td>&ndash;&gt;-->
-<!--&lt;!&ndash;            <select id="statusFilter" v-model="filter.status">&ndash;&gt;-->
-<!--&lt;!&ndash;              <option value>Show All</option>&ndash;&gt;-->
-<!--&lt;!&ndash;              <option value="In Progress">In Progress</option>&ndash;&gt;-->
-<!--&lt;!&ndash;              <option value="Completed">Completed</option>&ndash;&gt;-->
-<!--&lt;!&ndash;              <option value="Other Status">Other Status</option>&ndash;&gt;-->
-<!--&lt;!&ndash;            </select>&ndash;&gt;-->
-<!--&lt;!&ndash;          </td>&ndash;&gt;-->
-<!--          <td>&nbsp;</td>-->
-<!--        </tr>-->
-<!--        <tr v-for="project in filteredList"-->
-<!--            v-bind:key="project.id"-->
-<!--            class="projectList"-->
-<!--            >-->
-<!--          <td>{{project.projectID}}</td>-->
-<!--          <td>{{project.projectName}}</td>-->
-<!--          <td>{{project.description}}</td>-->
-<!--          <td>{{project.location}}</td>-->
-<!--          <td>{{project.precinct}}</td>-->
-<!--          <td>{{project.municipality}}</td>-->
-<!--          <td>{{project.projectManagerID}}</td>-->
-<!--          <td>{{project.groupID}}</td>-->
-<!--          <td>{{project.contractName}}</td>-->
-<!--          <td>{{project.fundingSource}}</td>-->
-<!--        </tr>-->
-<!--      </tbody>-->
-<!--    </table>-->
+
   </div>
 </template>
 
@@ -223,27 +150,122 @@ created(){
 
 <style scoped>
 
-button:active {
-  background-color: red;
-}
-
 .picker {
   list-style: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-width: 25%;
   flex-grow: 1;
 }
 
-.picker button{
-  color: white;
-  background-color: #073763;
-  text-decoration: none;
-  display: flex;
-}
 h1 {
   text-decoration: none;
 }
 
+.choice {
+  display: flex;
+  justify-content: center;
+}
+
+button:visited {
+  background-color: red;
+}
+
+.projectList li {
+  display: flex;
+  flex-direction: column;
+}
+
+.choice .picker li button{
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  color: white;
+  background-color: #073763;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  margin: 5px;
+  flex-wrap: wrap;
+}
+
+.picker {
+  max-width: 50%;
+}
 </style>
+
+
+<!--    <table id="projectTable">-->
+<!--      <thead>-->
+<!--        <tr>-->
+<!--          <th>Project ID</th>-->
+<!--          <th>Project Name</th>-->
+<!--          <th>Project Description</th>-->
+<!--          <th>Project Location</th>-->
+<!--          <th>Precinct</th>-->
+<!--          <th>Municipality</th>-->
+<!--          <th>Project Manager ID</th>-->
+<!--          <th>Project Group ID</th>-->
+<!--          <th>Contract Name</th>-->
+<!--          <th>Funding Source</th>-->
+<!--        </tr>-->
+<!--      </thead>-->
+<!--      <tbody>-->
+<!--        <tr>-->
+<!--          <td class="idfilter">-->
+<!--            <input type="text" id="projectIDFilter" v-model="filter.projectID"/>-->
+<!--          </td>-->
+<!--          <td class="nameFilter">-->
+<!--            <input type="text" id="projectNameFilter" v-model="filter.projectName"/>-->
+<!--          </td>-->
+<!--          <td class="descriptionFilter">-->
+<!--            <input type="text" id="projectDescriptionFilter" v-model="filter.description"/>-->
+<!--          </td>-->
+<!--          <td class="locationFilter">-->
+<!--            <input type="text" id="projectLocationFilter" v-model="filter.location"/>-->
+<!--          </td>-->
+<!--          <td class="precinctFilter">-->
+<!--            <input type="text" id="projectPrecinctFilter" v-model="filter.precinct"/>-->
+<!--          </td>-->
+<!--          <td class="municipalityFilter">-->
+<!--            <input type="text" id="projectMunicipalityFilter" v-model="filter.municipality"/>-->
+<!--          </td>-->
+<!--          <td class="managerIDFilter">-->
+<!--            <input type="text" id="projectManagerIDFilter" v-model="filter.projectManagerID"/>-->
+<!--          </td>-->
+<!--          <td class="GroupIDFilter">-->
+<!--            <input type="text" id="projectGroupIDFilter" v-model="filter.groupID"/>-->
+<!--          </td>-->
+<!--          <td class="contractNameFilter">-->
+<!--            <input type="text" id="projectContractNameFilter" v-model="filter.contractName"/>-->
+<!--          </td>-->
+<!--          <td>-->
+<!--            <input type="text" id="projectFundingSourceFilter" v-model="filter.fundingSource"/>-->
+<!--          </td>-->
+<!--&lt;!&ndash;          <td>&ndash;&gt;-->
+<!--&lt;!&ndash;            <select id="statusFilter" v-model="filter.status">&ndash;&gt;-->
+<!--&lt;!&ndash;              <option value>Show All</option>&ndash;&gt;-->
+<!--&lt;!&ndash;              <option value="In Progress">In Progress</option>&ndash;&gt;-->
+<!--&lt;!&ndash;              <option value="Completed">Completed</option>&ndash;&gt;-->
+<!--&lt;!&ndash;              <option value="Other Status">Other Status</option>&ndash;&gt;-->
+<!--&lt;!&ndash;            </select>&ndash;&gt;-->
+<!--&lt;!&ndash;          </td>&ndash;&gt;-->
+<!--          <td>&nbsp;</td>-->
+<!--        </tr>-->
+<!--        <tr v-for="project in filteredList"-->
+<!--            v-bind:key="project.id"-->
+<!--            class="projectList"-->
+<!--            >-->
+<!--          <td>{{project.projectID}}</td>-->
+<!--          <td>{{project.projectName}}</td>-->
+<!--          <td>{{project.description}}</td>-->
+<!--          <td>{{project.location}}</td>-->
+<!--          <td>{{project.precinct}}</td>-->
+<!--          <td>{{project.municipality}}</td>-->
+<!--          <td>{{project.projectManagerID}}</td>-->
+<!--          <td>{{project.groupID}}</td>-->
+<!--          <td>{{project.contractName}}</td>-->
+<!--          <td>{{project.fundingSource}}</td>-->
+<!--        </tr>-->
+<!--      </tbody>-->
+<!--    </table>-->
