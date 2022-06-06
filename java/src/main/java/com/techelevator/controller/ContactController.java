@@ -33,4 +33,9 @@ public class ContactController {
     @RequestMapping(path = "/contacts", method = RequestMethod.GET)
     public List<Contact> listContacts() {return contactDAO.getAllContacts();}
 
+    @RequestMapping(path = "/groups/{id}/contacts",method = RequestMethod.GET)
+    public List<Contact> listContactsbyGroupId(@PathVariable int id){
+        return contactDAO.getContactsByGroupId(id);
+    }
+
 }
