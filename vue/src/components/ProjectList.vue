@@ -80,15 +80,15 @@
                 class="projectList"
             >
               <td v-if="isHiddenID===true"><router-link :to="{ name: 'projectinfoview', params: {id:project.projectID} }" class="routerLinks">{{project.projectID}}</router-link></td>
-              <td v-if="isHiddenName===true"><router-link :to="{ name: 'projectinfoview', params: {id:project.projectID} }" class="routerLinks">{{project.projectID}}</router-link></td>
-              <td v-if="isHiddenDescription===true"><router-link :to="{ name: 'projectinfoview', params: {id:project.projectID} }" class="routerLinks">{{project.projectID}}</router-link></td>
-              <td v-if="isHiddenLocation===true"><router-link :to="{ name: 'projectinfoview' , params: {id:project.projectID}}" class="routerLinks">{{project.projectID}}</router-link></td>
-              <td v-if="isHiddenPrecinct===true"><router-link :to="{ name: 'projectinfoview', params: {id:project.projectID} }" class="routerLinks">{{project.projectID}}</router-link></td>
-              <td v-if="isHiddenMunicipality===true"><router-link :to="{ name: 'projectinfoview', params: {id:project.projectID} }" class="routerLinks">{{project.projectID}}</router-link></td>
-              <td v-if="isHiddenMangerID===true"><router-link :to="{ name: 'projectinfoview', params: {id:project.projectID} }" class="routerLinks">{{project.projectID}}</router-link></td>
-              <td v-if="isHiddenGroupID===true"><router-link :to="{ name: 'projectinfoview', params: {id:project.projectID} }" class="routerLinks">{{project.projectID}}</router-link></td>
-              <td v-if="isHiddenContractName===true"><router-link :to="{ name: 'projectinfoview', params: {id:project.projectID} }" class="routerLinks">{{project.projectID}}</router-link></td>
-              <td v-if="isHiddenFunding===true"><router-link :to="{ name: 'projectinfoview', params: {id:project.projectID} }" class="routerLinks">{{project.projectID}}</router-link></td>
+              <td v-if="isHiddenName===true"><router-link :to="{ name: 'projectinfoview', params: {id:project.projectID} }" class="routerLinks">{{project.projectName}}</router-link></td>
+              <td v-if="isHiddenDescription===true"><router-link :to="{ name: 'projectinfoview', params: {id:project.projectID} }" class="routerLinks">{{project.description}}</router-link></td>
+              <td v-if="isHiddenLocation===true"><router-link :to="{ name: 'projectinfoview' , params: {id:project.projectID}}" class="routerLinks">{{project.fundingSource}}</router-link></td>
+              <td v-if="isHiddenPrecinct===true"><router-link :to="{ name: 'projectinfoview', params: {id:project.projectID} }" class="routerLinks">{{project.precinct}}</router-link></td>
+              <td v-if="isHiddenMunicipality===true"><router-link :to="{ name: 'projectinfoview', params: {id:project.projectID} }" class="routerLinks">{{project.municipality}}</router-link></td>
+              <td v-if="isHiddenMangerID===true"><router-link :to="{ name: 'projectinfoview', params: {id:project.projectID} }" class="routerLinks">{{project.location}}</router-link></td>
+              <td v-if="isHiddenGroupID===true"><router-link :to="{ name: 'projectinfoview', params: {id:project.projectID} }" class="routerLinks">{{project.contractName}}</router-link></td>
+              <td v-if="isHiddenContractName===true"><router-link :to="{ name: 'projectinfoview', params: {id:project.projectID} }" class="routerLinks">{{project.projectManagerID}}</router-link></td>
+              <td v-if="isHiddenFunding===true"><router-link :to="{ name: 'projectinfoview', params: {id:project.projectID} }" class="routerLinks">{{project.groupID}}</router-link></td>
             </tr>
           </tbody>
       </table>
@@ -262,86 +262,15 @@ table {
   font-size: 1rem;
   color: #073763;
   background-color: white;
+  padding: 1px;
+  margin: 1px;
 }
 td {
   border: none;
-  margin: 2px;
-  padding: 2px;
+  padding-top: 5px;
+}
+
+tbody tr {
+  border-bottom: 2px solid black;
 }
 </style>
-
-
-<!--    <table id="projectTable">-->
-<!--      <thead>-->
-<!--        <tr>-->
-<!--          <th>Project ID</th>-->
-<!--          <th>Project Name</th>-->
-<!--          <th>Project Description</th>-->
-<!--          <th>Project Location</th>-->
-<!--          <th>Precinct</th>-->
-<!--          <th>Municipality</th>-->
-<!--          <th>Project Manager ID</th>-->
-<!--          <th>Project Group ID</th>-->
-<!--          <th>Contract Name</th>-->
-<!--          <th>Funding Source</th>-->
-<!--        </tr>-->
-<!--      </thead>-->
-<!--      <tbody>-->
-<!--        <tr>-->
-<!--          <td class="idfilter">-->
-<!--            <input type="text" id="projectIDFilter" v-model="filter.projectID"/>-->
-<!--          </td>-->
-<!--          <td class="nameFilter">-->
-<!--            <input type="text" id="projectNameFilter" v-model="filter.projectName"/>-->
-<!--          </td>-->
-<!--          <td class="descriptionFilter">-->
-<!--            <input type="text" id="projectDescriptionFilter" v-model="filter.description"/>-->
-<!--          </td>-->
-<!--          <td class="locationFilter">-->
-<!--            <input type="text" id="projectLocationFilter" v-model="filter.location"/>-->
-<!--          </td>-->
-<!--          <td class="precinctFilter">-->
-<!--            <input type="text" id="projectPrecinctFilter" v-model="filter.precinct"/>-->
-<!--          </td>-->
-<!--          <td class="municipalityFilter">-->
-<!--            <input type="text" id="projectMunicipalityFilter" v-model="filter.municipality"/>-->
-<!--          </td>-->
-<!--          <td class="managerIDFilter">-->
-<!--            <input type="text" id="projectManagerIDFilter" v-model="filter.projectManagerID"/>-->
-<!--          </td>-->
-<!--          <td class="GroupIDFilter">-->
-<!--            <input type="text" id="projectGroupIDFilter" v-model="filter.groupID"/>-->
-<!--          </td>-->
-<!--          <td class="contractNameFilter">-->
-<!--            <input type="text" id="projectContractNameFilter" v-model="filter.contractName"/>-->
-<!--          </td>-->
-<!--          <td>-->
-<!--            <input type="text" id="projectFundingSourceFilter" v-model="filter.fundingSource"/>-->
-<!--          </td>-->
-<!--&lt;!&ndash;          <td>&ndash;&gt;-->
-<!--&lt;!&ndash;            <select id="statusFilter" v-model="filter.status">&ndash;&gt;-->
-<!--&lt;!&ndash;              <option value>Show All</option>&ndash;&gt;-->
-<!--&lt;!&ndash;              <option value="In Progress">In Progress</option>&ndash;&gt;-->
-<!--&lt;!&ndash;              <option value="Completed">Completed</option>&ndash;&gt;-->
-<!--&lt;!&ndash;              <option value="Other Status">Other Status</option>&ndash;&gt;-->
-<!--&lt;!&ndash;            </select>&ndash;&gt;-->
-<!--&lt;!&ndash;          </td>&ndash;&gt;-->
-<!--          <td>&nbsp;</td>-->
-<!--        </tr>-->
-<!--        <tr v-for="project in filteredList"-->
-<!--            v-bind:key="project.id"-->
-<!--            class="projectList"-->
-<!--            >-->
-<!--          <td>{{project.projectID}}</td>-->
-<!--          <td>{{project.projectName}}</td>-->
-<!--          <td>{{project.description}}</td>-->
-<!--          <td>{{project.location}}</td>-->
-<!--          <td>{{project.precinct}}</td>-->
-<!--          <td>{{project.municipality}}</td>-->
-<!--          <td>{{project.projectManagerID}}</td>-->
-<!--          <td>{{project.groupID}}</td>-->
-<!--          <td>{{project.contractName}}</td>-->
-<!--          <td>{{project.fundingSource}}</td>-->
-<!--        </tr>-->
-<!--      </tbody>-->
-<!--    </table>-->
