@@ -73,4 +73,15 @@ public class JdbcContactDAO implements ContactDAO {
         }
         return contacts;
     }
+
+    @Override
+    public List<Contact> getContactsByGroupId(int id) {
+        String sql="SELECT* FROM contacts A  JOIN group_contacts B ON A.contact_id=B.contact_id  WHERE B.group_id=?";
+        SqlRowSet results=this.jdbcTemplate.queryForRowSet(sql,id);
+        List<Contact> contacts=new ArrayList<>();
+        while (results.next()){
+            contacts.add(contactObjectMapper(results));
+        }
+        return contacts;
+    }
 }

@@ -17,4 +17,6 @@ public interface ContactDAO {
 
     List<Contact> getAllContacts();
 
+    List<Contact> getContactsByGroupId(int id);
+
 }

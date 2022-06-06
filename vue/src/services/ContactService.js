@@ -16,4 +16,8 @@ export default{
     listContacts(){
         return http.get('/contacts')
     },
+
+    listContactsByGroupId(id){
+        return http.get(`/groups/${id}/contacts`)
+    }
 }
