@@ -3,11 +3,12 @@
     <!--    <div class="header">-->
     <!--      <h1>All Projects</h1>-->
     <!--    </div>-->
-
+    <div class="headerlink">
+      <li class="header">View Project By:</li>
+    </div>
     <div class="choice">
-
       <ol class="picker">
-        <li class="header">View Project By:</li>
+
         <li>
           <button @click="isHiddenID = !isHiddenID" :style="isHiddenID ? {'background-color': 'white', 'color': '#737363'} : null">Project ID</button>
         </li>
@@ -73,21 +74,21 @@
                   </td>
       </ol>
       <table>
-            <tbody class="listOfProjects">
+            <tbody id="listOfProjects">
             <tr v-for="project in filteredList"
                 v-bind:key="project.id"
                 class="projectList"
             >
-              <td v-if="isHiddenID===true"><router-link :to="{ name: 'projectinfoview' }" class="routerLinks">{{project.projectID}}</router-link></td>
-              <td v-if="isHiddenName===true"><router-link :to="{ name: 'projectinfoview' }" class="routerLinks">{{project.projectID}}</router-link></td>
-              <td v-if="isHiddenDescription===true"><router-link :to="{ name: 'projectinfoview' }" class="routerLinks">{{project.projectID}}</router-link></td>
-              <td v-if="isHiddenLocation===true"><router-link :to="{ name: 'projectinfoview' }" class="routerLinks">{{project.projectID}}</router-link></td>
-              <td v-if="isHiddenPrecinct===true"><router-link :to="{ name: 'projectinfoview' }" class="routerLinks">{{project.projectID}}</router-link></td>
-              <td v-if="isHiddenMunicipality===true"><router-link :to="{ name: 'projectinfoview' }" class="routerLinks">{{project.projectID}}</router-link></td>
-              <td v-if="isHiddenMangerID===true"><router-link :to="{ name: 'projectinfoview' }" class="routerLinks">{{project.projectID}}</router-link></td>
-              <td v-if="isHiddenGroupID===true"><router-link :to="{ name: 'projectinfoview' }" class="routerLinks">{{project.projectID}}</router-link></td>
-              <td v-if="isHiddenContractName===true"><router-link :to="{ name: 'projectinfoview' }" class="routerLinks">{{project.projectID}}</router-link></td>
-              <td v-if="isHiddenFunding===true"><router-link :to="{ name: 'projectinfoview' }" class="routerLinks">{{project.projectID}}</router-link></td>
+              <td v-if="isHiddenID===true"><router-link :to="{ name: 'projectinfoview', params: {id:project.projectID} }" class="routerLinks">{{project.projectID}}</router-link></td>
+              <td v-if="isHiddenName===true"><router-link :to="{ name: 'projectinfoview', params: {id:project.projectID} }" class="routerLinks">{{project.projectID}}</router-link></td>
+              <td v-if="isHiddenDescription===true"><router-link :to="{ name: 'projectinfoview', params: {id:project.projectID} }" class="routerLinks">{{project.projectID}}</router-link></td>
+              <td v-if="isHiddenLocation===true"><router-link :to="{ name: 'projectinfoview' , params: {id:project.projectID}}" class="routerLinks">{{project.projectID}}</router-link></td>
+              <td v-if="isHiddenPrecinct===true"><router-link :to="{ name: 'projectinfoview', params: {id:project.projectID} }" class="routerLinks">{{project.projectID}}</router-link></td>
+              <td v-if="isHiddenMunicipality===true"><router-link :to="{ name: 'projectinfoview', params: {id:project.projectID} }" class="routerLinks">{{project.projectID}}</router-link></td>
+              <td v-if="isHiddenMangerID===true"><router-link :to="{ name: 'projectinfoview', params: {id:project.projectID} }" class="routerLinks">{{project.projectID}}</router-link></td>
+              <td v-if="isHiddenGroupID===true"><router-link :to="{ name: 'projectinfoview', params: {id:project.projectID} }" class="routerLinks">{{project.projectID}}</router-link></td>
+              <td v-if="isHiddenContractName===true"><router-link :to="{ name: 'projectinfoview', params: {id:project.projectID} }" class="routerLinks">{{project.projectID}}</router-link></td>
+              <td v-if="isHiddenFunding===true"><router-link :to="{ name: 'projectinfoview', params: {id:project.projectID} }" class="routerLinks">{{project.projectID}}</router-link></td>
             </tr>
           </tbody>
       </table>
@@ -190,8 +191,13 @@ export default {
   list-style: none;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   flex-grow: 1;
+}
+
+.headerlink {
+  display: flex;
+  justify-content: center;
 }
 
 .choice {
@@ -223,6 +229,7 @@ export default {
   border-radius: 5px;
   margin: 5px;
   flex-wrap: wrap;
+  max-width: 50%;
 }
 
 .picker {
@@ -242,10 +249,12 @@ table {
   border: none;
   display: flex;
 }
-tbody {
+#listOfProjects {
   display: flex;
   align-content: center;
-  justify-content: center;
+  justify-content: flex-start;
+  align-content: flex-start;
+  flex-wrap: wrap;
   flex-direction: column;
 }
 
