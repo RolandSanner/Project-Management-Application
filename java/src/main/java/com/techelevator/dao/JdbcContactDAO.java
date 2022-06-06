@@ -1,6 +1,7 @@
 package com.techelevator.dao;
 
 import com.techelevator.model.Contact;
+import com.techelevator.model.Project;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
@@ -38,7 +39,6 @@ public class JdbcContactDAO implements ContactDAO {
 
         return contact;
     }
-
 
     @Override
     public List<Contact> listMyProjects(int id) {

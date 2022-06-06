@@ -14,4 +14,6 @@ public interface ProjectDAO {
 
 //    Project updateProjectGroupId();
 
+    List<Project> getProjectsByGroupId(int id);
+
 }

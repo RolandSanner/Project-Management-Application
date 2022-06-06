@@ -59,7 +59,7 @@
             class="form-control form-control-dropper"
             name="state"
             autofocus
-            v-model="project.Precinct"
+            v-model="project.precinct"
           >
             <option value="" disabled selected>Precinct</option>
             <option value=1>1</option>
@@ -122,14 +122,14 @@
                 type="text"
                 id="groupID"
                 class="form-control"
-                placeholder="Group ID"
+                placeholder="Project Group Id"
                 autofocus
                 v-model="project.groupID"
             />
 
 
             <button type="submit" v-on:click="saveDocument()">Submit</button>
-            <button type="cancel" class="cancel" v-on:click="cancel()">Cancel</button>
+            <button type="reset" class="cancel" v-on:click="cancel()">Cancel</button>
         </form>
     </div>
     </div>

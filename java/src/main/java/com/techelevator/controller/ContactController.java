@@ -2,6 +2,7 @@ package com.techelevator.controller;
 
 import com.techelevator.dao.ContactDAO;
 import com.techelevator.model.Contact;
+import com.techelevator.model.Project;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +18,7 @@ public class ContactController {
     ContactDAO contactDAO;
 
 
-    // MANAGER REQUEST MAPPING
+    // CONTACT REQUEST MAPPING
 
     @RequestMapping(path = "/manager/{id}", method = RequestMethod.GET)
     public List<Contact> listManagerProjects(@PathVariable int id) {
@@ -30,7 +31,6 @@ public class ContactController {
     }
 
     @RequestMapping(path = "/contacts", method = RequestMethod.GET)
-    public List<Contact> listContacts() {
-        return contactDAO.getAllContacts();
-    }
+    public List<Contact> listContacts() {return contactDAO.getAllContacts();}
+
 }

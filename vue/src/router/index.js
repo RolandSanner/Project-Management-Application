@@ -12,6 +12,8 @@ import NewContact from '../views/NewContact.vue'
 import UserInfo from '../views/UserInfo.vue'
 import ProjectInfoView from '../views/ProjectInfoView.vue'
 import ContactListView from '../views/ContactListView.vue'
+import GroupListView from '../views/GroupListView.vue'
+import GroupInfoView from '../views/GroupInfoView.vue'
 
 Vue.use(Router)
 
@@ -106,8 +108,24 @@ const router = new Router({
     },
     {
       path:"/contacts",
-      name:"contact-list",
+      name:"allContacts",
       component:ContactListView,
+      meta:{
+        requiresAuth:false
+      }
+    },
+    {
+      path:"/groups",
+      name:"group-list",
+      component:GroupListView,
+      meta:{
+        requiresAuth:true
+      }
+    },
+    {
+      path:"/groups/:id",
+      name: "groupinfoview",
+      component: GroupInfoView,
       meta:{
         requiresAuth:true
       }

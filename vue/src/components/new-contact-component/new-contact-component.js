@@ -12,11 +12,11 @@ export default {
 				phoneNumber: '',
 				contactRole: '',
 				companyName: '',
-				street: '',
-				city: '',
-				state: '',
-				zip: '',
-				industry: ''
+				contactStreet: '',
+				contactCity: '',
+				contactState: '',
+				contactZip: '',
+				contactIndustry: ''
 			}
 		}
 	},

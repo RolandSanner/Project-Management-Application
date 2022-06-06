@@ -29,7 +29,7 @@ created(){
 .user{
     margin-left: 50px;
     margin-bottom: 10px;
-    font-size: 24px;
+    font-size: 24=px;
     border-bottom: 1px solid #f2f2f2;
     padding: 10px 20px;
 }

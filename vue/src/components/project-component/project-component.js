@@ -28,7 +28,7 @@ export default {
 		saveDocument() {
 			projectService.create(this.project)
 			.then(response => {
-				if(response.status === 200){
+				if(response.status == 201){
 					this.$router.push("/")
 					this.clearNewProject();
 				}
@@ -51,7 +51,7 @@ export default {
 				location: '',
 				contractName: '',
 				projectManagerID: '',
-				groupID: ''
+				groupID: '',
 			}
 		}
 	}

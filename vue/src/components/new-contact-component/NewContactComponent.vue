@@ -74,7 +74,7 @@
             class="form-control"
             placeholder="Street Address"
             autofocus
-            v-model="contact.street"
+            v-model="contact.contactStreet"
           />
           <input
             type="text"
@@ -82,7 +82,7 @@
             class="form-control"
             placeholder="City"
             autofocus
-            v-model="contact.city"
+            v-model="contact.contactCity"
           />
         </div>
         <div class="address2">
@@ -91,7 +91,7 @@
             class="form-control form-control-dropper"
             name="state"
             autofocus
-            v-model="contact.state"
+            v-model="contact.contactState"
           >
             <option value="" disabled selected>State</option>
             <option value="AL">Alabama</option>
@@ -153,7 +153,7 @@
             class="form-control"
             placeholder="Zip "
             autofocus
-            v-model="contact.zip"
+            v-model="contact.contactZip"
           />
         </div>
         <select
@@ -161,7 +161,7 @@
           class="form-control-dropper"
           name="contact-industry"
           autofocus
-          v-model="contact.industry"
+          v-model="contact.contactIndustry"
         >
           <option value="" disabled selected>Contact Industry</option>
           <option value="design">Design</option>
@@ -179,7 +179,7 @@
         </select>
 
         <button type="submit" v-on:click="saveDocument()">Submit</button>
-        <button type="cancel" class="cancel" v-on:click="cancel()">
+        <button type="reset" class="cancel" v-on:click="cancel()">
           Cancel
         </button>
       </form>

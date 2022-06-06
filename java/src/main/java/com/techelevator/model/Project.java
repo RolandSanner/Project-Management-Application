@@ -10,12 +10,21 @@ public class Project {
     private String location;
     private String description;
     private long projectManagerID;
+    private String projectManagerName;
     private long groupID;
     private String fundingSource;
     private String contractName;
 
     public String getProjectID() {
         return projectID;
+    }
+
+    public String getProjectManagerName() {
+        return projectManagerName;
+    }
+
+    public void setProjectManagerName(String projectManagerName) {
+        this.projectManagerName = projectManagerName;
     }
 
     public void setProjectID(String projectID) {

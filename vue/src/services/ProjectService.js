@@ -15,5 +15,9 @@ export default{
 
     create(project) {
         return http.post('/project/new', project)
+    },
+
+    getProjectsByGroupId(id){
+        return http.get(`/groups/${id}/projects`)
     }
 }
