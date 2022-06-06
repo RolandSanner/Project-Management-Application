@@ -18,6 +18,7 @@ export default {
 				location: '',
 				contractName: '',
 				projectManagerID: '',
+				groupID: ''
 			}
 		}
 	},
@@ -27,7 +28,7 @@ export default {
 		saveDocument() {
 			projectService.create(this.project)
 			.then(response => {
-				if(response.status === 200){
+				if(response.status == 201){
 					this.$router.push("/")
 					this.clearNewProject();
 				}
@@ -49,8 +50,8 @@ export default {
 				municipality: '',
 				location: '',
 				contractName: '',
-				projectManagerID: 1,
-				groupID: 1,
+				projectManagerID: '',
+				groupID: '',
 			}
 		}
 	}

@@ -9,6 +9,7 @@
 
 <script>
   import NavigationBar from "./components/navigation-bar/NavigationBar.vue"
+
   export default {
     components: {
       NavigationBar

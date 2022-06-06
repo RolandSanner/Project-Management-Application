@@ -336,7 +336,7 @@ td{
 }
 thead,th{
      color: white;
-    background-color: #073763;
+     background-color: #073763;
 }
 th{
     padding: 8px;
