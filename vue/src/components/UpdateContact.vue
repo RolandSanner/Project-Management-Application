@@ -1,7 +1,7 @@
 <template>
   <div id="new-contact-component">
     <div id="new-contact">
-      <form class="new-contact">
+      <form class="new-contact" @submit.prevent>
         <h1 class="h3 mb-3 font-weight-normal">Update Contact</h1>
 
 
