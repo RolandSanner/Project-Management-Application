@@ -2,7 +2,7 @@
   <div id="container">
       <h1>Select Group to Assign Contact</h1>
       <div v-for="group in groups" v-bind:key="group.groupID" class="group-option">
-          <button v-on:click="fuckthis=false">
+          <button >
           {{group.groupName}}
           </button>
       </div>
@@ -21,7 +21,6 @@ data(){
             contact_id:0,
             group_id:0
             },
-            fuckthis:true
     }
 },
 created(){
