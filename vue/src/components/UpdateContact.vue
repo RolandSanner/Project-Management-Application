@@ -1,7 +1,7 @@
 <template>
   <div id="new-contact-component">
     <div id="new-contact">
-      <form class="new-contact">
+      <form class="new-contact" @submit.prevent>
         <h1 class="h3 mb-3 font-weight-normal">Update Contact</h1>
 
 
@@ -182,6 +182,7 @@ export default {
   data() {
     return {
       contact: {
+        contactID: '',
         firstName: '',
         lastName: '',
         email: '',
@@ -206,7 +207,7 @@ export default {
     updateContact() {
       ContactService.updateContact(this.contact)
           .then(response => {
-            if(response.status === 201){
+            if(response.status < 300){
               this.$router.push("/")
             }
           })
@@ -244,7 +245,7 @@ export default {
 #new-contact h1 {
   display: flex;
   justify-content: center;
-  padding: 25px 25px 25px 25px;
+  padding: 25px;
   font-size: 2.3rem;
   text-decoration: none;
 
@@ -259,7 +260,7 @@ export default {
 .form-control {
   display: flex;
   justify-content: center;
-  border-radius: 5px;
+  border-radius: 3px;
   box-shadow: 0 0 4px #073763;
   background-color: white;
   font-size: 1.5rem;
@@ -271,11 +272,27 @@ export default {
   width: 300px;
 }
 
+.form-control-dropper {
+  display: flex;
+  color: #313131;
+  background-color: white;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+  cursor: pointer;
+  padding-left: 5px;
+  width: 300px;
+}
+
 .form-control:focus{
   background: #07376335;
 }
 
-
+.form-control:focus{
+  background: #07376335;
+}
 form button {
   background-color: #073763;
   color: white;

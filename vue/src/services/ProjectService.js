@@ -21,9 +21,6 @@ export default{
         return http.get(`/groups/${id}/projects`)
     },
     updateProject(project){
-        return http.put('/projects/update', project)
-    },
-    getProjectsByContractorId(id){
-        return http.get(`/contractor/${id}/projects`)
+        return http.put('/project/update', project)
     }
 }
