@@ -9,7 +9,7 @@
 
         <li>
           <button @click="isHiddenID = !isHiddenID"
-                  :style="isHiddenID ? {'background-color': 'white', 'color': '#737363'} : null">Project ID
+                  :style="isHiddenID ? {'background-color': 'white', 'color': '#073763'} : null">Project ID
           </button>
         </li>
         <td class="idfilter">
@@ -17,7 +17,7 @@
         </td>
         <li>
           <button @click="isHiddenName = !isHiddenName"
-                  :style="isHiddenName ? {'background-color': 'white', 'color': '#737363'} : null">Project Name
+                  :style="isHiddenName ? {'background-color': 'white', 'color': '#073763'} : null">Project Name
           </button>
         </li>
         <td class="nameFilter">
@@ -25,7 +25,7 @@
         </td>
         <li>
           <button @click="isHiddenDescription = !isHiddenDescription"
-                  :style="isHiddenDescription ? {'background-color': 'white', 'color': '#737363'} : null">Project
+                  :style="isHiddenDescription ? {'background-color': 'white', 'color': '#073763'} : null">Project
             Description
           </button>
         </li>
@@ -34,7 +34,7 @@
         </td>
         <li>
           <button @click="isHiddenLocation = !isHiddenLocation"
-                  :style="isHiddenLocation ? {'background-color': 'white', 'color': '#737363'} : null">Project Location
+                  :style="isHiddenLocation ? {'background-color': 'white', 'color': '#073763'} : null">Project Location
           </button>
         </li>
         <td class="locationFilter">
@@ -42,7 +42,7 @@
         </td>
         <li>
           <button @click="isHiddenPrecinct = !isHiddenPrecinct"
-                  :style="isHiddenPrecinct ? {'background-color': 'white', 'color': '#737363'} : null">Project Precinct
+                  :style="isHiddenPrecinct ? {'background-color': 'white', 'color': '#073763'} : null">Project Precinct
           </button>
         </li>
         <td class="precinctFilter">
@@ -50,7 +50,7 @@
         </td>
         <li>
           <button @click="isHiddenMunicipality = !isHiddenMunicipality"
-                  :style="isHiddenMunicipality ? {'background-color': 'white', 'color': '#737363'} : null">Project
+                  :style="isHiddenMunicipality ? {'background-color': 'white', 'color': '#073763'} : null">Project
             Municipality
           </button>
         </li>
@@ -60,7 +60,7 @@
 
         <li>
           <button @click="isHiddenMangerID = !isHiddenMangerID"
-                  :style="isHiddenMangerID ? {'background-color': 'white', 'color': '#737363'} : null">Project MangerID
+                  :style="isHiddenMangerID ? {'background-color': 'white', 'color': '#073763'} : null">Project MangerID
           </button>
         </li>
         <td class="managerIDFilter">
@@ -69,7 +69,7 @@
 
         <li>
           <button @click="isHiddenGroupID = !isHiddenGroupID"
-                  :style="isHiddenGroupID ? {'background-color': 'white', 'color': '#737363'} : null">Project GroupID
+                  :style="isHiddenGroupID ? {'background-color': 'white', 'color': '#073763'} : null">Project GroupID
           </button>
         </li>
         <td class="GroupIDFilter">
@@ -78,7 +78,7 @@
 
         <li>
           <button @click="isHiddenContractName = !isHiddenContractName"
-                  :style="isHiddenContractName ? {'background-color': 'white', 'color': '#737363'} : null">Project
+                  :style="isHiddenContractName ? {'background-color': 'white', 'color': '#073763'} : null">Project
             Contract Name
           </button>
         </li>
@@ -87,7 +87,7 @@
         </td>
         <li>
           <button @click="isHiddenFunding = !isHiddenFunding"
-                  :style="isHiddenFunding ? {'background-color': 'white', 'color': '#737363'} : null">Project Funding
+                  :style="isHiddenFunding ? {'color': '#073763', 'background-color': 'white'} : null">Project Funding
             Name
           </button>
         </li>
