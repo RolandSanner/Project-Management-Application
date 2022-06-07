@@ -172,7 +172,6 @@ export default {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: #fff;
 }
 
 #project-component-main {
@@ -187,7 +186,7 @@ export default {
   height: auto;
   padding: 30px;
   border-radius: 5px;
-  box-shadow: 0px 0px 4px #073763;
+  box-shadow: 0 0 4px #073763;
   margin-top: 5%;
   min-width: 350px;
   max-width: 70%;
@@ -196,7 +195,7 @@ export default {
 #project-component  h1 {
   display: flex;
   justify-content: center;
-  padding: 25px 25px 25px 25px;
+  padding: 25px;
   font-size: 2.3rem;
   text-decoration: none;
 

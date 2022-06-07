@@ -20,7 +20,7 @@ export default{
         return http.get(`/groups/${id}/contacts`)
     },
     updateContact(contact){
-        return http.put('/contacts/update', contact)
+        return http.put('/contact/update', contact)
     },
     getContactByID(id){
         return http.put('/contacts/id', id)

@@ -21,6 +21,6 @@ export default{
         return http.get(`/groups/${id}/projects`)
     },
     updateProject(project){
-        return http.put('/projects/update', project)
+        return http.put('/project/update', project)
     }
 }

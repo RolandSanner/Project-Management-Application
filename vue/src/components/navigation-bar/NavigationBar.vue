@@ -6,7 +6,9 @@
     <div class="nav">
 
         <div class="logo">
-           <img src="./../../assests/logoBlue.png" alt="blue logo" height=55 width=auto>
+          <router-link :to="{ name: 'home'}">
+            <img src="./../../assests/logoBlue.png" alt="blue logo" height=55 width=auto>
+          </router-link>
         </div>
         <div class="navLinks">
             <router-link v-bind:to="{ name: 'home' }" class="link">Home</router-link>

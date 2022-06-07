@@ -116,7 +116,7 @@ public class JdbcContactDAO implements ContactDAO {
                 "WHERE contact_id = ?;";
 
         SqlRowSet results=this.jdbcTemplate.queryForRowSet(sql,id);
-        Contact contact=new Contact();
+        Contact contact=null;
          if(results.next()){
             contact = contactObjectMapper(results);
         }
