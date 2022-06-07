@@ -14,6 +14,7 @@ import ProjectInfoView from '../views/ProjectInfoView.vue'
 import ContactListView from '../views/ContactListView.vue'
 import GroupListView from '../views/GroupListView.vue'
 import GroupInfoView from '../views/GroupInfoView.vue'
+import UpdateProject from "@/components/UpdateProject";
 
 Vue.use(Router)
 
@@ -129,6 +130,11 @@ const router = new Router({
       meta:{
         requiresAuth:true
       }
+    },
+    {
+      path: "/projects/update/:id",
+      name: "UpdateProject",
+      component: UpdateProject
     }
   ]
 })
@@ -147,3 +153,4 @@ router.beforeEach((to, from, next) => {
 });
 
 export default router;
+
