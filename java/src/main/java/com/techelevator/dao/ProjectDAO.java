@@ -16,4 +16,5 @@ public interface ProjectDAO {
 
     List<Project> getProjectsByGroupId(int id);
 
+    void deleteProject(String projectId);
 }

@@ -84,4 +84,28 @@ public class JdbcContactDAO implements ContactDAO {
         }
         return contacts;
     }
+
+    @Override
+    public List<Contact> getContactsByProjectId(String id) {
+        String sql="SELECT* FROM contacts A JOIN project_contractors B ON A.contact_id=B.contractor_id WHERE B.project_id=?";
+        SqlRowSet results=this.jdbcTemplate.queryForRowSet(sql,id);
+        List<Contact> contacts=new ArrayList<>();
+        while (results.next()){
+            contacts.add(contactObjectMapper(results));
+        }
+        return contacts;
+    }
+
+    @Override
+    public void updateContact(Contact contact) {
+        String sql="UPDATE contacts SET firstname=?,lastname=?,phonenumber=?,email=?,municipality=?,contact_role=?,companyname=?,industry=?,contact_street=?,contact_city=?,contact_state=?,contact_zip=? " +
+                "WHERE contact_id=?";
+        jdbcTemplate.update(sql,contact.getFirstName(),contact.getLastName(),contact.getPhoneNumber(),contact.getEmail(),contact.getMunicipality(),contact.getContactRole(),contact.getCompanyName(),contact.getIndustry(),contact.getContactStreet(),contact.getContactCity(),contact.getContactState(),contact.getContactZip(),contact.getContactID());
+    }
+
+    @Override
+    public void deleteContact(int contactId) {
+        String sql="DELETE FROM contacts WHERE contact_id=?";
+        jdbcTemplate.update(sql,contactId);
+    }
 }
