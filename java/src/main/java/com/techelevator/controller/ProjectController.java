@@ -36,14 +36,24 @@ public class ProjectController {
        projectDAO.addProject(project);
     }
 
-//    @RequestMapping(path="project/{groupId}/updateGroup", method = RequestMethod.PUT)
-//    public void updateProjectGroupId(@PathVariable int id, @RequestBody Project project){
-//        project.setGroupID(id);
-//        projectDAO.updateProjectGroupId();
-//    }
 
     @RequestMapping(path = "groups/{id}/projects", method = RequestMethod.GET)
     public List<Project> getProjectsByGroupId(@PathVariable int id){
         return projectDAO.getProjectsByGroupId(id);
     }
+
+
+    @RequestMapping(path = "contractor/{id}/projects", method = RequestMethod.GET)
+    public List<Project> getProjectsByContractorID(@PathVariable int id){return projectDAO.getProjectsByContractorID(id);}
+
+    @RequestMapping(path = "project/update",method = RequestMethod.PUT)
+    public void updateProject(@RequestBody Project project){
+        projectDAO.updateProject(project);
+    }
+
+    @RequestMapping(path = "project/{id}/delete",method = RequestMethod.DELETE)
+    public void deleteProject(@PathVariable String id){
+        projectDAO.deleteProject(id);
+    }
+
 }

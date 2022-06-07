@@ -12,8 +12,13 @@ public interface ProjectDAO {
 
     void addProject(Project project);
 
-//    Project updateProjectGroupId();
+    void updateProject(Project project);
 
     List<Project> getProjectsByGroupId(int id);
+
+
+    List<Project> getProjectsByContractorID(int id);
+
+    void deleteProject(String projectId);
 
 }

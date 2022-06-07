@@ -38,4 +38,22 @@ public class ContactController {
         return contactDAO.getContactsByGroupId(id);
     }
 
+    @RequestMapping(path = "project/{id}/contacts",method = RequestMethod.GET)
+    public List<Contact> listContractorsByProjectId(@PathVariable String id){
+        return contactDAO.getContactsByProjectId(id);
+    }
+
+    @RequestMapping(path = "/contact/update",method = RequestMethod.PUT)
+    public void updateContact(@RequestBody Contact contact){
+        contactDAO.updateContact(contact);
+    }
+
+    @RequestMapping(path = "/contact/{id}/delete",method = RequestMethod.DELETE)
+    public void deleteContact(@PathVariable int id){
+        contactDAO.deleteContact(id);
+    }
+
+    @RequestMapping(path = "/contact/{id}", method = RequestMethod.GET)
+    public Contact getContactByID(@PathVariable int id){return contactDAO.getContactByID(id);
+    }
 }

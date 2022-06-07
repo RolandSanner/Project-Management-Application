@@ -31,6 +31,16 @@ public class GroupController {
         groupDAO.addNewGroup(group);
     }
 
+    @RequestMapping(path = "/groups/update",method = RequestMethod.PUT)
+    public void updateGroup(@RequestBody Group group){
+        groupDAO.updateGroup(group);
+    }
+
+    @RequestMapping(path = "groups/{id}/delete",method = RequestMethod.DELETE)
+    public void deleteGroup(@PathVariable int id){
+        groupDAO.deleteGroup(id);
+    }
+
 
 
 

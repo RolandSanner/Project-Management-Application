@@ -19,5 +19,8 @@ export default{
 
     getProjectsByGroupId(id){
         return http.get(`/groups/${id}/projects`)
+    },
+    updateProject(project){
+        return http.put('/projects/update', project)
     }
 }

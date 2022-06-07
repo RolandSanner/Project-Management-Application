@@ -19,4 +19,11 @@ public interface ContactDAO {
 
     List<Contact> getContactsByGroupId(int id);
 
+    List<Contact> getContactsByProjectId(String id);
+
+    void updateContact(Contact contact);
+
+    void deleteContact(int contactId);
+
+    Contact getContactByID(int id);
 }
