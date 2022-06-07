@@ -23,6 +23,6 @@ export default{
         return http.put('/contact/update', contact)
     },
     getContactByID(id){
-        return http.put(`/contact/${id}`)
+        return http.get(`/contact/${id}`)
     }
 }
