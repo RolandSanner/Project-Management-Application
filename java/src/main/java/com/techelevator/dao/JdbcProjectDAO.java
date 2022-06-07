@@ -106,7 +106,6 @@ public class JdbcProjectDAO implements ProjectDAO{
     }
 
     @Override
-<<<<<<< HEAD
     public List<Project> getProjectsByContractorID(int id) {
         String sql = "SELECT *\n" +
                 "FROM projects\n" +
@@ -129,12 +128,10 @@ public class JdbcProjectDAO implements ProjectDAO{
 //
 //    }
 
-=======
+
     public void deleteProject(String projectId) {
         String sql="DELETE FROM projects WHERE project_id=?";
         jdbcTemplate.update(sql,projectId);
     }
->>>>>>> main
-
 
 }

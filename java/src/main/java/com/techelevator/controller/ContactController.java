@@ -52,4 +52,8 @@ public class ContactController {
     public void deleteContact(@PathVariable int id){
         contactDAO.deleteContact(id);
     }
+
+    @RequestMapping(path = "/contact/{id}", method = RequestMethod.GET)
+    public Contact getContactByID(@PathVariable int id){return contactDAO.getContactByID(id);
+    }
 }

@@ -16,9 +16,9 @@ public interface ProjectDAO {
 
     List<Project> getProjectsByGroupId(int id);
 
-<<<<<<< HEAD
+
     List<Project> getProjectsByContractorID(int id);
-=======
+
     void deleteProject(String projectId);
->>>>>>> main
+
 }

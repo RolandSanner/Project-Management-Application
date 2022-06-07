@@ -42,10 +42,10 @@ public class ProjectController {
         return projectDAO.getProjectsByGroupId(id);
     }
 
-<<<<<<< HEAD
+
     @RequestMapping(path = "contractor/{id}/projects", method = RequestMethod.GET)
     public List<Project> getProjectsByContractorID(@PathVariable int id){return projectDAO.getProjectsByContractorID(id);}
-=======
+
     @RequestMapping(path = "project/update",method = RequestMethod.PUT)
     public void updateProject(@RequestBody Project project){
         projectDAO.updateProject(project);
@@ -55,5 +55,5 @@ public class ProjectController {
     public void deleteProject(@PathVariable String id){
         projectDAO.deleteProject(id);
     }
->>>>>>> main
+
 }

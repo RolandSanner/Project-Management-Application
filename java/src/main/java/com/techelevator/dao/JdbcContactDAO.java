@@ -108,4 +108,18 @@ public class JdbcContactDAO implements ContactDAO {
         String sql="DELETE FROM contacts WHERE contact_id=?";
         jdbcTemplate.update(sql,contactId);
     }
+
+    @Override
+    public Contact getContactByID(int id){
+        String sql="SELECT *\n" +
+                "FROM contacts\n" +
+                "WHERE contact_id = ?;";
+
+        SqlRowSet results=this.jdbcTemplate.queryForRowSet(sql,id);
+        Contact contact=new Contact();
+         if(results.next()){
+            contact = contactObjectMapper(results);
+        }
+        return contact;
+    }
 }

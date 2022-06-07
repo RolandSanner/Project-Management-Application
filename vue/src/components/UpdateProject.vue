@@ -7,7 +7,6 @@
             type="text"
             id="project-id"
             class="form-control"
-
             required
             autofocus
             v-model="project.projectID"
@@ -16,7 +15,6 @@
             type="text"
             id="project-name"
             class="form-control"
-
             required
             autofocus
             v-model="project.projectName"
@@ -24,7 +22,6 @@
         <textarea
             id="project-description"
             class="form-control"
-
             autofocus
             required
             rows="4"
@@ -35,7 +32,6 @@
             type="text"
             id="primary-funding"
             class="form-control"
-
             autofocus
             v-model="project.fundingSource"
         />
@@ -83,7 +79,6 @@
             type="text"
             id="municipality"
             class="form-control"
-
             autofocus
             required
             v-model="project.municipality"
@@ -92,7 +87,6 @@
             type="text"
             id="location"
             class="form-control"
-
             required
             autofocus
             v-model="project.location"
@@ -101,7 +95,6 @@
             type="text"
             id="contract"
             class="form-control"
-
             autofocus
             v-model="project.contractName"
         />
@@ -129,11 +122,10 @@
 </template>
 
 <script>
-import projectService from './../services/ProjectService'
+import ProjectService from './../services/ProjectService'
 
 export default {
   name: "UpdateProject",
-
   data(){
     return {
       project: {
@@ -151,25 +143,24 @@ export default {
     }
   },
   created(){
-    // ProjectService.getProjectById(this.$route.params.id).then(response=>{
-    //   this.project=response.data;
-    // })
+    ProjectService.getProjectById(this.$route.params.id).then(response=>{
+      this.project=response.data;
+    })
   },
   methods: {
     updateProject() {
-      projectService.updateProject(this.project)
-    //       .then(response => {
-    //         if(response.status == 201){
-    //           this.$router.push("/")
-    //           this.clearNewProject();
-    //         }
-    //       })
-    //       .catch(error => {
-    //         console.error(error)
-    //       })
-    // },
-    // cancel() {
-    //   this.$router.push('/')
+      ProjectService.updateProject(this.project)
+          .then(response => {
+            if(response.status < 300){
+              this.$router.push("/")
+            }
+          })
+          .catch(error => {
+            console.error(error)
+          })
+    },
+    cancel() {
+      this.$router.push('/')
     }
   }
 }

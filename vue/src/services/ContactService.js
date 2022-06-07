@@ -18,5 +18,11 @@ export default{
 
     listContactsByGroupId(id){
         return http.get(`/groups/${id}/contacts`)
+    },
+    updateContact(contact){
+        return http.put('/contacts/update', contact)
+    },
+    getContactByID(id){
+        return http.put('/contacts/id', id)
     }
 }

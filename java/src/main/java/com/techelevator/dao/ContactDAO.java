@@ -25,4 +25,5 @@ public interface ContactDAO {
 
     void deleteContact(int contactId);
 
+    Contact getContactByID(int id);
 }

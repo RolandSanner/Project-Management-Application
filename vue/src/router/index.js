@@ -15,6 +15,7 @@ import ContactListView from '../views/ContactListView.vue'
 import GroupListView from '../views/GroupListView.vue'
 import GroupInfoView from '../views/GroupInfoView.vue'
 import UpdateProject from "@/components/UpdateProject";
+import UpdateContact from '@/components/UpdateContact';
 
 Vue.use(Router)
 
@@ -135,6 +136,11 @@ const router = new Router({
       path: "/projects/update/:id",
       name: "UpdateProject",
       component: UpdateProject
+    },
+    {
+      path: "/contacts/update/:id",
+      name: "UpdateContact",
+      component: UpdateContact
     }
   ]
 })
