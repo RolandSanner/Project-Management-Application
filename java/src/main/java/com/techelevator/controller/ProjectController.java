@@ -46,4 +46,9 @@ public class ProjectController {
     public List<Project> getProjectsByGroupId(@PathVariable int id){
         return projectDAO.getProjectsByGroupId(id);
     }
+
+    @RequestMapping(path = "project/update",method = RequestMethod.PUT)
+    public void updateProject(@RequestBody Project project){
+        projectDAO.updateProject(project);
+    }
 }

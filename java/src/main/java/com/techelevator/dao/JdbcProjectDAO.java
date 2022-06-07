@@ -81,6 +81,13 @@ public class JdbcProjectDAO implements ProjectDAO{
     }
 
     @Override
+    public void updateProject(Project project) {
+        String sql="UPDATE projects SET project_name=?,project_description=?,project_location=?,precinct=?,municipality=?,project_manager_id=?,group_id=?,contractname=?,fundingsource=? " +
+                "WHERE project_id=?";
+        jdbcTemplate.update(sql,project.getProjectName(),project.getDescription(),project.getLocation(),project.getPrecinct(),project.getMunicipality(),project.getProjectManagerID(),project.getGroupID(),project.getContractName(),project.getFundingSource(),project.getProjectID());
+    }
+
+    @Override
     public List<Project> getProjectsByGroupId(int id) {
         String sql="SELECT project_id,project_name,project_description,project_location,precinct,A.municipality,project_manager_id,group_id,contractname,fundingsource,CONCAT(firstname, ' ',lastname) AS project_manager_name" +
                 " FROM projects A " +
@@ -94,15 +101,7 @@ public class JdbcProjectDAO implements ProjectDAO{
         return projects;
     }
 
-//    @Override
-//    public void updateProjectGroupID(int groupID, int projectID){
-//
-//        String sql = "UPDATE projects SET group_id = ? WHERE projects.project_id = ?";
-//        String sql2 = "UPDATE groups SET group_id = ? WHERE projects.project_id = ?";
-//
-//        jdbcTemplate.update(sql, sql2, groupID, projectID);
-//
-//    }
+
 
 
 
