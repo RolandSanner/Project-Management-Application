@@ -11,4 +11,9 @@ public interface GroupDAO {
     Group getGroupById(int groupId);
 
     void addNewGroup(Group group);
+
+    void updateGroup(Group group);
+
+    void deleteGroup(int groupId);
+
 }

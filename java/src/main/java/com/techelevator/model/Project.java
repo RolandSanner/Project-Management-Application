@@ -12,11 +12,20 @@ public class Project {
     private long projectManagerID;
     private String projectManagerName;
     private long groupID;
+    private String groupName;
     private String fundingSource;
     private String contractName;
 
     public String getProjectID() {
         return projectID;
+    }
+
+    public String getGroupName() {
+        return groupName;
+    }
+
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
     }
 
     public String getProjectManagerName() {

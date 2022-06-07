@@ -61,4 +61,17 @@ public class JdbcGroupDAO implements GroupDAO{
                 " VALUES(?,?)";
         jdbcTemplate.update(sql,group.getGroupName(),group.getProgram_manager_id());
     }
+
+    @Override
+    public void updateGroup(Group group) {
+        String sql="UPDATE groups SET group_name=?,program_manager_id=? " +
+                "WHERE group_id=?";
+        jdbcTemplate.update(sql,group.getGroupName(),group.getProgram_manager_id(),group.getGroupID());
+    }
+
+    @Override
+    public void deleteGroup(int groupId) {
+        String sql="DELETE FROM groups WHERE group_id=?";
+        jdbcTemplate.update(sql,groupId);
+    }
 }
