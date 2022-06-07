@@ -19,7 +19,7 @@ public interface ContactDAO {
 
     List<Contact> getContactsByGroupId(int id);
 
-    List<Contact> getContactsByProjectId(String id);
+    List<Contact> getContractorsByProjectId(String id);
 
     void updateContact(Contact contact);
 

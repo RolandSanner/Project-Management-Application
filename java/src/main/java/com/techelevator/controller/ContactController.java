@@ -38,9 +38,9 @@ public class ContactController {
         return contactDAO.getContactsByGroupId(id);
     }
 
-    @RequestMapping(path = "project/{id}/contacts",method = RequestMethod.GET)
+    @RequestMapping(path = "project/{id}/contractors",method = RequestMethod.GET)
     public List<Contact> listContractorsByProjectId(@PathVariable String id){
-        return contactDAO.getContactsByProjectId(id);
+        return contactDAO.getContractorsByProjectId(id);
     }
 
     @RequestMapping(path = "/contact/update",method = RequestMethod.PUT)

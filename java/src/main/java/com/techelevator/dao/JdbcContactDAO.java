@@ -86,8 +86,8 @@ public class JdbcContactDAO implements ContactDAO {
     }
 
     @Override
-    public List<Contact> getContactsByProjectId(String id) {
-        String sql="SELECT* FROM contacts A JOIN project_contractors B ON A.contact_id=B.contractor_id WHERE B.project_id=?";
+    public List<Contact> getContractorsByProjectId(String id) {
+        String sql="SELECT* FROM contacts A JOIN project_contractors B ON A.contact_id=B.contractor_id WHERE B.project_id=? AND A.contact_role='Contractor'";
         SqlRowSet results=this.jdbcTemplate.queryForRowSet(sql,id);
         List<Contact> contacts=new ArrayList<>();
         while (results.next()){
