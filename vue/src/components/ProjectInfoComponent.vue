@@ -52,15 +52,19 @@
         </GmapMap>
       </div>
       <div id="K">
-          Chart holder
+          <bar-chart id="bar"></bar-chart>
       </div>
   </div>
 </template>
 
 <script>
  import ProjectService from '../services/ProjectService'
+ import BarChart from '../components/BarChart.vue'
 export default {
  name:'project-info-component',
+ components: {
+     BarChart
+ },
  props:{
      'projectId': NaN
  },
@@ -90,7 +94,7 @@ export default {
 
 .project-info {
     display: flex;
-    width: 50%;
+    width: 60%;
     height: auto;
     flex-direction: row;
     flex-wrap: wrap;
@@ -208,7 +212,7 @@ p {
     display: flex;
     flex-basis: 45%;
     justify-content: center;
-    height: 250px;
+    height: 300px;
     align-items: center;
     background-color: #6CB4EE;
 }
@@ -216,10 +220,14 @@ p {
     display: flex;
     flex-basis: 45%;
     justify-content: center;
-    height: 250px;
     align-items: center;
-    background-color: #6CB4EE;
+    
 
+}
+
+#bar {
+    width: 100%;
+    height: 300px;
 }
 
 
