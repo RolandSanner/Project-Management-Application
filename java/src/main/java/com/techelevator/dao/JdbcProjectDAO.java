@@ -34,6 +34,7 @@ public class JdbcProjectDAO implements ProjectDAO{
         project.setContractName(results.getString("contractname"));
         project.setFundingSource(results.getString("fundingsource"));
         project.setProjectManagerName(results.getString("project_manager_name"));
+        project.setGroupName(results.getString("group_name"));
 
 
         return project;
@@ -42,9 +43,10 @@ public class JdbcProjectDAO implements ProjectDAO{
 
     @Override
     public List<Project> getAllProjects() {
-        String sql = "SELECT project_id,project_name,project_description,project_location,precinct,A.municipality,project_manager_id,group_id,contractname,fundingsource,CONCAT(firstname, ' ',lastname) AS project_manager_name " +
+        String sql = "SELECT project_id,project_name,project_description,project_location,precinct,A.municipality,project_manager_id,A.group_id,group_name,contractname,fundingsource,CONCAT(firstname, ' ',lastname) AS project_manager_name " +
                 " FROM projects A " +
-                "JOIN contacts B ON A.project_manager_id=B.contact_id;";
+                "JOIN contacts B ON A.project_manager_id=B.contact_id " +
+                "JOIN groups C ON A.group_id=C.group_id;";
         SqlRowSet results = this.jdbcTemplate.queryForRowSet(sql);
         List<Project> projects = new ArrayList<>();
         while (results.next()) {
@@ -57,9 +59,10 @@ public class JdbcProjectDAO implements ProjectDAO{
     @Override
     public Project getAProject(String id) {
 
-        String sql = "SELECT project_id,project_name,project_description,project_location,precinct,A.municipality,project_manager_id,group_id,contractname,fundingsource,CONCAT(firstname, ' ',lastname) AS project_manager_name " +
+        String sql = "SELECT project_id,project_name,project_description,project_location,precinct,A.municipality,project_manager_id,A.group_id,group_name,contractname,fundingsource,CONCAT(firstname, ' ',lastname) AS project_manager_name " +
                 "FROM projects A " +
-                "JOIN contacts B ON A.project_manager_id=B.contact_id" +
+                "JOIN contacts B ON A.project_manager_id=B.contact_id " +
+                "JOIN groups C ON A.group_id=C.group_id "+
                 " where project_id = ?";
         SqlRowSet results = this.jdbcTemplate.queryForRowSet(sql, id);
 
@@ -81,11 +84,19 @@ public class JdbcProjectDAO implements ProjectDAO{
     }
 
     @Override
+    public void updateProject(Project project) {
+        String sql="UPDATE projects SET project_name=?,project_description=?,project_location=?,precinct=?,municipality=?,project_manager_id=?,group_id=?,contractname=?,fundingsource=? " +
+                "WHERE project_id=?";
+        jdbcTemplate.update(sql,project.getProjectName(),project.getDescription(),project.getLocation(),project.getPrecinct(),project.getMunicipality(),project.getProjectManagerID(),project.getGroupID(),project.getContractName(),project.getFundingSource(),project.getProjectID());
+    }
+
+    @Override
     public List<Project> getProjectsByGroupId(int id) {
-        String sql="SELECT project_id,project_name,project_description,project_location,precinct,A.municipality,project_manager_id,group_id,contractname,fundingsource,CONCAT(firstname, ' ',lastname) AS project_manager_name" +
+        String sql="SELECT project_id,project_name,project_description,project_location,precinct,A.municipality,project_manager_id,A.group_id,group_name,contractname,fundingsource,CONCAT(firstname, ' ',lastname) AS project_manager_name" +
                 " FROM projects A " +
-                "JOIN contacts B ON A.project_manager_id=B.contact_id" +
-                " WHERE group_id=?";
+                "JOIN contacts B ON A.project_manager_id=B.contact_id " +
+                "JOIN groups C ON A.group_id=C.group_id"+
+                " WHERE A.group_id=?";
         SqlRowSet results=jdbcTemplate.queryForRowSet(sql,id);
         List<Project>projects=new ArrayList<>();
         while (results.next()){
@@ -94,6 +105,19 @@ public class JdbcProjectDAO implements ProjectDAO{
         return projects;
     }
 
+    @Override
+    public List<Project> getProjectsByContractorID(int id) {
+        String sql = "SELECT *\n" +
+                "FROM projects\n" +
+                "JOIN project_contractors pc on projects.project_id = pc.project_id\n" +
+                "WHERE contractor_id = ?;";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, id);
+        List<Project> projects = new ArrayList<>();
+        while (results.next()){
+            projects.add(projectObjectMapper(results));
+        }
+        return projects;
+    }
 //    @Override
 //    public void updateProjectGroupID(int groupID, int projectID){
 //
@@ -105,5 +129,9 @@ public class JdbcProjectDAO implements ProjectDAO{
 //    }
 
 
+    public void deleteProject(String projectId) {
+        String sql="DELETE FROM projects WHERE project_id=?";
+        jdbcTemplate.update(sql,projectId);
+    }
 
 }

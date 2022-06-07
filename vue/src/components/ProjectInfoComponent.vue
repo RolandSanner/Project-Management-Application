@@ -54,6 +54,9 @@
       <div id="K">
           <bar-chart id="bar"></bar-chart>
       </div>
+    <router-link :to="{ name: 'UpdateProject', params: {id:project.projectID} }" class="routerLinks">
+      Update Project
+    </router-link>
   </div>
 </template>
 
