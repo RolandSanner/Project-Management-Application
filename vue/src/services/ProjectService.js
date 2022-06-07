@@ -22,5 +22,8 @@ export default{
     },
     updateProject(project){
         return http.put('/projects/update', project)
+    },
+    getProjectsByContractorId(id){
+        return http.get(`/contractor/${id}/projects`)
     }
 }
