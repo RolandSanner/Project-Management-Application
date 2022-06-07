@@ -3,7 +3,7 @@
     <div class="nav">
       <NavigationBar class="nav"/>
     </div>
-      <router-view />
+    <router-view />
   </div>
 </template>
 

@@ -56,7 +56,7 @@ public class JdbcContactDAO implements ContactDAO {
 
     @Override
     public void addContact(Contact contact){
-        String sql = "INSERT INTO contacts (firstname, lastname, phonenumber, email, municipality, contact_role, companyname, industry, contact_street, contact_city, contact_state, contact_zip)\n" +
+        String sql = "INSERT INTO contacts (firstName, lastName, phoneNumber, email, municipality, contact_role, companyName, industry, contact_street, contact_city, contact_state, contact_zip)\n" +
                 "VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
 
         jdbcTemplate.update(sql, contact.getFirstName(), contact.getLastName(), contact.getPhoneNumber(), contact.getEmail(), contact.getMunicipality(), contact.getContactRole(), contact.getCompanyName(), contact.getIndustry(), contact.getContactStreet(), contact.getContactCity(), contact.getContactState(), contact.getContactZip());

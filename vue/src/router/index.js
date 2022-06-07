@@ -12,6 +12,7 @@ import NewContact from '../views/NewContact.vue'
 import UserInfo from '../views/UserInfo.vue'
 import ProjectInfoView from '../views/ProjectInfoView.vue'
 import ContactListView from '../views/ContactListView.vue'
+import ContactInfoView from '../views/ContactInfoView.vue'
 import GroupListView from '../views/GroupListView.vue'
 import GroupInfoView from '../views/GroupInfoView.vue'
 import UpdateProject from "@/components/UpdateProject";
@@ -114,7 +115,15 @@ const router = new Router({
       name:"allContacts",
       component:ContactListView,
       meta:{
-        requiresAuth:false
+        requiresAuth:true
+      }
+    },
+    {
+      path:"/contacts/:id",
+      name:"ContactInfoView",
+      component:ContactInfoView,
+      meta:{
+        requiresAuth:true
       }
     },
     {

@@ -20,7 +20,7 @@
       </thead>
       <tbody>
         <tr>
-          <td class="idfilter">
+          <td class="idFilter">
             <input type="text" id="contactIDFilter" v-model="filter.contactID"/>
           </td>
           <td class="firstNameFilter">
@@ -59,21 +59,14 @@
           <td class="contactZipFilter">
             <input type="text" id="contactZipFilter" v-model="filter.contactZip"/>
           </td>
-<!--          <td>-->
-<!--            <select id="statusFilter" v-model="filter.status">-->
-<!--              <option value>Show All</option>-->
-<!--              <option value="In Progress">In Progress</option>-->
-<!--              <option value="Completed">Completed</option>-->
-<!--              <option value="Other Status">Other Status</option>-->
-<!--            </select>-->
-<!--          </td>-->
           <td>&nbsp;</td>
         </tr>
         <tr v-for="contact in filteredList"
             v-bind:key="contact.id"
             class="contactList"
             >
-          <td>{{contact.contactID}}</td>
+          <td><router-link :to="{ name: 'ContactInfoView', params: {id:contact.contactID} }" class="routerLinks">
+              {{ contact.contactID }}</router-link></td>
           <td>{{contact.firstName}}</td>
           <td>{{contact.lastName}}</td>
           <td>{{contact.phoneNumber}}</td>
@@ -208,5 +201,11 @@ tbody tr{
 .contactList tr {
   display: flex;
 }
-
+.routerLinks {
+  font-size: rem;
+  color: white;
+  background-color: #073763;
+  padding: 1px;
+  margin: 1px;
+}
 </style>

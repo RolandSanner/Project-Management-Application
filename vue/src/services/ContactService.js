@@ -10,6 +10,7 @@ export default{
     },
 
     addContact(contact){
+        console.log("add new contact");
         return http.post(`/contacts/new`, contact);
     },
     listContacts(){
