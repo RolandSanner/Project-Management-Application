@@ -41,24 +41,24 @@
       <br />
     </div>
     <div class="colin section">
-      <a href="https://www.linkedin.com/in/colinwmcgregor/"
-        ><img src="./../assests/colin.jpg" alt="colin"
-      /></a>
+      <a href="https://www.linkedin.com/in/colinwmcgregor/">
+      <img src="./../assests/colin.jpg" alt="colin"/>
+      </a>
       <h2>Colin McGregor</h2>
       <p>
         Colin McGregor is a Tech Elevator Java Web Development graduate. Hard
         worker with a history of success in multiple industries and locations
         looking to start a career in software development. Colin has a wealth of
         experiences in a variety of disciplines that have all helped craft him
-        into the programmer he is today. Whether I was working with children on
+        into the programmer he is today. Whether he was working with children on
         the west coast of Japan, teaching business professionals in the heart of
         Prague, or plating desserts at the Ritz-Carlton in the Virgin Islands,
-        I've always been forced to hit the ground running and adapt as I go.
+        he's always been forced to hit the ground running and adapt as he goes.
       </p>
       <br />
 
-      <a href="https://github.com/RolandSanner" class="github">GitHub</a
-      ><a href="mailto: Sanner.roland@gmail.com" class="email">Email</a>
+      <a href="https://github.com/colinwmc" class="github">GitHub</a
+      ><a href="mailto: colin.w.mcgregor@gmail.com" class="email">Email</a>
     </div>
     <div class="drew section">
       <a href="https://www.linkedin.com/in/reed-drew/"
