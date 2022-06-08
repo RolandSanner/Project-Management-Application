@@ -33,13 +33,29 @@ public class JdbcProjectDAO implements ProjectDAO{
         project.setProjectManagerID(results.getLong("project_manager_id"));
         project.setContractName(results.getString("contractname"));
         project.setFundingSource(results.getString("fundingsource"));
+
+        return project;
+    }
+
+    private Project projectObjectMapperWithName(SqlRowSet results) {
+
+        Project project = new Project();
+        project.setProjectID(results.getString("project_id"));
+        project.setProjectName(results.getString("project_name"));
+        project.setPrecinct(results.getString("precinct"));
+        project.setMunicipality(results.getString("municipality"));
+        project.setLocation(results.getString("project_location"));
+        project.setDescription(results.getString("project_description"));
+        project.setGroupID(results.getLong("group_id"));
+        project.setProjectManagerID(results.getLong("project_manager_id"));
+        project.setContractName(results.getString("contractname"));
+        project.setFundingSource(results.getString("fundingsource"));
         project.setProjectManagerName(results.getString("project_manager_name"));
         project.setGroupName(results.getString("group_name"));
 
 
         return project;
     }
-
 
     @Override
     public List<Project> getAllProjects() {
@@ -50,7 +66,7 @@ public class JdbcProjectDAO implements ProjectDAO{
         SqlRowSet results = this.jdbcTemplate.queryForRowSet(sql);
         List<Project> projects = new ArrayList<>();
         while (results.next()) {
-            projects.add(projectObjectMapper(results));
+            projects.add(projectObjectMapperWithName(results));
 
         }
         return projects;
@@ -68,7 +84,7 @@ public class JdbcProjectDAO implements ProjectDAO{
 
         Project project = null;
         if(results.next()) {
-            project = projectObjectMapper(results);
+            project = projectObjectMapperWithName(results);
         }
 
         return project;
@@ -100,7 +116,7 @@ public class JdbcProjectDAO implements ProjectDAO{
         SqlRowSet results=jdbcTemplate.queryForRowSet(sql,id);
         List<Project>projects=new ArrayList<>();
         while (results.next()){
-            projects.add(projectObjectMapper(results));
+            projects.add(projectObjectMapperWithName(results));
         }
         return projects;
     }

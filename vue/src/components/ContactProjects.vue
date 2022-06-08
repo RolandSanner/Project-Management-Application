@@ -12,7 +12,7 @@
 <tbody>
     <tr v-for="project in projects" v-bind:key="project.id" class="project">
         <td>
-            <router-link v-bind:to="{name:'projectInfoView',params:{id:project.projectID}}">
+            <router-link v-bind:to="{name:'projectinfoview',params:{id:project.projectID}}">
       {{project.projectName}}
       </router-link>
       </td>

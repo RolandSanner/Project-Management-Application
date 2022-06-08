@@ -24,7 +24,7 @@ export default{
         return http.put('/contact/update', contact)
     },
     getContactByID(id){
-        return http.put('/contacts/id', id)
+        return http.get(`/contact/${id}`)
     },
     assignContactToGroup(groupContact){
         return http.post('/contact/assignGroup',groupContact)
