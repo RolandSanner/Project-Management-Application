@@ -11,8 +11,9 @@
           </router-link>
         </div>
         <div class="navLinks">
-            <router-link v-bind:to="{ name: 'home' }" class="link">Home</router-link>
-            <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''" 
+            <router-link :to="{ name: 'home' }" class="link">Home</router-link>
+            <router-link :to="{name: 'AboutUs'}" class="link"> | About Us</router-link>
+            <router-link :to="{ name: 'logout' }" v-if="$store.state.token != ''"
                             class="link" >&nbsp;|&nbsp;Logout</router-link>
         </div>
     </div>
