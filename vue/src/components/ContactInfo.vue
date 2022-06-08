@@ -59,6 +59,7 @@ created(){
 #info-header{
     width: 100vw;
     padding: 10px;
+<<<<<<< HEAD
     border: 0;
 }
 
@@ -74,5 +75,21 @@ created(){
   display: flex;
   justify-content: center;
 }
+=======
+    border: 0px;
+    grid-area: header;
+}
+.contact-info{
+    display: grid;
+    grid-template-areas: 
+    "header header"
+    ". updates";
+}
+.updates{
+    grid-area: updates;
+}
+
+
+>>>>>>> ce2b026640fad8ca15f36408bb2b3656aa86d4be
 
 </style>
