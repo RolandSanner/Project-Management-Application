@@ -11,9 +11,11 @@
           </thead>
       </table>
     <div class="updates">
+      <div class="routerLI">
     <router-link :to="{ name: 'UpdateContact', params: {id:contact.contactID} }" class="routerLinks" v-if="$store.state.user.authorities[0].name==='ROLE_ADMIN'">
       Update Project
     </router-link>
+      </div>
     <assign-contact-to-project-form v-if="$store.state.user.authorities[0].name==='ROLE_ADMIN'"/>
     <assign-contact-to-group-form v-if="$store.state.user.authorities[0].name==='ROLE_ADMIN'"/>
   </div>
@@ -57,8 +59,20 @@ created(){
 #info-header{
     width: 100vw;
     padding: 10px;
-    border: 0px;
+    border: 0;
 }
 
+.updates {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+
+.routerLI {
+  display: flex;
+  justify-content: center;
+}
 
 </style>
