@@ -58,7 +58,18 @@ created(){
     width: 100vw;
     padding: 10px;
     border: 0px;
+    grid-area: header;
 }
+.contact-info{
+    display: grid;
+    grid-template-areas: 
+    "header header"
+    ". updates";
+}
+.updates{
+    grid-area: updates;
+}
+
 
 
 </style>

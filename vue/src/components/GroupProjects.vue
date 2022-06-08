@@ -12,7 +12,7 @@
 <tbody>
     <tr v-for="project in projects" v-bind:key="project.id" class="project">
         <td>
-            <router-link v-bind:to="{name:'projectInfoView',params:{id:project.projectID}}">
+            <router-link v-bind:to="{name:'projectinfoview',params:{id:project.projectID}}">
       {{project.projectName}}
       </router-link>
       </td>
@@ -32,7 +32,11 @@
 </thead>
 <tbody>
     <tr v-for="contact in contacts" v-bind:key="contact.contactID" class="contact">
-        <td>{{contact.firstName}} {{contact.lastName}}</td>
+        <td>
+        <router-link v-bind:to="{name:'ContactInfoView',params:{id:contact.contactID}}">
+        {{contact.firstName}} {{contact.lastName}}
+        </router-link>
+        </td>
         <td>{{contact.contactRole}}</td>
     </tr>
 </tbody>
