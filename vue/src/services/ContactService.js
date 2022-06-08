@@ -28,5 +28,8 @@ export default{
     },
     assignContactToGroup(groupContact){
         return http.post('/contact/assignGroup',groupContact)
+    },
+    assignContactToProject(projectContact){
+        return http.post('/contractor/assignProject',projectContact)
     }
 }

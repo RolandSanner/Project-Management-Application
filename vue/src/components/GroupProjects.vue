@@ -1,6 +1,6 @@
 <template>
 <div id="main">
-    <div id="projects-list"> 
+    <div id="projectsList"> 
     <h2>Projects</h2>
       <table id='project-table'>
 <thead>
@@ -319,7 +319,7 @@ methods:{
     grid-area: data;
     display: flex;
 }
-#projects-list{
+#projectsList{
     grid-area: project-list;
     margin: 10px;
     

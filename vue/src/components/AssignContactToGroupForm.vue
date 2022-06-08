@@ -1,46 +1,60 @@
 <template>
-  <div id="container">
-      <h1>Select Group to Assign Contact</h1>
-      <div v-for="group in groups" v-bind:key="group.groupID" class="group-option">
-          <button >
-          {{group.groupName}}
-          </button>
-      </div>
+  <div id="assign-to-group-comp">
+      <form class="assign-group">
+          <label id="groupIdLabel" for="groupId">Assign Contact to Group</label>
+          <div id="input">
+          <input type="text"
+          name="groupId"
+           id="group_id" 
+           placeholder="Group ID#" 
+           required
+           v-model="groupContact.group_id"
+           />
+           <button id="assignGroupButton" v-on:click="assignContact()">Submit</button>
+           </div>
+      </form>
+    
   </div>
 </template>
 
 <script>
-import GroupService from '../services/GroupService'
 import ContactService from '../services/ContactService'
 export default {
-name:'contact-group-assignment-page',
+name:'contact-group-assignment-form',
 data(){
     return{
-        groups:[],
         groupContact:{
             contact_id:0,
-            group_id:0
+            group_id:''
             },
     }
 },
 created(){
-    GroupService.getGroups().then(response=>{
-        this.groups=response.data;
+    
         this.groupContact.contact_id=this.$route.params.id
-    })
-},
+    },
 methods:{
     assignContact(){
 
         ContactService.assignContactToGroup(this.groupContact);
     },
-    assignGroupId(id){
-        this.groupContact.group_id=id;
-    }
 }
 }
 </script>
 
 <style>
-
+#input{
+    display: flex;
+    justify-content: center;
+}
+#assignGroupButton{
+    margin: 0px;
+}
+.assign-group{
+    flex-basis: 100%;
+}
+#groupIdLabel{
+    display: flex;
+    justify-content: center;
+}
 </style>
