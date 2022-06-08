@@ -10,17 +10,31 @@
               </tr>
           </thead>
       </table>
+    <div class="updates">
+    <router-link :to="{ name: 'UpdateContact', params: {id:contact.contactID} }" class="routerLinks" v-if="$store.state.user.authorities[0].name==='ROLE_ADMIN'">
+      Update Project
+    </router-link>
+    <assign-contact-to-project-form v-if="$store.state.user.authorities[0].name==='ROLE_ADMIN'"/>
+    <assign-contact-to-group-form v-if="$store.state.user.authorities[0].name==='ROLE_ADMIN'"/>
   </div>
+  </div>
+
   
 </template>
 
 <script>
 import ContactService from '../services/ContactService'
+import AssignContactToGroupForm from "@/components/AssignContactToGroupForm";
+import AssignContactToProjectForm from "@/components/AssignContactToProjectForm";
 export default {
 name:'contact-details-component',
 props:{
     'contactID': Number
 },
+  components:{
+    AssignContactToGroupForm,
+    AssignContactToProjectForm
+  },
 data(){
     return{
         contact:{
@@ -45,4 +59,6 @@ created(){
     padding: 10px;
     border: 0px;
 }
+
+
 </style>

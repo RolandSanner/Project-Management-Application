@@ -46,7 +46,7 @@
       <div id="K">
           <bar-chart id="bar"></bar-chart>
       </div>
-    <router-link :to="{ name: 'UpdateProject', params: {id:project.projectID} }" class="routerLinks">
+    <router-link :to="{ name: 'UpdateProject', params: {id:project.projectID} }" class="routerLinks" v-if="$store.state.user.authorities[0].name==='ROLE_ADMIN'">
       Update Project
     </router-link>
   </div>
