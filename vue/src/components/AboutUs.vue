@@ -18,8 +18,8 @@
       </p>
       <br />
 
-      <a href="https://github.com/RolandSanner" class="github">GitHub</a
-      ><a href="mailto: Sanner.roland@gmail.com" class="email">Email</a>
+      <a href="https://github.com/JackKhodr" class="github">GitHub</a
+      ><a href="mailto: JaKhodr@gmail.com" class="email">Email</a>
     </div>
     <div class="roland section">
       <a href="https://www.linkedin.com/in/roland-sanner/"
