@@ -11,9 +11,9 @@
           </thead>
       </table>
     <div class="updates">
-      <div class="routerLI">
+      <div class="routerL">
     <router-link :to="{ name: 'UpdateContact', params: {id:contact.contactID} }" class="routerLinks" v-if="$store.state.user.authorities[0].name==='ROLE_ADMIN'">
-      Update Project
+      Update Contact
     </router-link>
       </div>
     <assign-contact-to-project-form v-if="$store.state.user.authorities[0].name==='ROLE_ADMIN'"/>
@@ -26,8 +26,8 @@
 
 <script>
 import ContactService from '../services/ContactService'
-import AssignContactToGroupForm from "@/components/AssignContactToGroupForm";
-import AssignContactToProjectForm from "@/components/AssignContactToProjectForm";
+import AssignContactToGroupForm from "../components/AssignContactToGroupForm";
+import AssignContactToProjectForm from "../components/AssignContactToProjectForm";
 export default {
 name:'contact-details-component',
 props:{
@@ -56,21 +56,21 @@ created(){
 </script>
 
 <style>
-#info-header{
+/* #info-header{
     width: 100vw;
     padding: 10px;
     border: 0;
-}
+} */
 
-.updates {
+/* .updates {
   display: flex;
   justify-content: flex-end;
   flex-wrap: wrap;
   flex-direction: column;
-}
+} */
 
 
-.routerLI {
+/* .routerLI {
   display: flex;
   justify-content: center;
 }
@@ -80,10 +80,10 @@ created(){
     grid-template-areas: 
     "header header"
     ". updates";
-}
-.updates{
+} */
+/* .updates{
     grid-area: updates;
-}
+} */
 
 
 

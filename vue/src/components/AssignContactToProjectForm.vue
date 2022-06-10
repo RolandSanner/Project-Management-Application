@@ -24,14 +24,14 @@ export default {
     data(){
         return{
             projectContact:{
-                contact_id:'',
+                contractor_id:'',
                 project_id:''
             }
         }
     },
     created(){
     
-        this.projectContact.contact_id=this.$route.params.id
+        this.projectContact.contractor_id=this.$route.params.id
     },
     methods:{
         assignContact(){
